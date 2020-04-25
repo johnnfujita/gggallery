@@ -17,7 +17,7 @@ phases:
     pre_build:
         commands:
             - echo will start installing dependencies...
-            yarn
+            - yarn
                 
     build:
         commands:
