@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import gsap from "gsap";
 import './styles/App.scss';
 import Header from './components/Header';
@@ -19,18 +19,49 @@ const routes = [
   {path: "/services", name: "Services", Component: Services },
   {path: "/approach", name: "Approach", Component: Approach },
 ]
+
+// function to limit the rerenderings to happen only after a few seconds after the last one
+function debounce(fn, ms) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms)
+  }
+}
+
 function App() {
 
+  gsap.to("body", 0, {css: { visibility: "visible"}});
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
+  
   useEffect(()=> {
-    let vh = window.innerHeight * .01;
+    let vh = dimensions.height * .01;
     document.documentElement.style.setProperty('--vh', `${vh}px`)
 
-    gsap.to("body", 0, {css: { visibility: "visible"}});
+   
+    const debounceHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }, 1000)
+    window.addEventListener("resize", debounceHandleResize);
+
+    return () => {
+      window.removeEventListener("resize", debounceHandleResize);
+    }
   });
   return (
     <>
       
-      <Header />
+      <Header dimensions={dimensions} />
+      {console.log(dimensions.width)}
       <div className="App">
         {routes.map(({path, Component}) => (
           <Route key={path} exact path={path} >
