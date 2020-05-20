@@ -32,7 +32,7 @@ const Header = ({ dimensions}) => {
             <div className="container">
                 <div className="row vcenter space-between">
                     <div className="logo">
-                        <a href="/">GGG.</a>
+                        <a href="/">GGG</a>
                     </div>
                     <div className="nav-toggle">
                         <div onClick={()=> setMenuState({menuOpened: true})} 
