@@ -17,10 +17,12 @@ const Header = ({ history, dimensions}) => {
             setMenuState({menuOpened: false})
         })
         if(menuState.menuOpened === true) {
-            gsap.to("nav", {css: {display: "block"}})
-            gsap.to("body", {css: {overflow: "hidden"}})
-
-            tl.to(".App", {
+            tl.to("body", {
+                duration: 0.01, 
+                css: {
+                    overflow: "hidden"
+                }
+            }).to(".App", {
                 duration: 1,
                 y: dimensions.width <= 654 ? "80vh" : "70vh",
                 ease: "expo.inOut"
@@ -112,13 +114,9 @@ const Header = ({ history, dimensions}) => {
                 css: { 
                     overflow: "auto"
                 }
-            }).to("nav", {
-                css: {
-                    display: "none"
-                }
             })
         }
-    })
+    }, [menuState.menuOpened, history,dimensions.width])
 
     return (
         <div className="header">
