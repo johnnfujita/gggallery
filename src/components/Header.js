@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
-// import { NavLink, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import {ReactComponent as UpArrow} from "../assets/up-arrow-circle.svg";
 import gsap from 'gsap';
 
 let tl = gsap.timeline();
 
 
-const Header = ({ dimensions}) => {
+const Header = ({ history, dimensions}) => {
     const [menuState, setMenuState] = useState({
         menuOpened: false
     });
 
     useEffect(() => {
+
+        history.listen(() => {
+            setMenuState({menuOpened: false})
+        })
         if(menuState.menuOpened === true) {
             gsap.to("nav", {css: {display: "block"}})
             gsap.to("body", {css: {overflow: "hidden"}})
@@ -121,7 +125,7 @@ const Header = ({ dimensions}) => {
             <div className="container">
                 <div className="row vcenter space-between">
                     <div className="logo">
-                        <a href="/">GGG</a>
+                        <NavLink to="/">GGG</NavLink>
                     </div>
                     <div className="nav-toggle">
                         <div onClick={()=> setMenuState({menuOpened: true})} 
@@ -142,4 +146,4 @@ const Header = ({ dimensions}) => {
     )
 }
 
-export default Header
+export default withRouter(Header);
