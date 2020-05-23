@@ -3,6 +3,7 @@ import { NavLink, withRouter } from "react-router-dom";
 import {ReactComponent as UpArrow} from "../assets/up-arrow-circle.svg";
 import gsap from 'gsap';
 
+
 let tl = gsap.timeline();
 
 
@@ -125,7 +126,10 @@ const Header = ({ history, dimensions}) => {
                     <div className="logo">
                         <NavLink to="/">GGG</NavLink>
                     </div>
+                    
+                    
                     <div className="nav-toggle">
+                    
                         <div onClick={()=> setMenuState({menuOpened: true})} 
                              className="hamburguer-menu">
                             
@@ -138,6 +142,7 @@ const Header = ({ history, dimensions}) => {
                         </div>
                     </div>
                 </div>
+                
             </div>
             
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import ProfileButtons from "./ProfileButtons";
 const Navigation = () => {
     return (
         <nav>
@@ -12,12 +12,12 @@ const Navigation = () => {
                             <ul className="nav-links">
                                 <li>
                                     <NavLink to="/case-studies" exact>
-                                        Case Studies
+                                        Artistas
                                     </NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/approach" exact>
-                                        Approach
+                                        Obras
                                     </NavLink>
                                 </li>
                                 <li>
@@ -27,30 +27,31 @@ const Navigation = () => {
                                 </li>
                                 <li>
                                     <NavLink to="/services" exact>
-                                        Services
+                                        Curadoria
                                     </NavLink>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <ProfileButtons />
                         <div className="nav-column">
-                            <div className="nav-label">Contact</div>
+                            <div className="nav-label">Contato</div>
                             <div className="nav-infos">
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Email</li>
                                     <li>
                                         <NavLink to="/contact" exact>
-                                            Get in touch with us
+                                            Como cadastrar seu espaço
                                         </NavLink>
                                     </li>
                                     <li>
                                         <NavLink to="/audit" exact>
-                                            Get a Free Audit
+                                            Como cadastrar suas obras
                                         </NavLink>
                                     </li>
                                 </ul>
                                 <ul className="nav-info">
-                                    <li className="nav-info-label">Root Gallery</li>
+                                    <li className="nav-info-label">Galeria Principal</li>
                                     <li>Villa Pita</li>
                                     <li>Brazil</li>
                                     <li>Fortaleza, CE</li>
@@ -62,7 +63,7 @@ const Navigation = () => {
                                 </ul>
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Legal</li>
-                                    <li>Privacy and Cookies</li>
+                                    <li>Privacidade & Cookies</li>
                                 </ul>
                             </div>
                         </div>
