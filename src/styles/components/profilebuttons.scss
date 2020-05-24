@@ -20,15 +20,15 @@
     border-radius: 100%;
     margin-right: 10px;
     z-index: 1;
-    border: 2px solid black;
+    border: 2px solid $white;
     
     transition: .4s ease-in-out;
     cursor: pointer;
     &:hover {
-        background: $black;
+        background: $white;
         svg {
         
-        color: $white;
+        color: $black;
         }
     }
 }
@@ -46,16 +46,16 @@
   
     border-radius: 100%;
     
-    border: 2px solid black;
+    border: 2px solid $white;
     z-index: 1;
 
     transition: .4s ease-in-out;
     cursor: pointer;
     &:hover {
-        background: $black;
+        background: $white;
         svg {
         
-        color: $white;
+        color: $black;
         }
     }
     
