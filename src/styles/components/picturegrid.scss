@@ -1,0 +1,52 @@
+.grid-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $white;
+    .picture-grid {
+        display: grid;
+        grid-template-columns: repeat(var(--columns, 3), 1fr);
+        grid-column-gap:40px;
+        grid-row-gap: 40px;
+        background-color: $white;
+        @include media("<=tablet") {
+            grid-template-columns: repeat(var(--columns,1), 1fr);
+            grid-column-gap: 0px;
+            padding-top: 80px;
+        }
+        
+
+        .column {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                
+                
+                @include media("<=tablet") {
+                    padding: 0px;
+                    margin-top: 0px;
+                }
+
+
+            .image {
+                position: relative;
+                margin-bottom: 40px;;
+                width: 100%;
+                
+                object-fit: cover;
+                object-position: center center;
+                opacity: 1;
+                transition: none 0s ease 0s;
+                box-shadow: 1.8px 1.6px 1.2px rgba(0,0,0,0.6);
+                
+                &:hover {
+                    cursor: pointer;
+
+                }
+            }
+        }
+        
+    }
+
+
+}
+

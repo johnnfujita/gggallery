@@ -11,10 +11,11 @@ import About from "./pages/about";
 import Services from "./pages/services";
 import { Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import PictureGrid from './components/PictureGrid';
 
 const routes = [
   {path: "/", name: "Home", Component: Home },
-  {path: "/case-studied", name: "Case Studies", Component: CaseStudies },
+  {path: "/case-studies", name: "Case Studies", Component: PictureGrid },
   {path: "/about", name: "About", Component: About },
   {path: "/services", name: "Services", Component: Services },
   {path: "/approach", name: "Approach", Component: Approach },

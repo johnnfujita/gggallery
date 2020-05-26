@@ -1,0 +1,135 @@
+{"obras": [
+    {
+        "id": 0,
+        "artist": "John",
+        "title": "La Damme Desolee", 
+        "style": "modern",
+        "technique": "Waterpaint",
+        "url": "paint1",
+        "price": 2000,
+        "prints": 200,
+        "printPrice": 200
+        
+    },
+    {
+        "id": 1,
+        "artist": "John",
+        "title": "Black Eunuque", 
+        "style": "Realism",
+        "technique": "Oil",
+        "url": "paint2",
+        "price": 10993,
+        "prints": 0,
+        "printPrice": 0
+        
+    },
+    {
+        "id": 2,
+        "artist": "Janio Reeves",
+        "title": "Encyclopedia", 
+        "style": "Renascentist",
+        "technique": "Oil",
+        "url": "paint3",
+        "price": 40321,
+        "prints": 0,
+        "printPrice": 0
+        
+    },
+    {
+        "id": 3,
+        "artist": "Khalil Tumis",
+        "title": "Suspiria", 
+        "style": "modern",
+        "technique": "Oil",
+        "url": "paint4",
+        "price": 1720,
+        "prints": 0,
+        "printPrice": 0
+        
+    },
+    {
+        "id": 4,
+        "artist": "Suskin Medina",
+        "title": "la mere", 
+        "style": "Cubism",
+        "technique": "Panel",
+        "url": "paint5",
+        "price": 230492,
+        "prints": 0,
+        "printPrice": 0
+        
+    },
+    {
+        "id": 5,
+        "artist": "Kwagdlin warhors",
+        "title": "Adeus Socovo", 
+        "style": "classic",
+        "technique": "Drawing",
+        "url": "paint6",
+        "price": 2000,
+        "prints": 200,
+        "printPrice": 200
+        
+    },
+    {
+        "id": 6,
+        "artist": "Jacobson Frenet",
+        "title": "Market", 
+        "style": "modern",
+        "technique": "Graphite",
+        "url": "paint7",
+        "price": 90494,
+        "prints": 30,
+        "printPrice": 2000
+        
+    },
+    {
+        "id": 7,
+        "artist": "LongLong",
+        "title": "Prometheu's Fire", 
+        "style": "modern",
+        "technique": "Oil",
+        "url": "paint8",
+        "price": 829,
+        "prints": 0,
+        "printPrice": 0
+        
+    },
+    {
+        "id": 8,
+        "artist": "Gauge Mamete",
+        "title": "Calidus", 
+        "style": "modern",
+        "technique": "Oil",
+        "url": "paint9",
+        "price": 1290,
+        "prints": 100,
+        "printPrice": 200
+        
+    },
+    {
+        "id": 9,
+        "artist": "Lincoln Petrus",
+        "title": "ObtuseMemoir", 
+        "style": "modern",
+        "technique": "Oil",
+        "url": "paint10",
+        "price": 3298,
+        "prints": 0,
+        "printPrice": 0 
+        
+    },
+    {
+        "id": 10,
+        "artist": "LaFrugs",
+        "title": "Death Scope", 
+        "style": "modern",
+        "technique": "DigitalComposition",
+        "url": "paint11",
+        "price": 800,
+        "prints": -1,
+        "printPrice": 80
+        
+    }
+]
+}
