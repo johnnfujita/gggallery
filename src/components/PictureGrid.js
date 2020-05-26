@@ -18,19 +18,50 @@ const PictureGrid = (props) => {
             <div className="picture-grid">
                 <div className="column">
                     {imageList.map((el, idx) => {
-                        return idx % 3 === 0 ?  <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} /> : " " 
+                        return idx % 3 === 0 ?  (<div className="image-container">
+                        <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
+                            <div className="description">
+                                <div className="price">R$ {el.price}</div>
+                                <div className="details">
+                                    <div className="artist">{el.artist}</div>
+                                    <div className="title">{el.title}, {el.date}</div>
+                                </div>
+                            </div>
+                    </div>)
+                     : " "
                         }
                     )}
                 </div>
                 <div className="column">
                     {imageList.map((el, idx) => {
-                        return idx % 3 === 1 ?  <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} /> : " " 
+                        return idx % 3 === 1 ?  
+                        (<div className="image-container">
+                            <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
+                                <div className="description">
+                                    <div className="price">R$ {el.price}</div>
+                                    <div className="details">
+                                        <div className="artist">{el.artist}</div>
+                                        <div className="title">{el.title}, {el.date}</div>
+                                    </div>
+                                </div>
+                        </div>)
+                         : " " 
                         }
                     )}
                 </div>
                 <div className="column">
                     {imageList.map((el, idx) => {
-                        return idx % 3 === 2 ?  <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} /> : " " 
+                        return idx % 3 === 2 ?  (<div className="image-container">
+                        <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
+                            <div className="description">
+                                <div className="price">R$ {el.price}</div>
+                                <div className="details">
+                                    <div className="artist">{el.artist}</div>
+                                    <div className="title">{el.title}, {el.date}</div>
+                                </div>
+                            </div>
+                    </div>)
+                     : " "
                         }
                     )}
                 </div>
