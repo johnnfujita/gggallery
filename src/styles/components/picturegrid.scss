@@ -34,7 +34,7 @@
                 
                 display: flex;
                 flex-direction: column;
-                transition: all 1s ease;
+                transition: all 1s ease-in;
                 @include media("<=tablet") {
                     width: 90%;
                     
@@ -47,7 +47,7 @@
                         border-bottom:none;
                         box-shadow: 8px 8px 8px  rgba(0,0,0,0.3);
                         transform: translateX(-10px);
-                        transition: all 1s ease;
+                        transition: all 1s ease-in;
                     }
                     
                    
@@ -91,10 +91,17 @@
                     border-bottom:1px solid rgba(0,0,0,0.3);
                    
                     .price {
-                        font-size: 24px;
+                        background-color: $black;
+                        border-radius: 30px;
+                        font-size: 20px;
                         font-weight: 700;
-                        font-family: "Playfair Display", serif
-                    
+                        font-family: "Playfair Display", serif;
+                        color: $white;
+                        padding: 8px 14px;
+                        
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                     }
                     .details {
                         display: flex;
