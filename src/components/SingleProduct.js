@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
 import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
@@ -7,13 +7,43 @@ import styled from "styled-components"
 
 
 
+function debounce(fn, ms) {
+    let timer;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(()=> {
+            timer = null;
+            fn.apply(this, arguments);
+        }, ms)
+    }
+}
+
 let imagesJson = require("../mockdata/obras.json")
 let imageList = imagesJson.obras
 
-let isTablet = window.innerWidth <= 650
-
 
 const SingleProduct = (props) => {
+
+    const [dimensions, setDimensions] = useState({
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
+    
+    useEffect(()=> {
+        const debounceHandleResize = debounce(function handleResize(){
+            setDimensions({
+                height: window.innerHeight,
+                width: window.innerWidth
+            })
+        }, 1000)
+        window.addEventListener("resize", debounceHandleResize);
+
+        return () => {
+            window.removeEventListener("resize", debounceHandleResize );
+        }
+    })
+    
+    
     let item = imageList.filter((el) => el.id === Number(props.match.params.id))
     console.log(item)
     item = item[0]
@@ -61,7 +91,7 @@ const SingleProduct = (props) => {
                     <div className="final-buttons">
                         <div className="add-button">Checkout</div>
                         <div className="or-label">ou</div>
-                        <div className="direct-whats"> <WhatsappContact size={24}/> {isTablet ? "" : "Whatsapp"}</div>
+                        <div className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</div>
                     </div>
                     
                 </div>
