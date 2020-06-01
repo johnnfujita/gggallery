@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $white;
     width: 48px;
     height: 48px;
     border-radius: 100%;
@@ -38,6 +39,7 @@
     justify-content: center;
     align-items: center;
     width: 48px;
+    color: $white;
     height: 48px;
     @include media("<=phone") {
         margin-top: 10px;

@@ -8,7 +8,7 @@ nav {
     position: fixed;
     overflow: hidden;
     background: $black;
-    a {
+    .anchors {
         position: relative;
         &:after {
             content: "";
@@ -71,7 +71,9 @@ nav {
                     @include media("<=phone") {
                         margin-bottom: 1.6rem;
                     }
+                    
                 }
+                
                 a {
                     font-weight: 600;
                     font-size: 2.8rem;
@@ -97,6 +99,11 @@ nav {
                         @include media("<=654px") {
                             display: none;
                         }
+                    }
+                    .nav-whatsapp {
+                        display: flex;
+                        align-items: center;
+                        
                     }
                     .nav-info-label {
                         font-weight: 600;

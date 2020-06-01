@@ -5,20 +5,31 @@ import Header from './components/Header';
 import Home from './pages/home';
 
 
-import CaseStudies from "./pages/caseStudies";
-import Approach from "./pages/approach";
+
+
 import About from "./pages/about";
-import Services from "./pages/services";
+import ArtistList from "./components/ArtistList";
 import { Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import PictureGrid from './components/PictureGrid';
+
+import DisplayList from "./components/DisplayList";
+import PictureGrid from "./components/PictureGrid"
+import SingleProduct from "./components/SingleProduct";
+import ArtistProfile from "./components/ArtistProfile";
+import RegisterOrLogin from "./components/RegisterOrLogin";
+import UserProfile from "./components/UserProfile";
 
 const routes = [
   {path: "/", name: "Home", Component: Home },
-  {path: "/case-studies", name: "Case Studies", Component: PictureGrid },
+  {path: "/obras", name: "Acervo", Component: PictureGrid },
   {path: "/about", name: "About", Component: About },
-  {path: "/services", name: "Services", Component: Services },
-  {path: "/approach", name: "Approach", Component: Approach },
+  {path: "/artistas", name: "Artistas", Component: ArtistList },
+  {path: "/espacos", name: "Espacos", Component: DisplayList },
+  {path: "/artista", name: "Artista", Component: ArtistProfile },
+  {path: "/obra/:id", name: "Obra", Component: SingleProduct },
+  {path: "/login", name: "Login", Component: RegisterOrLogin },
+  {path: "/perfilusuario", name: "Perfil Usuario", Component: UserProfile },
+
 ]
 
 // function to limit the rerenderings to happen only after a few seconds after the last one
@@ -65,10 +76,9 @@ function App() {
       {console.log(dimensions.width)}
       <div className="App">
         {routes.map(({path, Component}) => (
-          <Route key={path} exact path={path} >
-            <Component />
-          </Route>
+          <Route key={path} exact path={path} component={Component} />
         ))}
+        
       </div>
       <Navigation />
     </>

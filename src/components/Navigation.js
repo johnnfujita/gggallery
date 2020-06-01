@@ -1,6 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ProfileButtons from "./ProfileButtons";
+
+import {Whatsapp} from "@styled-icons/boxicons-logos/Whatsapp"
+import styled from "styled-components"
+
 const Navigation = () => {
     return (
         <nav>
@@ -11,23 +15,23 @@ const Navigation = () => {
                             Menu
                             <ul className="nav-links">
                                 <li>
-                                    <NavLink to="/case-studies" exact>
+                                    <NavLink className="anchors" to="/obras" exact>
+                                        Acervo
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className="anchors" to="/artistas" exact>
                                         Artistas
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/approach" exact>
-                                        Obras
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/about" exact>
+                                    <NavLink className="anchors" to="/about" exact>
                                         About
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/services" exact>
-                                        Curadoria
+                                    <NavLink className="anchors" to="/espaços" exact>
+                                        Espaços
                                     </NavLink>
                                 </li>
                             </ul>
@@ -40,12 +44,12 @@ const Navigation = () => {
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Email</li>
                                     <li>
-                                        <NavLink to="/contact" exact>
+                                        <NavLink className="anchors" to="/contact" exact>
                                             Como cadastrar seu espaço
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/audit" exact>
+                                        <NavLink className="anchors" to="/audit" exact>
                                             Como cadastrar suas obras
                                         </NavLink>
                                     </li>
@@ -58,8 +62,12 @@ const Navigation = () => {
                                 </ul>
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Phone</li>
-                                    <li>Garcez, G</li>
-                                    <li>+55 (85) 988 526 803</li>
+                                    
+                                    <li className="nav-whatsapp">
+                                        <a className="anchors" href="https://wa.me/5585997382000/" >
+                                            <WhatsappContact size={30} /> Whatsapp
+                                        </a>
+                                    </li>
                                 </ul>
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Legal</li>
@@ -74,3 +82,8 @@ const Navigation = () => {
 }
 
 export default Navigation
+
+
+const WhatsappContact = styled(Whatsapp)`
+    color: $white;
+`

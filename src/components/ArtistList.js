@@ -1,15 +1,15 @@
 import React from 'react'
 
-const Approach = () => {
+const ArtistList = () => {
     return (
         <div className="page">
             <div className="container">
                 <div className="row">
-                    <h3>Approach</h3>
+                    <h3>Artistas</h3>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Approach;
+export default ArtistList;
