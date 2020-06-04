@@ -1,179 +1,180 @@
-{"obras": [
-    {
-        "id": 0,
-        "artist": "John",
-        "title": "La Damme Desolee", 
-        "style": "modern",
-        "technique": "Waterpaint",
-        "url": "paint1",
-        "location": "Louvre",
-        "date": 1910,
-        "price": 2000,
-        "prints": 200,
-        "printPrice": 200,
-        "width": 85.1,
-        "height": 180 
-        
-    },
-    {
-        "id": 1,
-        "artist": "John",
-        "title": "Black Eunuque", 
-        "style": "Realism",
-        "technique": "Oil",
-        "url": "paint2",
-        "location": "Louvre",
-        "date": 1710,
-        "price": 10993,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 85.1,
-        "height": 180 
-        
-    },
-    {
-        "id": 2,
-        "artist": "Janio Reeves",
-        "title": "Encyclopedia", 
-        "style": "Renascentist",
-        "technique": "Oil",
-        "url": "paint3",
-        "location": "Pacadillon",
-        "date": 1820,
-        "price": 40321,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 85.1,
-        "height": 180 
-        
-    },
-    {
-        "id": 3,
-        "artist": "Khalil Tumis",
-        "title": "Suspiria", 
-        "style": "modern",
-        "technique": "Oil",
-        "url": "paint4",
-        "location": "Louvre",
-        "date": 1923,
-        "price": 1720,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 180,
-        "height": 180 
-        
-    },
-    {
-        "id": 4,
-        "artist": "Suskin Medina",
-        "title": "la mere", 
-        "style": "Cubism",
-        "technique": "Panel",
-        "url": "paint5",
-        "location": "Louvre",
-        "date": 1800,
-        "price": 230492,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 180,
-        "height": 280 
-        
-    },
-    {
-        "id": 5,
-        "artist": "Kwagdlin warhors",
-        "title": "Adeus Socovo", 
-        "style": "classic",
-        "technique": "Drawing",
-        "url": "paint6",
-        "location": "Louvre",
-        "date": 1952,
-        "price": 2000,
-        "prints": 200,
-        "printPrice": 200,
-        "width": 180,
-        "height": 280 
-        
-    },
-    {
-        "id": 6,
-        "artist": "Jacobson Frenet",
-        "title": "Market", 
-        "style": "modern",
-        "technique": "Graphite",
-        "url": "paint7",
-        "location": "Dragão do Mar",
-        "date": 2010,
-        "price": 90494,
-        "prints": 30,
-        "printPrice": 2000,
-        "width": 180,
-        "height": 380 
-        
-    },
-    {
-        "id": 7,
-        "artist": "LongLong",
-        "title": "Prometheu's Fire", 
-        "style": "modern",
-        "technique": "Oil",
-        "url": "paint8",
-        "location": "Louvre",
-        "date": 1923,
-        "price": 829,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 180,
-        "height": 50 
-        
-    },
-    {
-        "id": 8,
-        "artist": "Gauge Mamete",
-        "title": "Calidus", 
-        "style": "modern",
-        "technique": "Oil",
-        "url": "paint9",
-        "location": "GGG Central Gallery",
-        "date": 1999,
-        "price": 1290,
-        "prints": 100,
-        "printPrice": 200,
-        "width": 180,
-        "height": 50 
-        
-    },
-    {
-        "id": 9,
-        "artist": "Lincoln Petrus",
-        "title": "ObtuseMemoir", 
-        "style": "modern",
-        "technique": "Oil",
-        "url": "paint10",
-        "location": "RoBallery",
-        "date": 1985,
-        "price": 3298,
-        "prints": 0,
-        "printPrice": 0,
-        "width": 180,
-        "height": 180  
-        
-    },
-    {
-        "id": 10,
-        "artist": "LaFrugs",
-        "title": "Death Scope", 
-        "style": "modern",
-        "technique": "DigitalComposition",
-        "url": "paint11",
-        "location": "Moleskine",
-        "date": 1990,
-        "price": 800,
-        "prints": -1,
-        "printPrice": 80,
-        "width": 280,
-        "height": 60 
-        
-    }
-]
+{
+    "obras": [
+        {
+            "id": 0,
+            "artist": "John",
+            "title": "La Damme Desolee", 
+            "style": "modern",
+            "technique": "Waterpaint",
+            "url": "paint1",
+            "location": "Louvre",
+            "date": 1910,
+            "price": 2000,
+            "prints": 200,
+            "printPrice": 200,
+            "width": 85.1,
+            "height": 180 
+
+        },
+        {
+            "id": 1,
+            "artist": "John",
+            "title": "Black Eunuque", 
+            "style": "Realism",
+            "technique": "Oil",
+            "url": "paint2",
+            "location": "Louvre",
+            "date": 1710,
+            "price": 10993,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 85.1,
+            "height": 180 
+
+        },
+        {
+            "id": 2,
+            "artist": "Janio Reeves",
+            "title": "Encyclopedia", 
+            "style": "Renascentist",
+            "technique": "Oil",
+            "url": "paint3",
+            "location": "Pacadillon",
+            "date": 1820,
+            "price": 40321,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 85.1,
+            "height": 180 
+
+        },
+        {
+            "id": 3,
+            "artist": "Khalil Tumis",
+            "title": "Suspiria", 
+            "style": "modern",
+            "technique": "Oil",
+            "url": "paint4",
+            "location": "Louvre",
+            "date": 1923,
+            "price": 1720,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 180,
+            "height": 180 
+
+        },
+        {
+            "id": 4,
+            "artist": "Suskin Medina",
+            "title": "la mere", 
+            "style": "Cubism",
+            "technique": "Panel",
+            "url": "paint5",
+            "location": "Louvre",
+            "date": 1800,
+            "price": 230492,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 180,
+            "height": 280 
+
+        },
+        {
+            "id": 5,
+            "artist": "Kwagdlin warhors",
+            "title": "Adeus Socovo", 
+            "style": "classic",
+            "technique": "Drawing",
+            "url": "paint6",
+            "location": "Louvre",
+            "date": 1952,
+            "price": 2000,
+            "prints": 200,
+            "printPrice": 200,
+            "width": 180,
+            "height": 280 
+
+        },
+        {
+            "id": 6,
+            "artist": "Jacobson Frenet",
+            "title": "Market", 
+            "style": "modern",
+            "technique": "Graphite",
+            "url": "paint7",
+            "location": "Dragão do Mar",
+            "date": 2010,
+            "price": 90494,
+            "prints": 30,
+            "printPrice": 2000,
+            "width": 180,
+            "height": 380 
+
+        },
+        {
+            "id": 7,
+            "artist": "LongLong",
+            "title": "Prometheu's Fire", 
+            "style": "modern",
+            "technique": "Oil",
+            "url": "paint8",
+            "location": "Louvre",
+            "date": 1923,
+            "price": 829,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 180,
+            "height": 50 
+
+        },
+        {
+            "id": 8,
+            "artist": "Gauge Mamete",
+            "title": "Calidus", 
+            "style": "modern",
+            "technique": "Oil",
+            "url": "paint9",
+            "location": "GGG Central Gallery",
+            "date": 1999,
+            "price": 1290,
+            "prints": 100,
+            "printPrice": 200,
+            "width": 180,
+            "height": 50 
+
+        },
+        {
+            "id": 9,
+            "artist": "Lincoln Petrus",
+            "title": "ObtuseMemoir", 
+            "style": "modern",
+            "technique": "Oil",
+            "url": "paint10",
+            "location": "RoBallery",
+            "date": 1985,
+            "price": 3298,
+            "prints": 0,
+            "printPrice": 0,
+            "width": 180,
+            "height": 180  
+
+        },
+        {
+            "id": 10,
+            "artist": "LaFrugs",
+            "title": "Death Scope", 
+            "style": "modern",
+            "technique": "DigitalComposition",
+            "url": "paint11",
+            "location": "Moleskine",
+            "date": 1990,
+            "price": 800,
+            "prints": -1,
+            "printPrice": 80,
+            "width": 280,
+            "height": 60 
+
+        }
+    ]
 }

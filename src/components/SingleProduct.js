@@ -1,4 +1,6 @@
 import React, { useEffect, useState} from 'react'
+import ShopContext from "../context/shop-context";
+
 
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
 import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
@@ -48,57 +50,62 @@ const SingleProduct = (props) => {
     console.log(item)
     item = item[0]
     return (
-        <div className="obra-container">
-            <div className="image-container">
-                <img  className="image" src={require(`../assets/${item.url}.jpg`)} alt={`${item.title}`} />
-            </div>
-            <div className="menu">
-                <div className="description">
-                    <div className="details">
-                        <div className="title">{item.title}, {item.date}</div>
-                        <div className="artist">artist: {item.artist}</div>
-                        
-                        <div className="size">dimensions: {item.width}cm x {item.height}cm</div>
-                        <div className="size">technique: {item.technique}</div>
-                        <div className="size">style: {item.style}</div>
-                    </div>
-                    <div className="buttons-container-bottom">
-                        <div className="labels">
-                        <div className="label">Original Unique</div>
-                        <div className="label">Replicas Limited</div>
-                        </div>
-                        <div className="counter">
-                            <div className="counter-button">+</div>
-                            <input className="input-counter" type="text" pattern="\d+" placeholder="Qnt." disabled={true}/>
-                            <div className="counter-button">-</div>
-                        </div>
-                    </div>
-                    
+        <ShopContext.Consumer >
+            {context => (
+                <div className="obra-container">
+                <div className="image-container">
+                    <img  className="image" src={require(`../assets/${item.url}.jpg`)} alt={`${item.title}`} />
                 </div>
-                <div className="add-to-cart-container">
-                    <div className="price">R$ {item.price},00</div>
-
-                    <div className="certificates-warnings">
-                        <div className="certificate">
-                            <AuthenticityCheck size={18} />
-                            <div className="label-certificate">Certificado de Autenticidade</div>
+                <div className="menu">
+                    <div className="description">
+                        <div className="details">
+                            <div className="title">{item.title}, {item.date}</div>
+                            <div className="artist">artist: {item.artist}</div>
+                            
+                            <div className="size">dimensions: {item.width}cm x {item.height}cm</div>
+                            <div className="size">technique: {item.technique}</div>
+                            <div className="size">style: {item.style}</div>
+                        </div>
+                        <div className="buttons-container-bottom">
+                            <div className="labels">
+                            <div className="label">Original Unique</div>
+                            <div className="label">Replicas Limited</div>
                             </div>
-                        <div className="certificate">
-                            <PaymentBagde size={18} />
-                           <div className="label-certificate">Pagamento Seguro</div> 
+                            <div className="counter">
+                                <div className="counter-button">+</div>
+                                <input className="input-counter" type="text" pattern="\d+" placeholder="Qnt." disabled={true}/>
+                                <div className="counter-button">-</div>
+                            </div>
                         </div>
+                        
                     </div>
-                    <div className="final-buttons">
-                        <div className="add-button">Checkout</div>
-                        <div className="or-label">ou</div>
-                        <div className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</div>
+                    <div className="add-to-cart-container">
+                        <div className="price">R$ {item.price},00</div>
+    
+                        <div className="certificates-warnings">
+                            <div className="certificate">
+                                <AuthenticityCheck size={18} />
+                                <div className="label-certificate">Certificado de Autenticidade</div>
+                                </div>
+                            <div className="certificate">
+                                <PaymentBagde size={18} />
+                               <div className="label-certificate">Pagamento Seguro</div> 
+                            </div>
+                        </div>
+                        <div className="final-buttons">
+                            <div className="add-button">Checkout</div>
+                            <div className="or-label">ou</div>
+                            <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
+                        </div>
+                        
                     </div>
-                    
+                       
+    
                 </div>
-                   
-
             </div>
-        </div>
+            )}
+        
+        </ShopContext.Consumer>
     )
 }
 

@@ -9,8 +9,8 @@ const ProfileButtons = () => {
     return (
         <div className="button-container">
             
-            <NavLink to="\carrinho" className="circle-one"><CartIcon size="28"/></NavLink>
-            <NavLink to="\perfilusuario" className="circle-two"><PersonIcon size="28"/></NavLink>
+            <NavLink to="/carrinho" className="circle-one"><CartIcon size="28"/></NavLink>
+            <NavLink to="/perfilusuario" className="circle-two"><PersonIcon size="28"/></NavLink>
         </div>
     )
 }

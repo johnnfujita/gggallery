@@ -18,6 +18,8 @@ import SingleProduct from "./components/SingleProduct";
 import ArtistProfile from "./components/ArtistProfile";
 import RegisterOrLogin from "./components/RegisterOrLogin";
 import UserProfile from "./components/UserProfile";
+import ShoppingCart from "./components/ShoppingCart";
+
 
 const routes = [
   {path: "/", name: "Home", Component: Home },
@@ -29,6 +31,7 @@ const routes = [
   {path: "/obra/:id", name: "Obra", Component: SingleProduct },
   {path: "/login", name: "Login", Component: RegisterOrLogin },
   {path: "/perfilusuario", name: "Perfil Usuario", Component: UserProfile },
+  {path: "/carrinho", name: " Carrinho", Component: ShoppingCart}
 
 ]
 
