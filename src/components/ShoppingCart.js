@@ -70,7 +70,7 @@ const ShoppingCart = () => {
 
             </div>
             <div className="go-to-checkout-container">
-                <div className="title">GIO VEADO</div>
+                <div className="title">Cart</div>
                 <div className="go-to-checkout-inner-container">
                     <div className="gant-line">
                         <div className="gant-circle-1">1</div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import ShopContext from "../context/shop-context";
-
+import { NavLink } from "react-router-dom";
 
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
 import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
@@ -93,7 +93,7 @@ const SingleProduct = (props) => {
                             </div>
                         </div>
                         <div className="final-buttons">
-                            <div className="add-button">Checkout</div>
+                            <NavLink to="/carrinho" className="add-button">Checkout</NavLink>
                             <div className="or-label">ou</div>
                             <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
                         </div>
