@@ -35,8 +35,12 @@
             width: 20px;
         }
         .hamburguer-menu {
-            width: 25px;
-         
+            width: 40px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             span {
                 margin-bottom: .3rem;
                 background: $black;

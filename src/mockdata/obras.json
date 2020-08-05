@@ -10,7 +10,7 @@
             "location": "Louvre",
             "date": 1910,
             "price": 2000,
-            "prints": 200,
+            "print":200,
             "printPrice": 200,
             "width": 85.1,
             "height": 180 

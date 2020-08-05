@@ -1,6 +1,8 @@
 import React from 'react'
 import { ReactComponent as RightArrow } from '../assets/arrow-right.svg'
 //this style of import is so that we can animate it
+import { Link } from "react-router-dom";
+
 
 const Banner = () => {
     return (
@@ -20,7 +22,7 @@ const Banner = () => {
                         </div>
                     </h2>
                     <div className="btn-row">
-                        <a href="/">Galeria <RightArrow /></a>
+                        <Link to="/obras" >Galeria <RightArrow /></Link>
                     </div>
                 </div>
             </div>

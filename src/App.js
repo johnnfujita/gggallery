@@ -16,9 +16,13 @@ import DisplayList from "./components/DisplayList";
 import PictureGrid from "./components/PictureGrid"
 import SingleProduct from "./components/SingleProduct";
 import ArtistProfile from "./components/ArtistProfile";
-import RegisterOrLogin from "./components/RegisterOrLogin";
+
 import UserProfile from "./components/UserProfile";
 import ShoppingCart from "./components/ShoppingCart";
+import APITest from './components/APITest';
+
+import AuthForm from './pages/AuthForm';
+import AuthContext from './context/AuthContext';
 
 
 const routes = [
@@ -29,9 +33,13 @@ const routes = [
   {path: "/espacos", name: "Espacos", Component: DisplayList },
   {path: "/artista", name: "Artista", Component: ArtistProfile },
   {path: "/obra/:id", name: "Obra", Component: SingleProduct },
-  {path: "/login", name: "Login", Component: RegisterOrLogin },
+  
+  {path: "/carrinho", name: " Carrinho", Component: ShoppingCart},
+  {path: "/apitest", name: "Api Test", Component: APITest}
+
+]
+const privateRoutes = [
   {path: "/perfilusuario", name: "Perfil Usuario", Component: UserProfile },
-  {path: "/carrinho", name: " Carrinho", Component: ShoppingCart}
 
 ]
 
@@ -48,6 +56,8 @@ function debounce(fn, ms) {
 }
 
 function App() {
+
+  const [auth, setAuth] = useState(false)
 
   gsap.to("body", 0, {css: { visibility: "visible"}});
   const [dimensions, setDimensions] = useState({
@@ -73,18 +83,19 @@ function App() {
     }
   });
   return (
-    <>
-      
+    <AuthContext.Provider value={{auth, setAuth}}>
       <Header dimensions={dimensions} />
       {console.log(dimensions.width)}
       <div className="App">
         {routes.map(({path, Component}) => (
           <Route key={path} exact path={path} component={Component} />
+
         ))}
-        
+          <Route key={"/vidas/login"} exact path={"/vidas/login"} render={ props => <AuthForm {...props} role="login" />} />
+          <Route key={"/vidas/register"} exact path={"/vidas/register"} render={ props => <AuthForm {...props} role="register" />} />
       </div>
       <Navigation />
-    </>
+    </AuthContext.Provider>
   );
 }
 
