@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import ShopContext from "../context/shop-context";
+
 import { NavLink } from "react-router-dom";
 
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
@@ -50,8 +50,7 @@ const SingleProduct = (props) => {
     console.log(item)
     item = item[0]
     return (
-        <ShopContext.Consumer >
-            {context => (
+        <>
                 <div className="obra-container">
                 <div className="image-container">
                     <img  className="image" src={require(`../assets/${item.url}.jpg`)} alt={`${item.title}`} />
@@ -103,9 +102,8 @@ const SingleProduct = (props) => {
     
                 </div>
             </div>
-            )}
+        </>
         
-        </ShopContext.Consumer>
     )
 }
 
