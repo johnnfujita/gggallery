@@ -4,6 +4,11 @@ import './styles/App.scss';
 import Header from './components/Header';
 import Home from './pages/home';
 
+// global state connector to broadcast app component props to the global state
+
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 
 
@@ -16,9 +21,12 @@ import DisplayList from "./components/DisplayList";
 import PictureGrid from "./components/PictureGrid"
 import SingleProduct from "./components/SingleProduct";
 import ArtistProfile from "./components/ArtistProfile";
-import RegisterOrLogin from "./components/RegisterOrLogin";
+
 import UserProfile from "./components/UserProfile";
 import ShoppingCart from "./components/ShoppingCart";
+import  Login  from './pages/Login';
+import Register from './pages/Register';
+
 
 
 const routes = [
@@ -29,7 +37,7 @@ const routes = [
   {path: "/espacos", name: "Espacos", Component: DisplayList },
   {path: "/artista", name: "Artista", Component: ArtistProfile },
   {path: "/obra/:id", name: "Obra", Component: SingleProduct },
-  {path: "/login", name: "Login", Component: RegisterOrLogin },
+  
   {path: "/perfilusuario", name: "Perfil Usuario", Component: UserProfile },
   {path: "/carrinho", name: " Carrinho", Component: ShoppingCart}
 
@@ -48,7 +56,10 @@ function debounce(fn, ms) {
 }
 
 function App() {
-
+  
+  const isAuthenticated = useSelector(state => state.auth.token)
+  
+  
   gsap.to("body", 0, {css: { visibility: "visible"}});
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -56,6 +67,7 @@ function App() {
   })
   
   useEffect(()=> {
+    console.log(` this is true: ${isAuthenticated}`)
     let vh = dimensions.height * .01;
     document.documentElement.style.setProperty('--vh', `${vh}px`)
 
@@ -81,11 +93,12 @@ function App() {
         {routes.map(({path, Component}) => (
           <Route key={path} exact path={path} component={Component} />
         ))}
-        
+        <Route key={"/vidas/login"} exact path={"/vidas/login"} render={ props => <Login {...props} />} />
+        <Route key={"/vidas/register"} exact path={"/vidas/register"} render={ props => <Register {...props} role="register" />} />
       </div>
       <Navigation />
     </>
   );
 }
 
-export default App;
+export default App ;

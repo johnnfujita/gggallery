@@ -13,10 +13,12 @@ const createWarning = (state, action) => {
     })
 }
 
-export const errors = (state = initialState, action) => {
+const errors = (state = initialState, action) => {
     switch(action.type) {
         case CREATE_WARNING: return createWarning(state, action);
         default:
             return state;
     }
 }
+
+export default errors;
