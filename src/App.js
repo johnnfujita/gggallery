@@ -26,6 +26,7 @@ import UserProfile from "./components/UserProfile";
 import ShoppingCart from "./components/ShoppingCart";
 import  Login  from './pages/Login';
 import Register from './pages/Register';
+import Activate from './pages/Activate';
 
 
 
@@ -95,6 +96,7 @@ function App() {
         ))}
         <Route key={"/vidas/login"} exact path={"/vidas/login"} render={ props => <Login {...props} />} />
         <Route key={"/vidas/register"} exact path={"/vidas/register"} render={ props => <Register {...props} role="register" />} />
+        <Route key={"/activate"} exact path={"/activate/:uid/:token"} render={ props => <Activate {...props}  />} />
       </div>
       <Navigation />
     </>

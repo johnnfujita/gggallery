@@ -1,55 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-import {useSelector, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 
 import { authLogin } from '../store/actions/auth';
 import { Formik, Field } from 'formik';
 
 import { withStyles, createMuiTheme } from "@material-ui/core/styles";
 import { TextField, Button, InputAdornment, IconButton } from "@material-ui/core"
-import { AccountCircle, Visibility, VisibilityOff } from "@material-ui/icons"
-import { yellow } from "@material-ui/core/colors"
+import {  Visibility, VisibilityOff } from "@material-ui/icons"
+import { cyan } from "@material-ui/core/colors"
 
 
-  
-  const theme = createMuiTheme({
-    palette: {
-      primary: yellow,
+const CssTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: cyan[800],
     },
-  });
+    '& .MuiInput-underline:after': {
+      borderBottomColor: cyan[500]
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: "aaa",
+      },
+      '&:hover fieldset': {
+        borderColor: cyan[500],
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: cyan[500],
+      },
+    },
+  },
+})(TextField);
+  
+  // const theme = createMuiTheme({
+  //   palette: {
+  //     primary: cyan,
+  //   },
+  // });
 
   const ColorButton = withStyles((theme) => ({
     root: {
-      color: theme.palette.getContrastText(yellow[700]),
-      backgroundColor: yellow[700],
+      color: theme.palette.getContrastText(cyan[300]),
+      backgroundColor: cyan[300],
       width: "100px",
+      borderRadius: '20px',
       '&:hover': {
-        backgroundColor: yellow[800],
+        backgroundColor: cyan[500],
       },
     },
   }))(Button);
 
 
-const Login = ({history}) => {
+const Login = ({authLogin, history}) => {
     
 
-    const dispatch = useDispatch();
-    const token = useSelector( state => state.auth.auth_token)
-    const warning = useSelector(state => state.errors.error)
     
     const [state, setstate] = useState({ 
-        username: "",
+        email: "",
         password: "",
         showPassword: false,
         isRendered: false
     })
-    console.log("Token Here", token)
+   
     
     useEffect(()=> {
-        dispatch(authLogin(state.username, state.password))
+        
         setstate({
-            ...state,
+            
             isRendered: true
         })
     }, [state.isRendered])
@@ -74,16 +93,16 @@ const Login = ({history}) => {
                 <div className={state.isRendered ? "auth-box auth-box-rendered" : "auth-box"}>
                     <div className="logo-container">
 
-                        <img className="login-logo-vidas" src={require("../assets/virtualdemocracies-association.jpg")}/>
+                        <img className="login-logo-microappollis" src={require("../assets/microappollis-black-letters.jpg")}/>
 
                     </div>
                     <Formik
 
-                        initialValues={{ username: '', password: ""}} 
+                        initialValues={{ email: '', password: ""}} 
                         onSubmit={(data, {setSubmitting, resetForm}) => {
                             setSubmitting(true);
                             console.log(data, "adjso");
-                            dispatch(authLogin(data.username, data.password))
+                            authLogin(data.email, data.password)
                             setSubmitting(false);
                             resetForm()
                     }}
@@ -92,10 +111,10 @@ const Login = ({history}) => {
                             <form className="form-container" onSubmit={handleSubmit}>
                                 <Field 
                                     required
-                                    name="username" 
-                                    as={TextField} 
+                                    name="email" 
+                                    as={CssTextField} 
                                     type="input" 
-                                    label="username" 
+                                    label="email" 
                                     variant="outlined" 
 
                                 />
@@ -103,9 +122,9 @@ const Login = ({history}) => {
                                     required
                                     style={{marginTop: "12px"}}
                                     variant="outlined"
-                                    as={TextField}
+                                    as={CssTextField}
                                     name="password"
-                                    label="password"
+                                    label="senha"
                                     type={state.showPassword ? 'text' : 'password'}
                                     InputProps={{
                                         endAdornment: (
@@ -121,10 +140,10 @@ const Login = ({history}) => {
                                     ),}}
                                 />
                                 <div className="login-button-container">   
-                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">SUBMIT</ColorButton>
+                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">Entrar</ColorButton>
                                 <div className="login-forget-register">
-                                    <div className="login-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui</Link></div>
-                                    <div className="login-issues-item-container"><p>Esqueceu a Senha?</p><Link to="/vidas/password-reset/"> Recupere Aqui</Link></div>
+                                    <div className="login-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui!</Link></div>
+                                    <div className="login-issues-item-container"><p>Esqueceu a Senha?&nbsp; &nbsp;</p><Link to="/vidas/password-reset/"> Recupere Aqui!</Link></div>
                                 </div>
                                 </div>
                             </form>
@@ -138,12 +157,14 @@ const Login = ({history}) => {
             <div className="login-bottom-content">
                   
                 <p>The source code is licensed MIT, available at <a href="https://github.com/johnnfujita/virtualdemocracies-backend">Github</a></p>                             
-                <p><a href="https://virtualdemocracies.com">Virtual Democracies</a> by <a href="https://microappollis.com">Microappollis</a>.</p>
+                <p> by <a href="https://microappollis.com">Microappollis</a>.</p>
             </div>
             
         </div>
        
     )
 }
-
-export default Login;
+const mapStateToProps = state => ({
+  isAutheticated: state.auth.isAutheticated,
+})
+export default connect(mapStateToProps,{ authLogin})(Login);

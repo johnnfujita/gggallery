@@ -34,12 +34,18 @@
                 height:80vh;
               }
             .logo-container {
-                margin-top: 20px;
-                height: 150px;
-                width: 200px;
-                .login-logo-vidas {
+                margin-top: 10px;
+                height: 120px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+                border-bottom: 1px solid rgba(0,0,0,0.08);
+                .login-logo-microappollis {
                     object-fit: cover;
-                    width: 180px;
+                    width: 150px;
         
                 }
             }
@@ -52,29 +58,37 @@
                     margin-top: 30px;
                     flex-direction: column;
                     align-items: flex-start;
-                    
+                    @include media("<=phone") {
+                        margin-top: 60px;
+                      }
                     .login-forget-register {
+                       
                         display: flex;
                         flex-direction: column;
                         width: 100%;
-                        margin-top: 12px;
-                        justify-content: space-between;
+                        margin-top: 30px;
+                        justify-content: space-around;
                         align-items: flex-start;
+                        
                         .login-issues-item-container{
                             font-size: 14px;
                             display: flex;
+                            height:24px;
                             flex-direction: row;
                             justify-content: flex-start;
                             align-items: center;
+                            
                             p {
                                 font-size: 13px;
                                 color: #999;
+                                
                             }
                             a {
-                                
+                                color: $primary;
                                 text-decoration: none;
                                 font-size: 13px;
                                 font-weight: 500;
+                                
                                 transition: all .6s ease-in-out;
                                 &:hover {
                                     transform: scale(1.1);
