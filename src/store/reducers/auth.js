@@ -3,23 +3,26 @@ import { updateObject } from '../utility';
 
 
 const initialState = {
-    token: null,
+    auth_token: null,
     error: null,
     loading: false,
+    isAuthenticated: false
 }
 
 const authStart = (state, action) => {
     return updateObject(state, {
         error: null,
-        loading: true
+        loading: true,
     })
 }
 
 const authSuccess = (state, action) =>{
+    console.log("johnnie", action.auth_token)
     return updateObject(state, {
         auth_token: action.auth_token,
         error: null,
-        loading: false
+        loading: false,
+        isAuthenticated: true
     })
 }
 
@@ -41,7 +44,8 @@ const logoutStart = (state, action) => {
 const logoutSuccess = (state, action) => {
     return updateObject(state, {
         loading: false,
-        auth_token: null
+        auth_token: null,
+        isAuthenticated: false
     })
 }
 

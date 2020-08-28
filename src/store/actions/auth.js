@@ -12,7 +12,7 @@ export const authStart = () => {
 export const authSuccess = auth_token => {
     return {
         type: actionTypes.AUTH_SUCCESS,
-        token: auth_token,
+        auth_token: auth_token,
         //expiration: token.expiration,
         //refreshToken: token.refreshToken
     }
@@ -26,16 +26,16 @@ export const authFail = error => {
     }
 }
 
-export const authLogin = (username="djoser", password = "alpine12") => {
+export const authLogin = (email="djoser", password = "alpine12") => {
     return dispatch => {
         console.log("dfdsafdsf")
         dispatch(authStart());
-        axios.post(`${HOST}/auth/token/login/`, {
-            username: username,
+        axios.post(`${HOST}/vidas/auth/token/login/`, {
+            email:email ,
             password: password
         }, {headers:{ "Content-Type": "application/json"}}).then(res => {
             const auth_token = res.data.auth_token;
-            console.log(auth_token)
+            console.log(res.data.auth_token)
             localStorage.setItem('auth_token', auth_token)
             //localStorage.setItem('refreshToken', token.refreshToken)
             //localStorage.setItem('expiration', token.expiration)
@@ -76,7 +76,7 @@ export const logout = (auth_token) => {
     
     return dispatch => {
         dispatch(logoutStart())
-        axios.post(`${HOST}/ggg_art/accounts/logout/`, { auth_token: auth_token })
+        axios.post(`${HOST}/vidas/auth/logout/`, { auth_token: auth_token })
             .then(res =>{
                 localStorage.removeItem('auth_token')
                 //localStorage.removeItem('refreshToken')
@@ -100,35 +100,68 @@ export const checkAuthTimeOut = auth_token => {
 }
 
 
+export const registerSuccess = () => {
+    return {
+        type: actionTypes.REGISTER_SUCCESS,
+        //expiration: token.expiration,
+        //refreshToken: token.refreshToken
+    }
+}
 
-export const authRegister = (username, email, password1, password2) => {
+
+export const registerFail = error => {
+    return {
+        type: actionTypes.AUTH_FAIL,
+        error: error
+    }
+}
+
+export const register = (
+                    email, 
+                    password, 
+                    re_password,
+                    name,
+                    cpf,
+                    address_street,
+                    address_number,
+                    complement,
+                    card_holder_name,
+                    card_number,
+                    card_expiration,
+                    card_type,
+                    card_security_code,
+                    card_brand 
+                    ) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post(`${HOST}/ggg_art/accounts/register/`, {
-            username: username,
-            email: email,
-            password1: password1,
-            password2: password2
-        }).then(res => {
-            const auth_token = res.data.auth_token;
-            localStorage.setItem('accessToken', auth_token)
-            //localStorage.setItem('refreshToken', token.refreshToken)
-            //localStorage.setItem('expiration', token.expiration)
-            // TODO: have to create the actions to call the email 
-            //confirmation service, 
-            // the account will remain inactive until then 
-            //the dispacth must call authConfirmation then 
-            //it calls sendEmail, the success of send 
-            // if email cannot be send returns error message
-            //email returns the page of wait email, 
-            //timer is important to invalidade the email link, 
-            //with the email link is confirmed then it  calls the success
-            dispatch(authSuccess(auth_token));
+        const config = {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        const body = JSON.stringify({
+            email, 
+            password, 
+            re_password,
+            name,
+            cpf,
+            address_street,
+            address_number,
+            complement,
+            card_holder_name,
+            card_number,
+            card_expiration,
+            card_type,
+            card_security_code,
+            card_brand 
+        })
+        axios.post(`${HOST}/vidas/auth/users/`, body, config).then(res => {
+            dispatch(registerSuccess());
             dispatch(createMessage("Registered With Success"))
             //dispatch(checkAuthTimeOut(auth_token.expiration - Date.now()));
         }).catch( error => {
             dispatch(createWarning(error.response.statusText, error.response.status ))
-            dispatch(authFail(error))
+            dispatch(registerFail(error))
         })
     }
 }
