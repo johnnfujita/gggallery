@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import {connect } from 'react-redux';
 
 import { register } from '../store/actions/auth';
 import { Formik, Field } from 'formik';
 
-import { withStyles, ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { withStyles} from "@material-ui/core/styles";
 import { TextField, Button, InputAdornment, IconButton } from "@material-ui/core"
-import { AccountCircle, Visibility, VisibilityOff } from "@material-ui/icons"
+import {  Visibility, VisibilityOff } from "@material-ui/icons"
 import { cyan } from "@material-ui/core/colors"
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 
 
 const CssTextField = withStyles({
@@ -39,11 +34,7 @@ const CssTextField = withStyles({
     },
   })(TextField);
   
-  const theme = createMuiTheme({
-    palette: {
-      primary: cyan,
-    },
-  });
+  
 
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -60,29 +51,25 @@ const CssTextField = withStyles({
 
 const Register = ({ register, history}) => {
     
+    
+    const [stateRender, setStateRender ] = useState({isRendered: false});
+    useEffect(()=> {
+       
+        setStateRender({
+            
+            isRendered: true
+        })
+    }, [stateRender.isRendered])
+    
 
     const [statePasswd, setStatePasswd ] = useState({showPassword:false});
-    const [stateRender, setStateRender ] = useState({isRendered: false});
     const [accountCreated, setAccountCreated] = useState(false);
 
     
-
-    const [formData, setFormData] = useState({ 
-            email: "", 
-            password: "", 
-            re_password: "",
-            name: "",
-            cpf: "",
-            address_street:"",
-            address_number: "",
-            complement: "",
-            card_holder_name: "",
-            card_number: "",
-            card_expiration: "",
-            card_type: "",
-            card_security_code: "",
-            card_brand: "" 
-    })
+  
+    if (accountCreated) {
+        return <Redirect to="/vidas/login" />
+    }
    
     // const handleChange = (event) => {
     //     event.preventDefault();
@@ -92,13 +79,6 @@ const Register = ({ register, history}) => {
     //     })
        
     // };
-    useEffect(()=> {
-       
-        setStateRender({
-            ...stateRender,
-            isRendered: true
-        })
-    }, [stateRender])
     
 
     
@@ -142,9 +122,10 @@ const Register = ({ register, history}) => {
                             card_brand: "" 
                     }} 
                         onSubmit={(data, {setSubmitting, resetForm}) => {
+                            
                             setSubmitting(true);
                             console.log(data, "adjso");
-                            if (data.password === data.re_password) {
+                            
                                 register(data.email, 
                                     data.password, 
                                     data.re_password,
@@ -160,12 +141,9 @@ const Register = ({ register, history}) => {
                                     data.card_security_code,
                                     data.card_brand)
                             setSubmitting(false);
-                            setAccountCreated(true)
+                            
                             resetForm()
-                            }
-                            else {
-                                resetForm()
-                            }
+                            setAccountCreated(true)
                             
                     }}
                     >
@@ -179,7 +157,7 @@ const Register = ({ register, history}) => {
                                     type="input" 
                                     label="email" 
                                     variant="outlined" 
-                                    color="prymary"
+                                    
                                 />
                                
                                 <Field
@@ -238,7 +216,7 @@ const Register = ({ register, history}) => {
                                     type="input" 
                                     label="Nome Completo" 
                                     variant="outlined"
-                                    style={{color: "#ff0000"}}
+                                    
 
                                 />
 
@@ -348,7 +326,7 @@ const Register = ({ register, history}) => {
                                     style={{marginTop: "12px"}}
                                     as={CssTextField} 
                                     type="input" 
-                                    label="card_holder_name" 
+                                    label="Dono do cartão" 
                                     variant="outlined" 
 
                                 />
@@ -359,7 +337,7 @@ const Register = ({ register, history}) => {
                                     as={CssTextField} 
                                     type="input" 
                                     name="card_number"
-                                    label="card_number" 
+                                    label="Número do cartão" 
                                     variant="outlined" 
 
                                 />
@@ -389,7 +367,7 @@ const Register = ({ register, history}) => {
                                 
 
                                 <div className="register-button-container">   
-                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">SUBMIT</ColorButton>
+                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">Registrar</ColorButton>
                                 <div className="register-forget-register">
                                     <div className="register-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui!</Link></div>
                                     <div className="register-issues-item-container"><p>Esqueceu a Senha?&nbsp; &nbsp;</p><Link to="/vidas/password-reset/"> Recupere Aqui!</Link></div>

@@ -8,7 +8,7 @@ import { Formik, Field } from 'formik';
 
 import { withStyles, createMuiTheme } from "@material-ui/core/styles";
 import { TextField, Button, InputAdornment, IconButton } from "@material-ui/core"
-import { AccountCircle, Visibility, VisibilityOff } from "@material-ui/icons"
+import {  Visibility, VisibilityOff } from "@material-ui/icons"
 import { cyan } from "@material-ui/core/colors"
 
 
@@ -34,11 +34,11 @@ const CssTextField = withStyles({
   },
 })(TextField);
   
-  const theme = createMuiTheme({
-    palette: {
-      primary: cyan,
-    },
-  });
+  // const theme = createMuiTheme({
+  //   palette: {
+  //     primary: cyan,
+  //   },
+  // });
 
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -66,9 +66,9 @@ const Login = ({authLogin, history}) => {
    
     
     useEffect(()=> {
-        authLogin(state.email, state.password)
+        
         setstate({
-            ...state,
+            
             isRendered: true
         })
     }, [state.isRendered])
@@ -140,7 +140,7 @@ const Login = ({authLogin, history}) => {
                                     ),}}
                                 />
                                 <div className="login-button-container">   
-                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">SUBMIT</ColorButton>
+                                    <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">Entrar</ColorButton>
                                 <div className="login-forget-register">
                                     <div className="login-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui!</Link></div>
                                     <div className="login-issues-item-container"><p>Esqueceu a Senha?&nbsp; &nbsp;</p><Link to="/vidas/password-reset/"> Recupere Aqui!</Link></div>

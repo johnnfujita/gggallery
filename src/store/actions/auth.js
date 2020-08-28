@@ -165,3 +165,26 @@ export const register = (
         })
     }
 }
+
+
+export const verify = (uid, token) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    
+    const body = JSON.stringify({ uid, token });
+
+    try {
+        await axios.post(`${HOST}/vidas/auth/users/activation/`, body, config);
+        dispatch({
+            type: actionTypes.ACTIVATION_SUCCESS,
+           
+        })
+    } catch (err) {
+        dispatch({
+            type: actionTypes.ACTIVATION_FAIL
+        })
+    }
+}
