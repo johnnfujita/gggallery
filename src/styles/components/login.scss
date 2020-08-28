@@ -25,7 +25,7 @@
             
             transition: all 2s ease-in-out;
             width: 300px;
-            height: 45vh;
+            height: 50vh;
             padding: 20px;
             border-radius: 12px;
             transform: scale(0.8);
@@ -55,23 +55,35 @@
                     
                     .login-forget-register {
                         display: flex;
-                        
+                        flex-direction: column;
                         width: 100%;
                         margin-top: 12px;
                         justify-content: space-between;
-                        align-items: center;
-                        a {
-                            color: #999;
-                            text-decoration: none;
-                            font-size: 13px;
-                            font-weight: 500;
-                            transition: all .6s ease-in-out;
-                            &:hover {
-                                transform: scale(1.1);
-                                
-                                
+                        align-items: flex-start;
+                        .login-issues-item-container{
+                            font-size: 14px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            p {
+                                font-size: 13px;
+                                color: #999;
                             }
-                         }
+                            a {
+                                
+                                text-decoration: none;
+                                font-size: 13px;
+                                font-weight: 500;
+                                transition: all .6s ease-in-out;
+                                &:hover {
+                                    transform: scale(1.1);
+                                    
+                                    
+                                }
+                             }
+                        }
+                        
                     }
                     
                 }

@@ -123,8 +123,8 @@ const Login = ({history}) => {
                                 <div className="login-button-container">   
                                     <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">SUBMIT</ColorButton>
                                 <div className="login-forget-register">
-                                    <Link to="/vidas/register/">Seja um usuário associado!</Link>
-                                    <Link to="/vidas/password-reset/">Esqueceu a senha?</Link>
+                                    <div className="login-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui</Link></div>
+                                    <div className="login-issues-item-container"><p>Esqueceu a Senha?</p><Link to="/vidas/password-reset/"> Recupere Aqui</Link></div>
                                 </div>
                                 </div>
                             </form>
