@@ -61,7 +61,8 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                height: 1000px;       
+                min-height: 100vh;
+                margin-top: 56px;      
             }
             .dummy-product-row {
                 height: 120px;
@@ -119,6 +120,7 @@
                         .item-price-field {
                             display: flex;
                             align-items: center;
+                            font-size: 20px;
                         }
                         .item-quantity-field {
                             display: flex;
@@ -160,26 +162,28 @@
                         width: 50%;
                         height: 100%;
                         display: grid;
-                        grid-template-rows: 1fr 5fr ;
+                        grid-template-columns: none;
+                        grid-template-rows: 1fr 5fr;
                         
                         .item-price-and-quantity-container {
                             display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: flex-end;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
                             .item-price-field {
-                                height: 100%;
+                                height: 30%;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
-                                margin-right: 20px;
+                                font-size: 20px;
+                                
                             }
             
                             .item-quantity-field {
-                                height: 100%;
+                                height: 70%;
                                 display: flex;
                                 flex-direction: column;
-                                justify-content: center;
+                                justify-content: flex-start;
                                 align-items: center;
             
                             }

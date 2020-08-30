@@ -22,13 +22,13 @@ const ShoppingCart = () => {
                         </div>
                         <div className="row-text">
                             <div className="item-price-and-quantity-container">
-                                <div className="item-price-field">R$100</div>
+                                <div className="item-price-field">R$45000</div>
                                 <div className="item-quantity-field">
                                     <div className="item-operators">
                                         <div className="little-circle-operators">+</div>
                                     </div>
 
-                                    <div className="item-count">unique</div>
+                                    <div className="item-count">3</div>
                                     <div className="item-operators">
                                         <div className="little-circle-operators">-</div>
                                     </div>
@@ -39,28 +39,7 @@ const ShoppingCart = () => {
                         </div>
                     </div>
 
-                    <div className="dummy-product-row">
-                        <div className="item-thumbnail-container">
-                            <img className="item-thumbnail" src={require("../assets/paint1.jpg")} alt=" "/>
-                        </div>
-                        <div className="row-text">
-                            <div className="item-price-and-quantity-container">
-                                <div className="item-price-field">R$100</div>
-                                <div className="item-quantity-field">
-                                    <div className="item-operators">
-                                        <div className="little-circle-operators">+</div>
-                                    </div>
-
-                                    <div className="item-count">unique</div>
-                                    <div className="item-operators">
-                                        <div className="little-circle-operators">-</div>
-                                    </div>
-                                </div>
-                            </div>   
-                            {/* <div className="item-total-field">R$100</div> */}
-                            <div className="item-remove-button">X</div>
-                        </div>
-                    </div>
+                    
 
                 </div>
                     
@@ -68,14 +47,14 @@ const ShoppingCart = () => {
             <div className="go-to-checkout-container">
                 <div className="go-to-checkout-title">Cart</div>
                 <div className="go-to-checkout-inner-container">
-                    <div className="gant-line">
+                    {/* <div className="gant-line">
                         <div className="gant-circle-1">1</div>
                         <div className="gant-line-1"></div>
                         <div className="gant-circle-2">2</div>
                         <div className="gant-line-2"></div>
                         <div className="gant-circle-3">3</div>
                         
-                    </div>
+                    </div> */}
                     <div className="total-container">
                         <div className="total-label">TOTAL</div>
                         <div className="total-value">R$ 400.00</div>
