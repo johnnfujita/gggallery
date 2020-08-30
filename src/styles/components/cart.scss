@@ -4,6 +4,23 @@
     display: flex;
     flex-direction: row;
     background-color: $white;
+    .go-to-title-smartphone {
+        display: none;
+        @include media("<=phone") {
+            display: flex;
+            flex-direction: column;
+            height: 130px;
+            justify-content: flex-end;
+            font-size: 36px;
+            padding-left: 8px;
+            border-bottom: 5px solid rgba(0,0,0,1);
+        }
+    }
+    @include media("<=phone") {
+        height:100%;
+        flex-direction: column;
+        
+    }
     .product-container {
         width: 66.66%;
         padding-left: 50px;
@@ -11,60 +28,181 @@
         background-color: rgb(237, 237, 243);
         display: flex;
         flex-direction: column;
-        
+        @include media("<=phone") {
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
         .product-container-header {
             height: 50px;
             background-color: #fff;
-            margin-top: 100px;
+            margin-top: 120px;
             display: grid;
             padding-left: 30px;
-            grid-template-columns: 3fr repeat(3, 2fr) 1fr ;
+            grid-template-columns:  2fr 2fr 1fr 2fr;
             padding: 10px;
             align-items: center;
             font-weight: 800;
             font-size: 12px;
+            @include media("<=phone") {
+                display: none;
+            }
             border-bottom: 5px solid rgba(0,0,0,1);
             .header-field {
                color: #aaa;
                
+               
             }
         }
         .product-table {
-            margin-top: 20px;
+           
+            
+            @include media("<=phone") {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                height: 1000px;       
+            }
             .dummy-product-row {
                 height: 120px;
                 background-color: $white;
                 padding: 10px;
                 display: grid;
                 padding-left: 30px;
-                grid-template-columns: 3fr repeat(3, 2fr) 1fr;
+                grid-template-columns: 2fr 4fr;
                 justify-content: center;
                 align-items: center;
                 border-bottom: 1px solid rgba(0,0,0,0.1);
-                
+                @include media('<=phone') {
+                    height: 250px;
+                    display: flex;
+                    width: 100%;
+                    flex-direction: row;
+                    padding-left: 0;
+                    padding: 0;
+                }
                 .item-thumbnail-container {
                     height: 100%;
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    @include media('<=phone') {
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding-left: 20px;
+                    }
                     .item-thumbnail {
                         height: 100px;
                         box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
                     }
+
+                    @include media("<=phone") {
+                        .item-thumbnail {
+                            height: 150px;
+                            box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+                        }
+                    }
                 }
-                
+                .row-text {
+                    display: grid;
+                    grid-template-columns: 4fr 1fr;
+                    width: 100%;
+                    height: 100%;
+                    
+                    .item-price-and-quantity-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        width: 100%;
+                        .item-price-field {
+                            display: flex;
+                            align-items: center;
+                        }
+                        .item-quantity-field {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            .item-operators {
+                                .little-circle-operators {
+                                    border: 2px solid #000;
+                                    height: 24px;
+                                    font-size: 20px;
+                                    width: 24px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 100%;
+                                    color: black;
+                                    background-color: white;
+                                }
+                            }
+                            .item-count {
+                                padding: 10px 0px 10px 0px;
+                            } 
+                        }
+        
+                    }
+                    
+                    .item-total-field {
+    
+                    }
+                    .item-remove-button {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
 
-                .item-price-field {
-
-                }
-
-                .item-quantity-field {
-
-                }
-
-                .item-total-field {
-
+                    @include media("<=phone") {
+                        width: 50%;
+                        height: 100%;
+                        display: grid;
+                        grid-template-rows: 1fr 5fr ;
+                        
+                        .item-price-and-quantity-container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: flex-end;
+                            .item-price-field {
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 20px;
+                            }
+            
+                            .item-quantity-field {
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+            
+                            }
+                        }
+                        
+        
+                        .item-total-field {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 26px;
+                        }
+                        .item-remove-button {
+                            grid-row-start: 1;
+                            grid-row-end: 2;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            padding: 16px 24px 0px 0px ;
+                            align-items: center;
+                        }
+                    }
                 }
 
             }
@@ -77,8 +215,11 @@
         display: grid;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: 20px 1fr 20px;
-        
-        .title {
+        @include media("<=phone") {
+            display: none;
+            
+        }
+        .go-to-checkout-title {
             grid-row: 1 / 2;
             grid-column: 2 / 3;
             width: 100%;
@@ -87,13 +228,14 @@
             justify-content: flex-end;
             align-items: flex-start;
             font-size: 38px;
+            
         }
         .go-to-checkout-inner-container {
             grid-row: 2 / 5;
             grid-column: 2 / 3;
             display: grid;
             grid-template-rows: 70px repeat(5, 1fr);
-          
+            
             
             .gant-line {
                 height: 70px;

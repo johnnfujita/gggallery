@@ -13,11 +13,16 @@
         height: 86%;
         justify-content: flex-start;
         margin-top: 80px;
-        align-items: center;
+        
+        align-items: flex-start;
+        @include media(">=phone") {
+            width: 80%;
+            
+        }
         .register-title {
             font-weight: bold;
             margin-bottom: 20px;
-            font-size: 30px;
+            font-size: 36px;
         }
         .register-auth-box {
             transition: all 1s ease-in-out;
@@ -26,11 +31,14 @@
             
             transition: all 2s ease-in-out;
             width: 300px;
-            height: 50%;
+            height: 66%;
             padding: 20px;
             border-radius: 12px;
             transform: scale(0.8);
             box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.1);
+            @include media(">=phone") {
+                width: 80%;
+            }
             @include media("<=phone") {
                 height:100%;
               }
@@ -54,19 +62,157 @@
             .register-form-container {
                 display: flex;
                 flex-direction: column;
-                .register-section-title-container {
-                    margin-top: 10px;
-                    border-top: 1px solid rgba(0,0,0,0.08);
-                    .register-section-title {
-                        font-size: 18px;
+                .account-section {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .register-password-and-repassword {
+                        width: 100%;
+                    }
+                    @include media(">=phone") {
+                        .register-password-and-repassword-container {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;;
+                            .register-password-and-repassword {
+                                width: 40%;
+                                margin-right: 40px;
+                            }
+                        }
+             
                     }
                 }
-                .register-togglers-container {
-                    display: flex;
-                    flex-direction: row;
+                .register-profile-section {
                     width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .register-section-title-container {
+                        margin-top: 10px;
+                        border-top: 1px solid rgba(0,0,0,0.08);
+                        .register-section-title {
+                            font-size: 18px;
+                        }
+                    }
+                    .container-name-cpf {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .register-number-complement {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include media(">=phone") {
+                        .container-name-cpf {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            .register-name {
+                                width: 72%;
 
+                            }
+                            .register-cpf {
+                                width: 25%;
+                            }
+                        }
+                        .register-number-complement {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            .register-address-num {
+                                width:25%;
+                                margin-right: 40px;
+                            }
+                            .register-address-complement{
+                                width: 25%;
+                            }
+                        }
+                    }
                 }
+                .register-cardholder-data {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .register-section-title-container {
+                        margin-top: 10px;
+                        border-top: 1px solid rgba(0,0,0,0.08);
+                        .register-section-title {
+                            font-size: 18px;
+                        }
+                    }
+                    .register-cardholder-selectors {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        .register-form-controls {
+                            width: 100%;
+                        }
+                        .register-form-selectors {
+                            width: 100%;
+                        }
+                    }
+                    @include media(">=phone") {
+                        .register-cardholder-selectors {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            .register-form-controls {
+                                width: 50%; 
+                                display: flex,;
+                                flex-direction: row;
+                                margin-top: 10px;
+                            }
+                            .register-form-selectors {
+                                width: 50%; 
+                               
+                                margin-top: 10px;
+                            }
+                            
+                        }
+                    }
+                    .register-togglers-container {
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+    
+                    }
+                    .container-creditcard-data {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        .register-card-number {
+                            width: 100%;
+                        }
+                        .register-card-exp {
+                            width: 30%;
+                            margin-right: 20px;
+                        }
+                        .register-card-seccode {
+                            width: 30%;
+                        }
+                    }
+                    @include media(">=phone") {
+                        .container-creditcard-data {
+                            .register-card-number {
+                                width: 70%;
+                                margin-right: 20px;
+                            }
+                            .register-card-exp {
+
+                                width: 8%;
+                            }
+                            .register-card-seccode {
+                                width: 8%;
+                            }
+                        }
+                      }
+                }
+                
                 .register-button-container {
                     display: flex;
                     margin-top: 30px;

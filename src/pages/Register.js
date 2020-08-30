@@ -6,10 +6,19 @@ import {connect } from 'react-redux';
 import { register } from '../store/actions/auth';
 import { Formik, Field } from 'formik';
 
-import { withStyles} from "@material-ui/core/styles";
-import { TextField, Button, InputAdornment, IconButton } from "@material-ui/core"
+import { withStyles, ThemeProvider, createMuiTheme, makeStyles} from "@material-ui/core/styles";
+import { TextField, FormControl, InputLabel, Select,MenuItem, Button, InputAdornment, IconButton } from "@material-ui/core"
 import {  Visibility, VisibilityOff } from "@material-ui/icons"
 import { cyan } from "@material-ui/core/colors"
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: cyan[500],
+    },
+  },
+});
+
 
 
 const CssTextField = withStyles({
@@ -71,15 +80,7 @@ const Register = ({ register, history}) => {
         return <Redirect to="/vidas/login" />
     }
    
-    // const handleChange = (event) => {
-    //     event.preventDefault();
-    //     setFormData({
-    //         ...formData,
-    //         [event.target.name]: event.target.value
-    //     })
-       
-    // };
-    
+  
 
     
    
@@ -124,7 +125,7 @@ const Register = ({ register, history}) => {
                         onSubmit={(data, {setSubmitting, resetForm}) => {
                             
                             setSubmitting(true);
-                            console.log(data, "adjso");
+          
                             
                                 register(data.email, 
                                     data.password, 
@@ -147,9 +148,9 @@ const Register = ({ register, history}) => {
                             
                     }}
                     >
-                        {({values, isSubmitting, handleSubmit}) => (
+                        {({values, isSubmitting, handleSubmit, handleChange}) => (
                             <form className="register-form-container" onSubmit={handleSubmit}>
-                              
+                                <div className="account-section">
                                 <Field 
                                     required
                                     name="email" 
@@ -159,8 +160,9 @@ const Register = ({ register, history}) => {
                                     variant="outlined" 
                                     
                                 />
-                               
+                                <div className="register-password-and-repassword-container">
                                 <Field
+                                className="register-password-and-repassword"
                                     required
                                     style={{marginTop: "12px"}}
                                     variant="outlined"
@@ -183,7 +185,8 @@ const Register = ({ register, history}) => {
                                     ),}}
                                 />
 
-                                <Field
+<Field
+                                    className="register-password-and-repassword"
                                     required
                                     style={{marginTop: "12px"}}
                                     variant="outlined"
@@ -205,32 +208,44 @@ const Register = ({ register, history}) => {
                                       
                                     ),}}
                                 />
+
+                                </div>
+                                
+
+                                
+                                </div>
+                                <div className="register-profile-section">
                                 <div className="register-section-title-container">
                                     <p className="register-section-title">Perfil</p>
                                 </div>
-                                <Field 
-                                    required
-                                    name="name" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField}  
-                                    type="input" 
-                                    label="Nome Completo" 
-                                    variant="outlined"
-                                    
+                                <div className="container-name-cpf">
+                                  <Field 
+                                      className="register-name"
+                                      required
+                                      name="name" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField}  
+                                      type="input" 
+                                      label="Nome Completo" 
+                                      variant="outlined"
+                                          
 
-                                />
+                                  />
 
-                                <Field 
-                                    required
-                                    style={{marginTop: "12px"}}
-                                    name="cpf" 
-                                    as={CssTextField}  
-                                    type="input" 
-                                    label="CPF" 
-                                    variant="outlined" 
+                                  <Field 
+                                      className="register-cpf"
+                                      required
+                                      style={{marginTop: "12px"}}
+                                      name="cpf" 
+                                      as={CssTextField}  
+                                      type="input" 
+                                      label="CPF" 
+                                      variant="outlined" 
 
-                                />
-
+                                  />
+                                </div>
+                                
+                                
                                 <Field 
                                     required
                                     name="address_street" 
@@ -241,8 +256,9 @@ const Register = ({ register, history}) => {
                                     variant="outlined" 
 
                                 />
-
-                                <Field 
+                                <div className="register-number-complement">
+                                <Field
+                                    className="register-address-num" 
                                     required
                                     name="address_number" 
                                     style={{marginTop: "12px"}}
@@ -253,7 +269,8 @@ const Register = ({ register, history}) => {
 
                                 />
 
-                                <Field 
+                                <Field
+                                  className="register-address-complement" 
                                     required
                                     name="complement" 
                                     style={{marginTop: "12px"}}
@@ -263,113 +280,128 @@ const Register = ({ register, history}) => {
                                     variant="outlined" 
 
                                 />
-                                <div className="register-section-title-container">
-                                    <p className="register-section-title">Informação de Cobrança</p>
                                 </div>
-                                {/* <ThemeProvider theme={theme}>
-                                <FormControl style={{marginTop: "10px"}}>
-                                    <InputLabel id="demo-simple-select-label">Forma de Pagamento</InputLabel>
-                                    <Select
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      name={"card_type"}
-                                      value={formData.card_type}
-                                      onChange={handleChange}
-                                    >
-                                      <MenuItem value="CreditCard">Crédito</MenuItem>
-                                      <MenuItem value="DebitCard">Débito</MenuItem>
-                
-                                    </Select>
-                                </FormControl>
-
-                                <FormControl style={{marginTop: "20px"}}>
-                                    <InputLabel id="demo-simple-select-label">Bandeira Cartão</InputLabel>
-                                    <Select
-                                    
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      name={"card_brand"}
-                                      value={formData.card_type}
-                                      onChange={handleChange}
-                                    >
-                                      <MenuItem value="Visa">Visa</MenuItem>
-                                      <MenuItem value="MasterCard">Master Card</MenuItem>
-                
-                                    </Select>
-                                </FormControl>
                                 
-                                </ThemeProvider> */}
+                                </div>
+                                <div className="register-cardholder-data">
+                                  <div className="register-section-title-container">
+                                      <p className="register-section-title">Informação de Cobrança</p>
+                                  </div>
+                                  <div className="register-cardholder-selectors">
+                                  <ThemeProvider theme={theme}>
+                                  <FormControl variant='outlined' className="register-form-controls">
+                                      <InputLabel style={{background: "white", padding:'2px'}}id="demo-simple-select-outlined-label">Forma de Pagamento</InputLabel>
+                                      <Select
+                                      className="register-form-selectors"
+                                        labelId="demo-simple-select-outlined-label"
+                                        id="demo-simple-select-outlined"
+                                        name={"card_type"}
+                                        value={values.card_type}
+                                        onChange={handleChange}
+                                      >
+                                        <MenuItem value="CreditCard">Crédito</MenuItem>
+                                        <MenuItem value="DebitCard">Débito</MenuItem>
+                                          
+                                      </Select>
+                                  </FormControl>
+
+                                  <FormControl variant='outlined' style={{marginTop: "12px"}}className="register-form-controls">
+                                      <InputLabel style={{background: "white", padding:'2px'}} id="demo-simple-select-label">Bandeira Cartão</InputLabel>
+                                      <Select
+                                        className="register-form-selectors"
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        name={"card_brand"}
+                                        value={values.card_brand}
+                                        onChange={handleChange}
+                                      >
+                                        <MenuItem value="Visa">Visa</MenuItem>
+                                        <MenuItem value="MasterCard">Master Card</MenuItem>
+                                          
+                                      </Select>
+                                  </FormControl>
+                                          
+                                  </ThemeProvider>
+                                  </div>
+                                  
+                                  {/* <Field 
+                                      required
+                                      name="card_type" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      label="Forma de pagamento" 
+                                      variant="outlined"
+                                  
+
+                                  /> */}
+                                  {/* <Field 
+                                      required
+                                      name="card_brand" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      label="Bandeira Cartão" 
+                                      variant="outlined" 
+
+                                  /> */}
+                                  <Field 
+                                      required
+                                      name="card_holder_name" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      label="Titular" 
+                                      variant="outlined" 
+
+                                  />
+                                <div className="container-creditcard-data">
                                 <Field 
-                                    required
-                                    name="card_type" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    label="Forma de pagamento" 
-                                    variant="outlined"
-                             
+                                      className="register-card-number"
+                                      required
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      name="card_number"
+                                      label="Número do cartão" 
+                                      variant="outlined" 
 
-                                />
-                                <Field 
-                                    required
-                                    name="card_brand" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    label="Bandeira Cartão" 
-                                    variant="outlined" 
+                                  />
 
-                                />
-                                <Field 
-                                    required
-                                    name="card_holder_name" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    label="Dono do cartão" 
-                                    variant="outlined" 
+                                  <Field 
+                                  className="register-card-exp"
+                                      required
+                                      name="card_expiration" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      label="Exp" 
+                                      variant="outlined" 
 
-                                />
+                                  />
 
-                                <Field 
-                                    required
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    name="card_number"
-                                    label="Número do cartão" 
-                                    variant="outlined" 
+                                  <Field  
+                                      className="register-card-seccode"
+                                      required
+                                      name="card_security_code" 
+                                      style={{marginTop: "12px"}}
+                                      as={CssTextField} 
+                                      type="input" 
+                                      label="CVV" 
+                                      variant="outlined" 
 
-                                />
-
-                                <Field 
-                                    required
-                                    name="card_expiration" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    label="Validade" 
-                                    variant="outlined" 
-
-                                />
-
-<Field 
-                                    required
-                                    name="card_security_code" 
-                                    style={{marginTop: "12px"}}
-                                    as={CssTextField} 
-                                    type="input" 
-                                    label="Código de Segurança" 
-                                    variant="outlined" 
-
-                                />
+                                  />
+                                </div>
+                                  
+                                </div>
+                                
 
                                 
 
                                 <div className="register-button-container">   
                                     <ColorButton color="primary"  disable={isSubmitting.toString()} type="submit">Registrar</ColorButton>
                                 <div className="register-forget-register">
-                                    <div className="register-issues-item-container"><p>Não é membro?&nbsp; &nbsp;</p><Link to="/vidas/register/"> Registre Aqui!</Link></div>
+                                    <div className="register-issues-item-container"><p>Já é membro?&nbsp; &nbsp;</p><Link to="/vidas/login/"> Accesse Aqui!</Link></div>
                                     <div className="register-issues-item-container"><p>Esqueceu a Senha?&nbsp; &nbsp;</p><Link to="/vidas/password-reset/"> Recupere Aqui!</Link></div>
                                 </div>
                                 </div>

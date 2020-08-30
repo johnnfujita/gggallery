@@ -6,6 +6,18 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import store from './store/store';
 import { Provider } from 'react-redux';
+import { createBrowserHistory } from 'history'
+
+const history = createBrowserHistory();
+
+let app = document.getElementById('root');
+
+if (app) {
+  const path = (/#!(\/.*)$/.exec(window.location.hash) || [])[1];
+  if (path) {
+    history.replace(path);
+  }
+}
 
 
 ReactDOM.render(
@@ -16,7 +28,7 @@ ReactDOM.render(
       </BrowserRouter>
     </React.StrictMode>
   </Provider>,
-  document.getElementById('root')
+  app
 );
 
 // If you want your app to work offline and load faster, you can change

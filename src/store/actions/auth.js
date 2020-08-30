@@ -40,7 +40,7 @@ export const authLogin = (email="djoser", password = "alpine12") => {
             //localStorage.setItem('refreshToken', token.refreshToken)
             //localStorage.setItem('expiration', token.expiration)
             
-            dispatch(createMessage({userCreated: "Perfil Cadastrado com Sucesso!"}))
+            dispatch(createMessage({userCreated: "Bem Vindo!"}))
             dispatch(authSuccess(auth_token));
             //dispatch(checkAuthTimeOut(token));
         }).catch( (error) => {
@@ -111,7 +111,7 @@ export const registerSuccess = () => {
 
 export const registerFail = error => {
     return {
-        type: actionTypes.AUTH_FAIL,
+        type: actionTypes.REGISTER_FAIL,
         error: error
     }
 }
@@ -157,7 +157,7 @@ export const register = (
         })
         axios.post(`${HOST}/vidas/auth/users/`, body, config).then(res => {
             dispatch(registerSuccess());
-            dispatch(createMessage("Registered With Success"))
+            dispatch(createMessage("Registrado com sucesso!"))
             //dispatch(checkAuthTimeOut(auth_token.expiration - Date.now()));
         }).catch( error => {
             dispatch(createWarning(error.response.statusText, error.response.status ))

@@ -5,72 +5,68 @@ import styled from "styled-components"
 const ShoppingCart = () => {
     return (
         <div className="cart-container">
+            <div className="go-to-title-smartphone">Cart</div>
             <div className="product-container">
                 <div className="product-container-header">
                 <div className="header-field">PRODUTO</div>
                 <div className="header-field">PREÇO</div>
                 <div className="header-field">QNT.</div>
-                <div className="header-field">TOTAL</div>
+ 
                 <div className="header-field"></div>
                 </div>
                 <div className="product-table">
+
                     <div className="dummy-product-row">
                         <div className="item-thumbnail-container">
                             <img className="item-thumbnail" src={require("../assets/paint1.jpg")} alt=" "/>
                         </div>
-                        <div className="item-price-field">R$100</div>
-                        <div className="item-quantity-field">
-                            <div className="item-counters"></div>
-                            <div className="item-type">unique</div>
+                        <div className="row-text">
+                            <div className="item-price-and-quantity-container">
+                                <div className="item-price-field">R$100</div>
+                                <div className="item-quantity-field">
+                                    <div className="item-operators">
+                                        <div className="little-circle-operators">+</div>
+                                    </div>
+
+                                    <div className="item-count">unique</div>
+                                    <div className="item-operators">
+                                        <div className="little-circle-operators">-</div>
+                                    </div>
+                                </div>
+                            </div>   
+                            {/* <div className="item-total-field">R$100</div> */}
+                            <div className="item-remove-button">X</div>
                         </div>
-                        <div className="item-total-field">R$100</div>
-                        <div className="item-remove-button">X</div>
                     </div>
 
                     <div className="dummy-product-row">
                         <div className="item-thumbnail-container">
-                            <img className="item-thumbnail" src={require("../assets/paint2.jpg")} alt=" "/>
+                            <img className="item-thumbnail" src={require("../assets/paint1.jpg")} alt=" "/>
                         </div>
-                        <div className="item-price-field">R$100</div>
-                        <div className="item-quantity-field">
-                            <div className="item-counters"></div>
-                            <div className="item-type">unique</div>
+                        <div className="row-text">
+                            <div className="item-price-and-quantity-container">
+                                <div className="item-price-field">R$100</div>
+                                <div className="item-quantity-field">
+                                    <div className="item-operators">
+                                        <div className="little-circle-operators">+</div>
+                                    </div>
+
+                                    <div className="item-count">unique</div>
+                                    <div className="item-operators">
+                                        <div className="little-circle-operators">-</div>
+                                    </div>
+                                </div>
+                            </div>   
+                            {/* <div className="item-total-field">R$100</div> */}
+                            <div className="item-remove-button">X</div>
                         </div>
-                        <div className="item-total-field">R$100</div>
-                        <div className="item-remove-button">X</div>
                     </div>
 
-                    <div className="dummy-product-row">
-                        <div className="item-thumbnail-container">
-                            <img className="item-thumbnail" src={require("../assets/paint4.jpg")} alt=" "/>
-                        </div>
-                        <div className="item-price-field">R$100</div>
-                        <div className="item-quantity-field">
-                            <div className="item-counters"></div>
-                            <div className="item-type">unique</div>
-                        </div>
-                        <div className="item-total-field">R$100</div>
-                        <div className="item-remove-button">X</div>
-                    </div>
-
-                    <div className="dummy-product-row">
-                        <div className="item-thumbnail-container">
-                            <img className="item-thumbnail" src={require("../assets/paint3.jpg")} alt=" "/>
-                        </div>
-                        <div className="item-price-field">R$100</div>
-                        <div className="item-quantity-field">
-                            <div className="item-counters"></div>
-                            <div className="item-type">unique</div>
-                        </div>
-                        <div className="item-total-field">R$100</div>
-                        <div className="item-remove-button">X</div>
-                    </div>
-     
                 </div>
-
+                    
             </div>
             <div className="go-to-checkout-container">
-                <div className="title">Cart</div>
+                <div className="go-to-checkout-title">Cart</div>
                 <div className="go-to-checkout-inner-container">
                     <div className="gant-line">
                         <div className="gant-circle-1">1</div>

@@ -2,6 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 import { updateObject } from '../utility';
 
 
+
 const initialState = {
     auth_token: null,
     error: null,
@@ -51,9 +52,38 @@ const logoutSuccess = (state, action) => {
 
 const logoutFail = (state, action) => {
     return updateObject(state, {
-        token: null,
+        auth_token: null,
         loading: false,
         error: action.error
+    })
+}
+
+const activationFail = (state, action) => {
+    return updateObject(state, {
+        error: action.error,
+        loading: false,
+        auth_token: null
+    })
+}
+
+const activationSuccess = (state, action) => {
+    return updateObject(state, {
+        error: null,
+        loading: false,
+    })
+}
+
+const registerSuccess = (state, action) => {
+    return updateObject(state, {
+        error: null,
+        loading: false,
+    })
+}
+
+const registerFail = (state, action) => {
+    return updateObject(state, {
+        error: action.error,
+        loading: false,
     })
 }
 
@@ -66,6 +96,10 @@ const auth = (state = initialState, action) => {
         case actionTypes.LOGOUT_START: return logoutStart(state, action);
         case actionTypes.LOGOUT_SUCCESS: return logoutSuccess(state, action);
         case actionTypes.LOGOUT_FAIL: return logoutFail(state, action);
+        case actionTypes.ACTIVATION_FAIL: return activationFail(state, action);
+        case actionTypes.ACTIVATION_SUCCESS: return activationSuccess(state, action);
+        case actionTypes.REGISTER_SUCCESS: return registerSuccess(state, action);
+        case actionTypes.REGISTER_FAIL: return registerFail(state, action);
         default:
             return state;
     }
