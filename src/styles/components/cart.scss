@@ -12,12 +12,14 @@
             height: 130px;
             justify-content: flex-end;
             font-size: 36px;
+            background-color: $white;
             padding-left: 8px;
             border-bottom: 5px solid rgba(0,0,0,1);
         }
     }
     @include media("<=phone") {
-        height:100%;
+        height:100vh;
+        background-color: rgb(237, 237, 243);
         flex-direction: column;
         
     }
@@ -61,7 +63,7 @@
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                min-height: 100vh;
+                
                 margin-top: 56px;      
             }
             .dummy-product-row {
@@ -213,6 +215,7 @@
             
         }
     }
+    
     .go-to-checkout-container {
         width: 33.33%;
         background-color: $white;
@@ -336,3 +339,132 @@
 
     }
 }
+.add-to-cart-container {
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    @include media(">=phone") {
+        display: none;
+    }
+   
+    @include media("<=tablet") {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        padding: 0px;
+        padding-top: 20px;
+    }
+    padding: 20px;
+    .price {
+
+        @include media("<=tablet") {
+            padding-right: 20px;
+            text-align: end;
+            font-size: 30px
+        }
+        font-size: 40px;
+        letter-spacing: 2px;
+        font-size: 28x;
+        color: $black;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .certificates-warnings {
+        padding: 8px;
+        font-size: 16px;
+        color: #ccc;
+        .certificate {
+            font-size: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            .label-certificate {
+                padding: 4px;
+                
+            }
+        }
+    }
+    .final-buttons {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include media("<=tablet") {
+            flex-direction: row;
+        }
+
+        .add-button {
+            @include media("<=tablet") {
+                width: 70%;
+                flex-direction: row;
+                border: none;
+                height: 60px;
+                border-radius: 6px;
+                color: $white;
+                background-color: $black;
+                box-shadow: 3px 8px 10px rgba(0,0,0,.2);
+            }
+            color: $black;
+            text-decoration: none;
+            height: 60px;
+            width: 100%;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgba(0,0,0, 1);
+            font-size: 26px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                background-color: rgb(34, 240, 7);
+                color: $white;
+                border: 3px solid rgb(34, 240, 7);
+                -webkit-transform: scale(1.02);
+                -ms-transform: scale(1.02);
+                transform: scale(1.02);
+                font-weight: 700;
+            }
+        }
+        
+        .or-label {
+            padding: 10px;
+            color: #ccc;
+        }
+        .direct-whats {
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+            color: $black;
+            text-decoration: none;
+            @include media("<=tablet") {
+                color: $white;
+                background-color: $black;
+                height: 40px;
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 20px;
+                box-shadow: 3px 8px 6px rgba(0,0,0,.2);
+                font-size: 10px;
+            }
+            
+            &:hover {
+                -webkit-animation: swing 1s ease;
+                animation: swing 1s ease;
+                -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+                color:  rgb(34, 240, 7);
+                
+            }
+        }
+    }
+} 
+

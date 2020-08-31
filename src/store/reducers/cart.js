@@ -1,7 +1,16 @@
 import * as actionTypes from "../actions/actionTypes"
 import { updateObject } from '../utility';
 const initialState = {
-    cart: {},
+    cart: [
+        {
+            productId: 1,
+            quantity: 1
+        },
+        {
+            productId: 2,
+            quantity: 1
+        }
+    ],
     loading: false
 
 } 
@@ -13,26 +22,26 @@ export const startServerCall = (state, action) =>{
 }
 
 
-export const addCartItemSuccess = (state, action) => {
+export const incrementCartItemSuccess = (state, action) => {
     return updateObject(state, {
         loading: false,
         cart: action.payload
     })
 }
-export const addCartItemFail = (state, action) => {
+export const incrementCartItemFail = (state, action) => {
     return updateObject(state, {
         loading: false,
         error: action.error
     })
 }
 
-export const removeCartItemSuccess =  (state, action) =>  {
+export const decrementCartItemSuccess =  (state, action) =>  {
     return updateObject(state, {
         loading: false,
         cart: action.payload
     })
 }
-export const removeCartItemFail = (state, action) => {
+export const decrementCartItemFail = (state, action) => {
     return updateObject(state, {
         loading: false,
         error: action.error
@@ -43,7 +52,7 @@ export const removeCartItemFail = (state, action) => {
 export const cleanCartItemSuccess = (state, action) => {
     return updateObject(state, {
         loading: false,
-        cart: {}
+        cart: action.payload
     })
 }
 export const cleanCartItemFail = (state, action) => {
@@ -57,10 +66,10 @@ export const cleanCartItemFail = (state, action) => {
 const cart = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.UTILITY_START_SEVER_CALL: return startServerCall(state, action);
-        case actionTypes.CART_ADD_ITEM_SUCCESS: return addCartItemSuccess(state, action);
-        case actionTypes.CART_ADD_ITEM_FAIL: return addCartItemFail(state, action);
-        case actionTypes.CART_REMOVE_ITEM_SUCCESS: return removeCartItemSuccess(state, action);
-        case actionTypes.CART_REMOVE_ITEM_FAIL: return removeCartItemFail(state, action);
+        case actionTypes.CART_INCREMENT_ITEM_SUCCESS: return incrementCartItemSuccess(state, action);
+        case actionTypes.CART_INCREMENT_ITEM_FAIL: return incrementCartItemFail(state, action);
+        case actionTypes.CART_DECREMENT_ITEM_SUCCESS: return decrementCartItemSuccess(state, action);
+        case actionTypes.CART_DECREMENT_ITEM_FAIL: return decrementCartItemFail(state, action);
         case actionTypes.CART_CLEAN_CART_SUCCESS: return cleanCartItemSuccess(state, action);
         case actionTypes.CART_CLEAN_CART_FAIL: return cleanCartItemFail(state, action);
         default:

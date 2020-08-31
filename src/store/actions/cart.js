@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 
+
 export const startServerCall = () =>{
     return{
         type: actionTypes.UTILITY_START_SEVER_CALL,
@@ -7,9 +8,9 @@ export const startServerCall = () =>{
     }
 }
 
-export const addCartItemSuccess = cart =>{
+export const incrementCartItemSuccess = cart =>{
     return{
-        type: actionTypes.CART_ADD_ITEM_SUCCESS,
+        type: actionTypes.CART_INCREMENT_ITEM_SUCCESS,
         payload: cart    
     }
 }
@@ -22,38 +23,38 @@ export const addCartItemSuccess = cart =>{
 // }
 
 
-export const cartAddItem = cart => {
+export const incrementCartItem = cart => {
     return dispatch => {
         dispatch(startServerCall())
-        dispatch(addCartItemSuccess(cart))
+        dispatch(incrementCartItemSuccess(cart))
     }
 }
 
-export const addCartItemFail = error =>{
+export const incrementCartItemFail = error =>{
     return{
-        type: actionTypes.CART_ADD_ITEM_FAIL,
+        type: actionTypes.CART_INCREMENT_ITEM_FAIL,
         error: error    
     }
 }
 
-export const removeCartItemSuccess = cart =>{
+export const decrementCartItemSuccess = cart =>{
     return {
-        type: actionTypes.CART_REMOVE_ITEM_SUCCESS,
+        type: actionTypes.CART_DECREMENT_ITEM_SUCCESS,
         payload: cart    
     }
 }
 
-export const removeCartItemFail = error =>{
+export const decrementCartItemFail = error =>{
     return{
-        type: actionTypes.CART_REMOVE_ITEM_FAIL,
+        type: actionTypes.CART_DECREMENT_ITEM_FAIL,
         error: error    
     }
 }
 
-export const removeCartItem = cart => {
+export const decrementCartItem = cart => {
     return dispatch => {
         dispatch(startServerCall());
-        dispatch(removeCartItemSuccess(cart));
+        dispatch(decrementCartItemSuccess(cart));
     }
 }
 
@@ -64,16 +65,16 @@ export const cleanCartItemFail = error =>{
     }
 }
 
-export const cleanCartItemSuccess = () =>{
+export const cleanCartItemSuccess = (cart) =>{
     return{
         type: actionTypes.CART_CLEAN_CART_SUCCESS,
-        cart:{} 
+        payload: cart
     }
 }
 
-export const cleanCartItem = () => {
+export const cleanCartItem = (cart) => {
     return dispatch => {
         dispatch(startServerCall());
-        dispatch(cleanCartItemSuccess());
+        dispatch(cleanCartItemSuccess(cart));
     }
 }
