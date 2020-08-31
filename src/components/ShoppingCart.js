@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 
 import { connect } from 'react-redux';
-import { incrementCartItem, decrementCartItem, cleanCartItem } from '../store/actions/cart'; 
+import { incrementCartItem, decrementCartItem } from '../store/actions/cart'; 
 
 import { NavLink } from "react-router-dom"
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
@@ -11,127 +11,32 @@ import {ShoppingBag} from "@styled-icons/boxicons-solid/ShoppingBag"
 import styled from "styled-components"
 
 
-var paintings  = [
-    {
-        imgUrl: "../assets/paint1.jpg",
-        price: 44000.00
-
-    },
-    {
-        imgUrl: "../assets/paint1.jpg",
-        price: 40000.00
-        
-    }
-]
 
 
 
 
-const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem}) => {
+
+const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
    
-    console.log(cart)
-    useEffect(()=> {    
-        console.log(cart)
-        
-    },[paintings, cart])
+
+ 
     
-    const [localCart, setLocalCart] = useState([...cart])
-        
+
     
-    
-    const handleIncrementClick = (item) => {
-        console.log(item, "Eu sou o id")
-        if (!(cart === undefined || cart.length === 0)) {
-            const index = cart.findIndex(cartItem => cartItem.productId === item)
-            console.log('dentro da list eu sou o id dentro do carrinho', index)
-            console.log(cart)
-            if (index !== -1) {
-                cart[index].quantity += 1;
-                setLocalCart([...cart])
-            }
-            else {
-                cart.push(
-                    {
-                        productId: item,
-                        quantity: 1
-                    })
-            }
-        }
-        else {
-            cart.push(
-                {
-                    productId: item,
-                    quantity: 1
-                })
-        }
-       
-        incrementCartItem(cart)
-        return cart 
+    const handleIncrementClick = (item) => { 
+        incrementCartItem(item)
+        return item
     }
 
     const handleDecrementClick = (item) => {
-        if (!(cart === undefined || cart.length === 0)) {
-            const index = cart.findIndex(cartItem => cartItem.productId === item)
-            if (index!==-1){
-                if(cart[index].quantity>=2){
-                    cart[index].quantity -= 1;
-                    console.log('tirei um da quantidade ai viu', cart)
-                }
-                else if(cart[index].quantity === 1) {
-                    cart.splice(index, 1)
-                    console.log('dropei tudo', cart)
-
-                }
-            }
-            else {
-                console.log('esse item nem existe e tu quer oq?', cart)
-                return cart
-            }
-        }   
-        else {
-            console.log('da carrim n ma')
-            return cart
-        }
-            
-
-
-        decrementCartItem(cart)
-        return cart 
+        decrementCartItem(item)
+        return item
     }
 
-    const handleCleanItemClick = (item) => {
-        if (!(cart === undefined || cart.length === 0)) {
-            const index = cart.findIndex(cartItem => cartItem.productId === item)
-            console.log(index)
-            if (index!==-1) {
-                cart.splice(index, 1)
-                console.log('oi',cart)
-            }
-            else {
-                console.log("oi sem item",cart)
-                return cart
-            }
-        }
-        else{
-            console.log("oi sem carrim",cart)
-            return cart
-        }
-        cleanCartItem(cart)
-        return cart
-    }
-    const handleChangeQntField =(e)=> {
-        
-       e.preventDefault()
-       const index = cart.findIndex(item => item.productId === parseInt(e.target.name))
-       console.log(cart)
-       console.log(parseInt(e.target.name), index)
-        cart[index].quantity = parseInt(e.target.value)
-    }
     
     return (
       
         <div className="cart-container">
-            <p>{JSON.stringify(localCart)}</p>
             <div className="go-to-title-smartphone">Cart</div>
             <div className="product-container">
                 <div className="product-container-header">
@@ -148,20 +53,20 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                             console.log("PASSEI POR AQUI")
                             return (
 
-                    <div className="dummy-product-row">
+                    <div key={element.productId} className="dummy-product-row">
                     <div className="item-thumbnail-container">
                         <img className="item-thumbnail" src={require("../assets/paint1.jpg")} alt=" "/>
                     </div>
                     <div className="row-text">
                         <div className="item-price-and-quantity-container">
-                            <div className="item-price-field">{element.price}{}</div>
+                            <div className="item-price-field">{element.price}{element.productId}</div>
                             <div className="item-quantity-field">
                                 <div className="item-operators">
                                     <button onClick={()=> handleIncrementClick(element.productId)} className="little-circle-operators">+</button>
                                 </div>
 
                                 <div className="item-count">
-                                    <input type="number" name={element.productId}  onChange={handleChangeQntField} /><p>{cart[0].quantity}</p>
+                                    <p>{element.quantity}</p>
                                 </div>
                                 <div className="item-operators">
                                     <div onClick={()=> handleDecrementClick(element.productId)} className="little-circle-operators">-</div>
@@ -169,7 +74,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                             </div>
                         </div>   
                         {/* <div className="item-total-field">R$100</div> */}
-                        <div onClick={()=> handleCleanItemClick(element.productId)} className="item-remove-button">X</div>
+                        <div className="item-remove-button">X</div>
                     </div>
                 </div> 
                             )
@@ -239,7 +144,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
 const mapStateToProps = state => ({
     cart: state.cart.cart
 })
-export default connect(mapStateToProps, {incrementCartItem, decrementCartItem, cleanCartItem})(ShoppingCart);
+export default connect(mapStateToProps, {incrementCartItem, decrementCartItem})(ShoppingCart);
 
 
 const CheckoutBag = styled(ShoppingBag)`

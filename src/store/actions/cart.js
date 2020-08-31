@@ -8,10 +8,10 @@ export const startServerCall = () =>{
     }
 }
 
-export const incrementCartItemSuccess = cart =>{
+export const incrementCartItemSuccess = item =>{
     return{
         type: actionTypes.CART_INCREMENT_ITEM_SUCCESS,
-        payload: cart    
+        payload: item    
     }
 }
 
@@ -23,10 +23,10 @@ export const incrementCartItemSuccess = cart =>{
 // }
 
 
-export const incrementCartItem = cart => {
+export const incrementCartItem = item => {
     return dispatch => {
         dispatch(startServerCall())
-        dispatch(incrementCartItemSuccess(cart))
+        dispatch(incrementCartItemSuccess(item))
     }
 }
 

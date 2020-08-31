@@ -23,11 +23,13 @@ export const startServerCall = (state, action) =>{
 
 
 export const incrementCartItemSuccess = (state, action) => {
-    return updateObject(state, {
+    console.log(state, action)
+    return {
         loading: false,
-        cart: action.payload
-    })
+        cart: state.cart.map(item => item.productId === action.payload ? {...item, quantity: item.quantity+=1} : item) 
+    }
 }
+
 export const incrementCartItemFail = (state, action) => {
     return updateObject(state, {
         loading: false,
