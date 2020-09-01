@@ -8,10 +8,10 @@ export const startServerCall = () =>{
     }
 }
 
-export const incrementCartItemSuccess = item =>{
+export const incrementCartItemSuccess = itemId =>{
     return{
         type: actionTypes.CART_INCREMENT_ITEM_SUCCESS,
-        payload: item    
+        payload: itemId    
     }
 }
 
@@ -23,10 +23,10 @@ export const incrementCartItemSuccess = item =>{
 // }
 
 
-export const incrementCartItem = item => {
+export const incrementCartItem = itemId => {
     return dispatch => {
         dispatch(startServerCall())
-        dispatch(incrementCartItemSuccess(item))
+        dispatch(incrementCartItemSuccess(itemId))
     }
 }
 
@@ -37,10 +37,10 @@ export const incrementCartItemFail = error =>{
     }
 }
 
-export const decrementCartItemSuccess = cart =>{
+export const decrementCartItemSuccess = itemId =>{
     return {
         type: actionTypes.CART_DECREMENT_ITEM_SUCCESS,
-        payload: cart    
+        payload: itemId    
     }
 }
 
@@ -51,10 +51,10 @@ export const decrementCartItemFail = error =>{
     }
 }
 
-export const decrementCartItem = cart => {
+export const decrementCartItem = itemId => {
     return dispatch => {
         dispatch(startServerCall());
-        dispatch(decrementCartItemSuccess(cart));
+        dispatch(decrementCartItemSuccess(itemId));
     }
 }
 

@@ -23,14 +23,18 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
     
 
     
-    const handleIncrementClick = (item) => { 
-        incrementCartItem(item)
-        return item
+    const handleIncrementClick = (itemId) => { 
+        incrementCartItem(itemId)
+        return itemId
     }
 
-    const handleDecrementClick = (item) => {
-        decrementCartItem(item)
-        return item
+    const handleDecrementClick = (itemId, itemQnt) => {
+
+        if(itemQnt > 1) {
+            decrementCartItem(itemId)
+        }
+        
+        return itemId
     }
 
     
@@ -59,17 +63,16 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
                     </div>
                     <div className="row-text">
                         <div className="item-price-and-quantity-container">
-                            <div className="item-price-field">{element.price}{element.productId}</div>
+                            <div className="item-price-field">{element.price}</div>
                             <div className="item-quantity-field">
                                 <div className="item-operators">
-                                    <button onClick={()=> handleIncrementClick(element.productId)} className="little-circle-operators">+</button>
+                                    <div onClick={()=> handleIncrementClick(element.productId)} className="little-circle-operators">+</div>
                                 </div>
-
                                 <div className="item-count">
                                     <p>{element.quantity}</p>
                                 </div>
                                 <div className="item-operators">
-                                    <div onClick={()=> handleDecrementClick(element.productId)} className="little-circle-operators">-</div>
+                                    <div onClick={()=> handleDecrementClick(element.productId,  element.quantity)} className="little-circle-operators">-</div>
                                 </div>
                             </div>
                         </div>   

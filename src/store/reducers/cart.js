@@ -4,12 +4,21 @@ const initialState = {
     cart: [
         {
             productId: 1,
-            quantity: 1
+            quantity: 2
         },
         {
             productId: 2,
             quantity: 1
-        }
+        },
+        {
+            productId: 3,
+            quantity: 1
+        },
+        {
+            productId: 4,
+            quantity: 1
+        },
+
     ],
     loading: false
 
@@ -40,7 +49,7 @@ export const incrementCartItemFail = (state, action) => {
 export const decrementCartItemSuccess =  (state, action) =>  {
     return updateObject(state, {
         loading: false,
-        cart: action.payload
+        cart: state.cart.map(item => item.productId === action.payload ? {...item, quantity:item.quantity-=1} : item)
     })
 }
 export const decrementCartItemFail = (state, action) => {
