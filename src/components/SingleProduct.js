@@ -1,12 +1,12 @@
 import React, { useEffect, useState} from 'react'
 
-import { NavLink } from "react-router-dom";
+
 
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
 import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
 import {Whatsapp} from "@styled-icons/boxicons-logos/Whatsapp"
 import styled from "styled-components"
-
+import { connect } from 'react-redux';
 
 
 function debounce(fn, ms) {
@@ -47,7 +47,7 @@ const SingleProduct = (props) => {
     
     
     let item = imageList.filter((el) => el.id === Number(props.match.params.id))
-    console.log(item)
+    
     item = item[0]
     return (
         <>
@@ -92,7 +92,7 @@ const SingleProduct = (props) => {
                             </div>
                         </div>
                         <div className="final-buttons">
-                            <NavLink to="/carrinho" className="add-button">Checkout</NavLink>
+                            <div onClick={()=> null }className="add-button">Adicionar</div>
                             <div className="or-label">ou</div>
                             <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
                         </div>
@@ -107,7 +107,11 @@ const SingleProduct = (props) => {
     )
 }
 
-export default SingleProduct
+const mapStateToProps = (state) => ({
+    cart: state.cart.cart
+})
+
+export default connect(mapStateToProps, {}) (SingleProduct);
 
 
 const PaymentBagde = styled(SecurePayment)`

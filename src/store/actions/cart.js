@@ -98,3 +98,13 @@ export const cleanCartItem = (itemId) => {
         dispatch(cleanCartItemSuccess(itemId));
     }
 }
+
+// export const addCartItemSucess
+
+// export const addCartItem = (itemId) => {
+//     return dispatch => {
+//         dispatch(startServerCall)
+//         dispatch(addCartItemSucess)
+//     }
+
+// }

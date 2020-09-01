@@ -48,7 +48,11 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
     return (
       
         <div className="cart-container">
-            <div className="go-to-title-smartphone">Cart</div>
+            <div className="go-to-title-smartphone">Cart
+                <button onClick={()=>cleanCart()} className="remove-cart-button">
+                    <Trash size={24}/>
+                </button>
+            </div>
             <div className="product-container">
                 <div className="product-container-header">
                 <div className="header-field">PRODUTO</div>
@@ -122,7 +126,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                     </div> */}
                     <div className="total-container">
                         <div className="total-label">TOTAL</div>
-                        <div className="total-value">R$ 400.00</div>
+                        <div className="total-value">R$ {cart.length >= 1 ? cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
                     </div>
                     <div className="conditions-and-agreements">
                         <div className="shipping-conditions">*entrega disponível apenas na região metropolitana de fortaleza</div>
@@ -134,23 +138,23 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                 </div>
             </div>
 
-            <div className="add-to-cart-container">
-                        <div className="price">R$ {cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next)},00</div>
+            <div className="cart-add-to-cart-container">
+                        <div className="cart-price">R$ {cart.length >= 1 ? cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
     
-                        <div className="certificates-warnings">
-                            <div className="certificate">
+                        <div className="cart-certificates-warnings">
+                            <div className="cart-certificate">
                                 <AuthenticityCheck size={18} />
-                                <div className="label-certificate">Certificado de Autenticidade</div>
+                                <div className="cart-label-certificate">Certificado de Autenticidade</div>
                                 </div>
-                            <div className="certificate">
+                            <div className="cart-certificate">
                                 <PaymentBagde size={18} />
-                               <div className="label-certificate">Pagamento Seguro</div> 
+                               <div className="cart-label-certificate">Pagamento Seguro</div> 
                             </div>
                         </div>
-                        <div className="final-buttons">
-                            <NavLink to="/carrinho" className="add-button">Checkout</NavLink>
-                            <div className="or-label">ou</div>
-                            <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="direct-whats"> <WhatsappContact size={24}/> { window.innerWidth <= 650 ? "" : "Whatsapp"}</a>
+                        <div className="cart-final-buttons">
+                            <NavLink to="/carrinho" className="cart-add-button">Checkout</NavLink>
+                            <div className="cart-or-label">ou</div>
+                            <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="cart-direct-whats"> <WhatsappContact size={24}/> { window.innerWidth <= 650 ? "" : "Whatsapp"}</a>
                         </div>
                         
                     </div>
