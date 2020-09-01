@@ -58,6 +58,22 @@
                
                
             }
+            .remove-cart-button-container {
+                display: flex;
+                justify-content: center;
+                .remove-cart-button {
+                    font-size: 13px;
+                    font-weight: 500;
+                    border: none;
+                    color:#c0c0c0;
+                    background: $white;
+                    &:hover {
+                        color:$black;
+                        cursor: pointer;
+                        transition: all 0.4s ease-in-out;
+                    }               
+                }
+            }
         }
         .product-table {
            
@@ -73,6 +89,7 @@
                  
             }
             .dummy-product-row {
+                transition: all .2s ease-in-out;
                 height: 120px;
                 background-color: $white;
                 padding: 10px;
@@ -136,6 +153,7 @@
                             justify-content: center;
                             align-items: center;
                             .item-operators {
+                                
                                 .little-circle-operators {
                                     border: 2px solid #000;
                                     height: 24px;
@@ -147,7 +165,16 @@
                                     border-radius: 100%;
                                     color: black;
                                     background-color: white;
+                                    transition: all .4s ease-in-out;
+                                    &:hover {
+                                        background-color: rgba(0,0,0,1);
+                                        color: $white;
+                                        cursor: pointer;
+                                        
+                                    }
                                 }
+                                
+
                             }
                             .item-count {
                                 
@@ -164,6 +191,19 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
+                        .cart-item-remove-button {
+                            border: 2px solid rgba(0,0,0,1);
+                            height: 42px;
+                            width: 42px;
+                            border-radius: 100%;
+                            transition: all .4s ease-in-out;
+                            &:hover {
+                                cursor: pointer;
+                                background-color: $black;
+                                color: $white;
+                                
+                            }
+                        }
                     }
 
                     @include media("<=phone") {
@@ -213,6 +253,14 @@
                             justify-content: flex-end;
                             padding: 16px 24px 0px 0px ;
                             align-items: center;
+                            .cart-item-remove-button {
+                                
+                                height: 32px;
+                                width: 32px;
+                                border: none;
+                               
+                                
+                            }
                         }
                     }
                 }

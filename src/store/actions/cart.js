@@ -58,23 +58,43 @@ export const decrementCartItem = itemId => {
     }
 }
 
-export const cleanCartItemFail = error =>{
+export const cleanCartFail = error =>{
     return{
         type: actionTypes.CART_CLEAN_CART_FAIL,
         error: error    
     }
 }
 
-export const cleanCartItemSuccess = (cart) =>{
+export const cleanCartSuccess = () =>{
     return{
         type: actionTypes.CART_CLEAN_CART_SUCCESS,
-        payload: cart
     }
 }
 
-export const cleanCartItem = (cart) => {
+export const cleanCart = () => {
     return dispatch => {
         dispatch(startServerCall());
-        dispatch(cleanCartItemSuccess(cart));
+        dispatch(cleanCartSuccess());
+    }
+}
+
+export const cleanCartItemFail = error =>{
+    return{
+        type: actionTypes.CART_CLEAN_ITEM_FAIL,
+        error: error    
+    }
+}
+
+export const cleanCartItemSuccess = (itemId) =>{
+    return{
+        type: actionTypes.CART_CLEAN_ITEM_SUCCESS,
+        payload: itemId
+    }
+}
+
+export const cleanCartItem = (itemId) => {
+    return dispatch => {
+        dispatch(startServerCall());
+        dispatch(cleanCartItemSuccess(itemId));
     }
 }

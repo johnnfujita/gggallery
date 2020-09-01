@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 
 import { connect } from 'react-redux';
-import { incrementCartItem, decrementCartItem } from '../store/actions/cart'; 
+import { incrementCartItem, decrementCartItem, cleanCartItem, cleanCart } from '../store/actions/cart'; 
 
 import { NavLink } from "react-router-dom"
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
@@ -9,18 +9,15 @@ import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
 import {Whatsapp} from "@styled-icons/boxicons-logos/Whatsapp"
 import {ShoppingBag} from "@styled-icons/boxicons-solid/ShoppingBag"
 import styled from "styled-components"
+import {Trash} from "@styled-icons/boxicons-solid/Trash"
 
 
 
 
 
 
-
-const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
+const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem, cleanCart}) => {
    
-
- 
-    
 
     
     const handleIncrementClick = (itemId) => { 
@@ -33,10 +30,20 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
         if(itemQnt > 1) {
             decrementCartItem(itemId)
         }
+        else if(itemQnt === 1){
+            cleanCartItem(itemId)
+
+        }
         
         return itemId
     }
 
+    const handleCleanItemClick = (itemId) => {
+        cleanCartItem(itemId)
+        return itemId
+    }
+
+    
     
     return (
       
@@ -47,14 +54,20 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
                 <div className="header-field">PRODUTO</div>
                 <div className="header-field">PREÇO</div>
                 <div className="header-field">QNT.</div>
+                
  
-                <div className="header-field"></div>
+                <div className="remove-cart-button-container">
+                    <button onClick={()=>cleanCart()} className="remove-cart-button">
+                        <Trash size={24}/>
+                    </button>
+
+                </div>
                 </div>
                 <div className="product-table">
 
                     {   
-                        (cart.map((element) => {
-                            console.log("PASSEI POR AQUI")
+                        cart.length>0 ? (cart.map((element) => {
+                            
                             return (
 
                     <div key={element.productId} className="dummy-product-row">
@@ -77,12 +90,14 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
                             </div>
                         </div>   
                         {/* <div className="item-total-field">R$100</div> */}
-                        <div className="item-remove-button">X</div>
+                        <div className="item-remove-button">
+                            <button onClick={()=>handleCleanItemClick(element.productId)} className="cart-item-remove-button">X</button>
+                        </div>
                     </div>
                 </div> 
                             )
                          
-                    }))
+                    })) : (<h3 style={{display: "flex", justifyContent: "center", color:"#c0c0c0"}}>CARRINHO VAZIO</h3>)
                 }
                     
                     
@@ -120,7 +135,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
             </div>
 
             <div className="add-to-cart-container">
-                        <div className="price">R$ {"item.price"},00</div>
+                        <div className="price">R$ {cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next)},00</div>
     
                         <div className="certificates-warnings">
                             <div className="certificate">
@@ -147,7 +162,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem}) => {
 const mapStateToProps = state => ({
     cart: state.cart.cart
 })
-export default connect(mapStateToProps, {incrementCartItem, decrementCartItem})(ShoppingCart);
+export default connect(mapStateToProps, {incrementCartItem, decrementCartItem, cleanCartItem, cleanCart})(ShoppingCart);
 
 
 const CheckoutBag = styled(ShoppingBag)`
@@ -162,5 +177,9 @@ const AuthenticityCheck = styled(BadgeCheck)`
 `
 
 const WhatsappContact = styled(Whatsapp)`
+    color: $black;
+`
+
+const TrashIcon = styled(Trash)`
     color: $black;
 `
