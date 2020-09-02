@@ -109,27 +109,42 @@
             
                 margin-top: 18px;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-around;
 
                 @include media("<=tablet") {
-                    display: none;
+                   
+                }
+                .description-container{
+                    color:#888;
+                    font-weight: 300;
+                    margin-bottom: 24px;
+                    padding: 10px;
+                    
                 }
                 .labels {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     .label {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         padding: 8px;
                         color: #888;
                         border: 1px solid $white;
                         margin-top: 8px;
+                        margin-right: 15px;
                         border-radius: 24px;
+                    }
+                    @include media("<=tablet") {
+                        display: none;
                     }
                 }
                 .counter {
+
                     width: 33%;
                     color: $white;
-                    display: flex;
+                    display: none;
                     flex-direction: column;
                     align-items: center;
                     .input-counter {

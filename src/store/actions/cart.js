@@ -99,12 +99,24 @@ export const cleanCartItem = (itemId) => {
     }
 }
 
-// export const addCartItemSucess
+export const addCartItemSuccess = (itemId) =>{
+    return{
+        type: actionTypes.CART_ADD_ITEM_SUCCESS,
+        payload: itemId
+    }
+}
 
-// export const addCartItem = (itemId) => {
-//     return dispatch => {
-//         dispatch(startServerCall)
-//         dispatch(addCartItemSucess)
-//     }
+export const addCartItemFail = error =>{
+    return{
+        type: actionTypes.CART_ADD_ITEM_FAIL,
+        error: error
+    }
+}
 
-// }
+export const addCartItem = (itemId) => {
+    return dispatch => {
+        dispatch(startServerCall());
+        dispatch(addCartItemSuccess(itemId))
+    }
+
+}

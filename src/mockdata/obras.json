@@ -1,180 +1,550 @@
 {
     "obras": [
         {
-            "id": 0,
-            "artist": "John",
-            "title": "La Damme Desolee", 
-            "style": "modern",
-            "technique": "Waterpaint",
-            "url": "paint1",
-            "location": "Louvre",
-            "date": 1910,
-            "price": 2000,
-            "prints": 200,
-            "printPrice": 200,
-            "width": 85.1,
-            "height": 180 
-
-        },
-        {
             "id": 1,
-            "artist": "John",
-            "title": "Black Eunuque", 
-            "style": "Realism",
-            "technique": "Oil",
-            "url": "paint2",
-            "location": "Louvre",
-            "date": 1710,
-            "price": 10993,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 85.1,
-            "height": 180 
+            "title": "Lembranças do Oriente",
+            "created": "19/08/2020", 
+            "style": "Expressionismo",
+            "description": "É uma abstração do meu imaginário de oriente. Certamente registrado pelo meu inconciente, do que foi armazenados de possiveis livros, músicas ou cenas de filmes que vi.",
+            "artist": "Mano Alencar",
+            "technique": "Acrílica sobre tela",
+            "url": "lembrancas-do-oriente",
+            "location": "Zaiko",
+            "date": 2017,
+            "tags": ["oriente", "abstrato", "cores", "laranja"],
+            "original": {
+                "id": 1,
+                "price": 4000,
+                "displayd_at": "Zaiko",
+                "available": true
+            },
+            "prints": [
+                
+            ],
+            "limited": [
+                {
+                    "id": 1,
+                    "price": 2000,
+                    "displayed_at": "Zaiko",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 2,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 3,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                }
+            ],
+            "width": 120,
+            "height": 40 
 
         },
         {
             "id": 2,
-            "artist": "Janio Reeves",
-            "title": "Encyclopedia", 
-            "style": "Renascentist",
-            "technique": "Oil",
-            "url": "paint3",
-            "location": "Pacadillon",
-            "date": 1820,
-            "price": 40321,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 85.1,
-            "height": 180 
+            "title": "Iracema Technopop",
+            "created": "19/08/2020", 
+            "style": "Expressionismo",
+            "description": "A graça a que é concedido o quadro é a mulher, mas tabém é a praia, o verão. É a Iracema Pop.",
+            "artist": "Mano Alencar",
+            "technique": "Acrílica sobre tela",
+            "url": "iracema-technopop",
+            "location": "Zaiko",
+            "date": 2020,
+            "tags": ["Verão", "iracema", "pop", "praia", "sensual", "contemporaneo", "sol"],
+            "original": {
+                "id": 2,
+                "price": 223500,
+                "displayd_at": "Zaiko",
+                "available": true
+            },
+            "prints": [
+                
+            ],
+            "limited": [
+                {
+                    "id": 4,
+                    "price": 2000,
+                    "displayed_at": "Zaiko",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 5,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 6,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                }
+            ],
+            "width": 60,
+            "height": 80 
 
         },
         {
             "id": 3,
-            "artist": "Khalil Tumis",
-            "title": "Suspiria", 
-            "style": "modern",
-            "technique": "Oil",
-            "url": "paint4",
-            "location": "Louvre",
-            "date": 1923,
-            "price": 1720,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 180,
-            "height": 180 
-
-        },
-        {
-            "id": 4,
-            "artist": "Suskin Medina",
-            "title": "la mere", 
-            "style": "Cubism",
-            "technique": "Panel",
-            "url": "paint5",
-            "location": "Louvre",
-            "date": 1800,
-            "price": 230492,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 180,
-            "height": 280 
-
-        },
-        {
-            "id": 5,
-            "artist": "Kwagdlin warhors",
-            "title": "Adeus Socovo", 
-            "style": "classic",
-            "technique": "Drawing",
-            "url": "paint6",
-            "location": "Louvre",
-            "date": 1952,
-            "price": 2000,
-            "prints": 200,
-            "printPrice": 200,
-            "width": 180,
-            "height": 280 
-
-        },
-        {
-            "id": 6,
-            "artist": "Jacobson Frenet",
-            "title": "Market", 
-            "style": "modern",
-            "technique": "Graphite",
-            "url": "paint7",
-            "location": "Dragão do Mar",
-            "date": 2010,
-            "price": 90494,
-            "prints": 30,
-            "printPrice": 2000,
-            "width": 180,
-            "height": 380 
-
-        },
-        {
-            "id": 7,
-            "artist": "LongLong",
-            "title": "Prometheu's Fire", 
-            "style": "modern",
-            "technique": "Oil",
-            "url": "paint8",
-            "location": "Louvre",
-            "date": 1923,
-            "price": 829,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 180,
-            "height": 50 
-
-        },
-        {
-            "id": 8,
-            "artist": "Gauge Mamete",
-            "title": "Calidus", 
-            "style": "modern",
-            "technique": "Oil",
-            "url": "paint9",
-            "location": "GGG Central Gallery",
-            "date": 1999,
-            "price": 1290,
-            "prints": 100,
-            "printPrice": 200,
-            "width": 180,
-            "height": 50 
-
-        },
-        {
-            "id": 9,
-            "artist": "Lincoln Petrus",
-            "title": "ObtuseMemoir", 
-            "style": "modern",
-            "technique": "Oil",
-            "url": "paint10",
-            "location": "RoBallery",
-            "date": 1985,
-            "price": 3298,
-            "prints": 0,
-            "printPrice": 0,
-            "width": 180,
-            "height": 180  
-
-        },
-        {
-            "id": 10,
-            "artist": "LaFrugs",
-            "title": "Death Scope", 
-            "style": "modern",
-            "technique": "DigitalComposition",
-            "url": "paint11",
-            "location": "Moleskine",
-            "date": 1990,
-            "price": 800,
-            "prints": -1,
-            "printPrice": 80,
-            "width": 280,
+            "title": "Bike",
+            "created": "19/08/2020", 
+            "style": "Expressionismo",
+            "description": "Eu sempre ando de bike. Ali crio poemas, faço obras na minha cabeça. Neste dia, cheguei do pedal e pintei esta obra. Saiu, ela que se mostrou para mim.",
+            "artist": "Mano Alencar",
+            "technique": "Acrílica sobre tela",
+            "url": "bike",
+            "location": "Zaiko",
+            "date": 2017,
+            "tags": ["Bicicleta", "azul", "esporte", "cores", "alegria", "velociadade", "agilidade", "bike"],
+            "original": {
+                "id": 3,
+                "price": 3500,
+                "displayd_at": "Zaiko",
+                "available": true
+            },
+            "prints": [
+                {
+                    "id": 7,
+                    "price": 2000,
+                    "displayed_at": "Moleskine",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 8,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 9,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                } 
+            ],
+            "limited": [
+                {
+                    "id": 7,
+                    "price": 2000,
+                    "displayed_at": "Zaiko",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id":8,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                },
+                {
+                    "id": 9,
+                    "price": 2000,
+                    "displayed_at": "Stored",
+                    "available": true,
+                    "owner": 23
+                }
+            ],
+            "width": 80,
             "height": 60 
+        },
+        {
+                "id": 4,
+                "title": "Janela de Macau",
+                "created": "19/08/2020", 
+                "style": "Expressionismo",
+                "description": "Se trata de uma paisagem urbana do oriente.O pobre, bonito e esquisito ao mesmo tempo. Um Suburbio aziático.",
+                "artist": "Mano Alencar",
+                "technique": "Acrílica sobre tela",
+                "url": "janela-de-macau",
+                "location": "Zaiko",
+                "date": 2020,
+                "tags": ["Intenso", "cores", "quente", "paisagem", "abstrato", "vermelho", "montanha"],
+                "original": {
+                    "id": 4,
+                    "price": 3000,
+                    "displayd_at": "Zaiko",
+                    "available": true
+                },
+                "prints": [
+                    {
+                        "id": 10,
+                        "price": 2000,
+                        "displayed_at": "Moleskine",
+                        "available": true,
+                        "owner": 23
+                    },
+                    {
+                        "id": 11,
+                        "price": 2000,
+                        "displayed_at": "Stored",
+                        "available": true,
+                        "owner": 23
+                    },
+                    {
+                        "id": 12,
+                        "price": 2000,
+                        "displayed_at": "Stored",
+                        "available": true,
+                        "owner": 23
+                    } 
+                ],
+                "limited": [
+                    {
+                        "id": 10,
+                        "price": 2000,
+                        "displayed_at": "Zaiko",
+                        "available": true,
+                        "owner": 23
+                    },
+                    {
+                        "id":11,
+                        "price": 2000,
+                        "displayed_at": "Stored",
+                        "available": true,
+                        "owner": 23
+                    },
+                    {
+                        "id": 12,
+                        "price": 2000,
+                        "displayed_at": "Stored",
+                        "available": true,
+                        "owner": 23
+                    }
+                ],
+                "width": 50,
+                "height": 70 
+                },
+                {
+                    "id": 5,
+                    "title": "oKre",
+                    "created": "19/08/2020", 
+                    "style": "Expressionismo",
+                    "description": "Aquele caos bem definito, que sabe que é caos. Mas que é assumido e confiantemente incontrolado. Que a pesar de ser confuso, sabe que é ocre. Um ocre. Um kaos com 'K', mas certo de que está tudo no seu devido lugar.",
+                    "artist": "Mano Alencar",
+                    "technique": "Acrílica sobre tela",
+                    "url": "okre",
+                    "location": "Zaiko",
+                    "date": 2019,
+                    "tags": ["Ocre", "caos", "equilíbrio", "Movimento", "harmonia", "oriente"],
+                    "original": {
+                        "id": 5,
+                        "price": 9000,
+                        "displayd_at": "Zaiko",
+                        "available": true
+                    },
+                    "prints": [
+                        {
+                            "id": 13,
+                            "price": 2000,
+                            "displayed_at": "Moleskine",
+                            "available": true,
+                            "owner": 23
+                        },
+                        {
+                            "id": 14,
+                            "price": 2000,
+                            "displayed_at": "Stored",
+                            "available": true,
+                            "owner": 23
+                        },
+                        {
+                            "id": 15,
+                            "price": 2000,
+                            "displayed_at": "Stored",
+                            "available": true,
+                            "owner": 23
+                        } 
+                    ],
+                    "limited": [
+                        {
+                            "id": 13,
+                            "price": 2000,
+                            "displayed_at": "Zaiko",
+                            "available": true,
+                            "owner": 23
+                        },
+                        {
+                            "id": 14,
+                            "price": 2000,
+                            "displayed_at": "Stored",
+                            "available": true,
+                            "owner": 23
+                        },
+                        {
+                            "id": 15,
+                            "price": 2000,
+                            "displayed_at": "Stored",
+                            "available": true,
+                            "owner": 23
+                        }
+                    ],
+                    "width": 140,
+                    "height": 140 
+                    },
+                    {
+                        "id": 6,
+                        "title": "Sushi",
+                        "created": "19/08/2020", 
+                        "style": "Expressionismo",
+                        "description": "Montanhas Japonesas, retratando a beleza e sutileza da natureza oriental.",
+                        "artist": "Suzana Rocha",
+                        "technique": "Acrílica e caneta Posca sobre tela.",
+                        "url": "paint6",
+                        "location": "Zaiko",
+                        "date": 2020,
+                        "tags": ["Montanha", "Japao", "sushi", "posca", "oriente"],
+                        "original": {
+                            "id": 6,
+                            "price": 1100,
+                            "displayd_at": "Zaiko",
+                            "available": true
+                        },
+                        "prints": [
+                            {
+                                "id": 16,
+                                "price": 2000,
+                                "displayed_at": "Moleskine",
+                                "available": true,
+                                "owner": 23
+                            },
+                            {
+                                "id": 17,
+                                "price": 2000,
+                                "displayed_at": "Stored",
+                                "available": true,
+                                "owner": 23
+                            },
+                            {
+                                "id": 18,
+                                "price": 2000,
+                                "displayed_at": "Stored",
+                                "available": true,
+                                "owner": 23
+                            } 
+                        ],
+                        "limited": [
+                            {
+                                "id": 16,
+                                "price": 2000,
+                                "displayed_at": "Zaiko",
+                                "available": true,
+                                "owner": 23
+                            },
+                            {
+                                "id": 17,
+                                "price": 2000,
+                                "displayed_at": "Stored",
+                                "available": true,
+                                "owner": 23
+                            },
+                            {
+                                "id": 18,
+                                "price": 2000,
+                                "displayed_at": "Stored",
+                                "available": true,
+                                "owner": 23
+                            }
+                        ],
+                        "width": 80,
+                        "height": 100 
+                        },
+                        {
+                            "id": 7,
+                            "title": "Flores de Cerejeira",
+                            "created": "19/08/2020", 
+                            "style": "Expressionismo",
+                            "description": "Montanhas Japonesas, retratando a beleza e sutileza da natureza oriental.",
+                            "artist": "Suzana Rocha",
+                            "technique": "Acrílica e caneta Posca sobre tela.",
+                            "url": "paint7",
+                            "location": "Zaiko",
+                            "date": 2020,
+                            "tags": ["Montanha", "Japao", "sushi", "posca", "oriente"],
+                            "original": {
+                                "id": 7,
+                                "price": 1250,
+                                "displayd_at": "Zaiko",
+                                "available": true
+                            },
+                            "prints": [
+                                {
+                                    "id": 19,
+                                    "price": 2000,
+                                    "displayed_at": "Moleskine",
+                                    "available": true,
+                                    "owner": 23
+                                },
+                                {
+                                    "id": 20,
+                                    "price": 2000,
+                                    "displayed_at": "Stored",
+                                    "available": true,
+                                    "owner": 23
+                                },
+                                {
+                                    "id": 21,
+                                    "price": 2000,
+                                    "displayed_at": "Stored",
+                                    "available": true,
+                                    "owner": 23
+                                } 
+                            ],
+                            "limited": [
+                                {
+                                    "id": 19,
+                                    "price": 2000,
+                                    "displayed_at": "Zaiko",
+                                    "available": true,
+                                    "owner": 23
+                                },
+                                {
+                                    "id": 20,
+                                    "price": 2000,
+                                    "displayed_at": "Stored",
+                                    "available": true,
+                                    "owner": 23
+                                },
+                                {
+                                    "id": 21,
+                                    "price": 2000,
+                                    "displayed_at": "Stored",
+                                    "available": true,
+                                    "owner": 23
+                                }
+                            ],
+                            "width": 80,
+                            "height": 100 
+                            },
+                            {
+                                "id": 8,
+                                "title": "Vulcão",
+                                "created": "19/08/2020", 
+                                "style": "Expressionismo",
+                                "description": "Montanhas Japonesas, retratando a beleza e sutileza da natureza oriental.",
+                                "artist": "Suzana Rocha",
+                                "technique": "Acrílica e caneta Posca sobre tela.",
+                                "url": "paint8",
+                                "location": "Zaiko",
+                                "date": 2020,
+                                "tags": ["Montanha", "Japao", "sushi", "posca", "oriente"],
+                                "original": {
+                                    "id": 8,
+                                    "price": 1250,
+                                    "displayd_at": "Zaiko",
+                                    "available": true
+                                },
+                                "prints": [
+                                    {
+                                        "id": 22,
+                                        "price": 2000,
+                                        "displayed_at": "Moleskine",
+                                        "available": true,
+                                        "owner": 23
+                                    },
+                                    {
+                                        "id": 23,
+                                        "price": 2000,
+                                        "displayed_at": "Stored",
+                                        "available": true,
+                                        "owner": 23
+                                    },
+                                    {
+                                        "id": 24,
+                                        "price": 2000,
+                                        "displayed_at": "Stored",
+                                        "available": true,
+                                        "owner": 23
+                                    } 
+                                ],
+                                "limited": [
+                                    {
+                                        "id": 22,
+                                        "price": 2000,
+                                        "displayed_at": "Zaiko",
+                                        "available": true,
+                                        "owner": 23
+                                    },
+                                    {
+                                        "id": 23,
+                                        "price": 2000,
+                                        "displayed_at": "Stored",
+                                        "available": true,
+                                        "owner": 23
+                                    },
+                                    {
+                                        "id": 24,
+                                        "price": 2000,
+                                        "displayed_at": "Stored",
+                                        "available": true,
+                                        "owner": 23
+                                    }
+                                ],
+                                "width": 80,
+                                "height": 100 
+                                },
+                                {
+                                    "id": 9,
+                                    "title":"Jarim de Zaiko",
+                                    "created": "19/08/2020", 
+                                    "style": "Expressionismo",
+                                    "description": "Montanhas Japonesas, retratando a beleza e sutileza da natureza oriental.",
+                                    "artist": "Suzana Rocha",
+                                    "technique": "Acrílica e caneta Posca sobre tela.",
+                                    "url": "paint9",
+                                    "location": "Zaiko",
+                                    "date": 2020,
+                                    "tags": ["Montanha", "Japao", "sushi", "posca", "oriente"],
+                                    "original": {
+                                        "id": 9,
+                                        "price": 1250,
+                                        "displayd_at": "Zaiko",
+                                        "available": true
+                                    },
+                                    "prints": [
+                                        
+                                    ],
+                                    "limited": [
+                                        {
+                                            "id": 25,
+                                            "price": 2000,
+                                            "displayed_at": "Zaiko",
+                                            "available": true,
+                                            "owner": 23
+                                        },
+                                        {
+                                            "id": 26,
+                                            "price": 2000,
+                                            "displayed_at": "Stored",
+                                            "available": true,
+                                            "owner": 23
+                                        },
+                                        {
+                                            "id": 27,
+                                            "price": 2000,
+                                            "displayed_at": "Stored",
+                                            "available": true,
+                                            "owner": 23
+                                        }
+                                    ],
+                                    "width": 80,
+                                    "height": 100 
+                                    }
+    ]   
 
-        }
-    ]
 }

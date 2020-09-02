@@ -1,28 +1,9 @@
 import * as actionTypes from "../actions/actionTypes"
 import { updateObject } from '../utility';
+
 const initialState = {
     cart: [
-        {
-            productId: 1,
-            quantity: 2,
-            price: 90000
-        },
-        {
-            productId: 2,
-            quantity: 1,
-            price: 40000
-        },
-        {
-            productId: 3,
-            quantity: 1,
-            price: 40000
-        },
-        {
-            productId: 4,
-            quantity: 1,
-            price: 40000
-        },
-
+    
     ],
     loading: false
 
@@ -92,6 +73,21 @@ export const cleanCartItemFail = (state, action) => {
         error: action.error
     })
 }
+
+export const addCartItemSuccess = (state, action) => {
+    console.log(state)
+    return {
+        loading: false,
+        cart: [...state.cart, {productId: action.payload, quantity: 1, price: 6666}  ]
+    }
+}
+
+export const addCartItemFail = (state, action) => {
+    return updateObject(state, {
+        loading: false,
+        error: action.error
+    })
+}
         
         
 
@@ -106,6 +102,8 @@ const cart = (state = initialState, action) => {
         case actionTypes.CART_CLEAN_CART_FAIL: return cleanCartFail(state, action);
         case actionTypes.CART_CLEAN_ITEM_SUCCESS: return cleanCartItemSuccess(state, action);
         case actionTypes.CART_CLEAN_ITEM_FAIL: return cleanCartItemFail(state, action);
+        case actionTypes.CART_ADD_ITEM_SUCCESS: return addCartItemSuccess(state, action);
+        case actionTypes.CART_ADD_ITEM_FAIL: return addCartItemFail(state, action);
         default:
             return state    
     }

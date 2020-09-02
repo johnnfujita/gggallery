@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
+import { addCartItem } from '../store/actions/cart'
 
-
-
+import { Redirect } from 'react-router-dom';
 import { BadgeCheck } from "@styled-icons/boxicons-solid/BadgeCheck"
 import { SecurePayment } from '@styled-icons/remix-fill/SecurePayment'
 import {Whatsapp} from "@styled-icons/boxicons-logos/Whatsapp"
@@ -24,8 +24,10 @@ let imagesJson = require("../mockdata/obras.json")
 let imageList = imagesJson.obras
 
 
-const SingleProduct = (props) => {
-
+const SingleProduct = ({cart, match, addCartItem}) => {
+    
+    const [addedItem, setAddedItem] = useState(false) 
+    
     const [dimensions, setDimensions] = useState({
         height: window.innerHeight,
         width: window.innerWidth
@@ -45,8 +47,19 @@ const SingleProduct = (props) => {
         }
     })
     
-    
-    let item = imageList.filter((el) => el.id === Number(props.match.params.id))
+    const handleClickAddItem = (itemId) => {
+        console.log(itemId, cart.findIndex(item => item.productId === itemId) === -1)
+        if (cart.findIndex(item => item.productId === itemId) === -1){
+            console.log('oiii')
+            addCartItem(itemId)
+            setAddedItem(true)
+        }
+        
+    }
+    if (addedItem) { 
+        return <Redirect to="/carrinho" />
+    }
+    let item = imageList.filter((el) => el.id === Number(match.params.id))
     
     item = item[0]
     return (
@@ -59,16 +72,17 @@ const SingleProduct = (props) => {
                     <div className="description">
                         <div className="details">
                             <div className="title">{item.title}, {item.date}</div>
-                            <div className="artist">artist: {item.artist}</div>
+                            <div className="artist"> {item.artist}</div>
                             
-                            <div className="size">dimensions: {item.width}cm x {item.height}cm</div>
-                            <div className="size">technique: {item.technique}</div>
-                            <div className="size">style: {item.style}</div>
+                            <div className="size">{item.width}cm x {item.height}cm</div>
+                            <div className="size">{item.technique}</div>
+                            <div className="size">{item.style}</div>
                         </div>
                         <div className="buttons-container-bottom">
+                            <div className="description-container">{item.description}</div>
                             <div className="labels">
-                            <div className="label">Original Unique</div>
-                            <div className="label">Replicas Limited</div>
+                            <div className="label">Original</div>
+                            {item.prints.length > 0 ? <div className="label">Prints</div>:null}
                             </div>
                             <div className="counter">
                                 <div className="counter-button">+</div>
@@ -79,7 +93,7 @@ const SingleProduct = (props) => {
                         
                     </div>
                     <div className="add-to-cart-container">
-                        <div className="price">R$ {item.price},00</div>
+                        <div className="price">R$ {item.original.price},00</div>
     
                         <div className="certificates-warnings">
                             <div className="certificate">
@@ -92,9 +106,9 @@ const SingleProduct = (props) => {
                             </div>
                         </div>
                         <div className="final-buttons">
-                            <div onClick={()=> null }className="add-button">Adicionar</div>
+                            <div onClick={()=> handleClickAddItem(item.id) }className="add-button">Adicionar</div>
                             <div className="or-label">ou</div>
-                            <a href="https://wa.me/5585988526803?text=http://codepipeline-gggallery-dev.s3-website-us-east-1.amazonaws.com/obra/6" className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
+                            <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
                         </div>
                         
                     </div>
@@ -111,7 +125,7 @@ const mapStateToProps = (state) => ({
     cart: state.cart.cart
 })
 
-export default connect(mapStateToProps, {}) (SingleProduct);
+export default connect(mapStateToProps, { addCartItem }) (SingleProduct);
 
 
 const PaymentBagde = styled(SecurePayment)`

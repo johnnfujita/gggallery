@@ -113,6 +113,9 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        @include media("<=tablet") {
+                            font-size: 16px;
+                        }
                     }
                     .details {
                         display: flex;
@@ -128,9 +131,12 @@
     
                         .title {
                             font-family: "Playfair Display", serif;
-                            font-size: 18px;
+                            font-size: 20px;
                             font-weight: 400;
                             font-style: italic;
+                            @include media("<=tablet") {
+                                font-size: 16px;
+                            }
                         }
                     }
                     
