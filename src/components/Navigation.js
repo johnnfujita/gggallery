@@ -24,11 +24,11 @@ const Navigation = () => {
                                         Artistas
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink className="anchors" to="/about" exact>
                                         About
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 <li>
                                     <NavLink className="anchors" to="/espaços" exact>
                                         Espaços
