@@ -99,10 +99,10 @@ export const cleanCartItem = (itemId) => {
     }
 }
 
-export const addCartItemSuccess = (itemId) =>{
+export const addCartItemSuccess = (item) =>{
     return{
         type: actionTypes.CART_ADD_ITEM_SUCCESS,
-        payload: itemId
+        payload: item
     }
 }
 
@@ -113,10 +113,10 @@ export const addCartItemFail = error =>{
     }
 }
 
-export const addCartItem = (itemId) => {
+export const addCartItem = (item) => {
     return dispatch => {
         dispatch(startServerCall());
-        dispatch(addCartItemSuccess(itemId))
+        dispatch(addCartItemSuccess(item))
     }
 
 }

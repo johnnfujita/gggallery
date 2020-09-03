@@ -44,14 +44,14 @@ const Navigation = () => {
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Email</li>
                                     <li>
-                                        <NavLink className="anchors" to="/contact" exact>
+                                        <a  href={`https://api.whatsapp.com/send?phone=5585997382000&text=Garcez,%0agostaria%20de%20ter%20meu%20estabelecimento%20cadastrado%20para%20receber%20obras.`} className="anchors">
                                             Como cadastrar seu espaço
-                                        </NavLink>
+                                        </a>
                                     </li>
                                     <li>
-                                        <NavLink className="anchors" to="/audit" exact>
+                                    <a  href={`https://api.whatsapp.com/send?phone=5585997382000&text=Garcez,%0agostaria%20de%20ter%20obras%20de%20arte%20que%20possuo%20para%20venda.`} className="anchors">
                                             Como cadastrar suas obras
-                                        </NavLink>
+                                        </a>
                                     </li>
                                 </ul>
                                 <ul className="nav-info">

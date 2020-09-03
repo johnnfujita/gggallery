@@ -74,28 +74,29 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                             
                             return (
 
-                    <div key={element.productId} className="dummy-product-row">
+                    <div key={element.id} className="dummy-product-row">
                     <div className="item-thumbnail-container">
-                        <img className="item-thumbnail" src={require("../assets/paint1.jpg")} alt=" "/>
+                        <img className="item-thumbnail" src={require(`../assets/${element.url}.jpg`)} alt=" "/>
                     </div>
                     <div className="row-text">
                         <div className="item-price-and-quantity-container">
-                            <div className="item-price-field">{element.price}</div>
+                            <div className="item-price-field">R${element.original.price},00</div>
                             <div className="item-quantity-field">
-                                <div className="item-operators">
-                                    <div onClick={()=> handleIncrementClick(element.productId)} className="little-circle-operators">+</div>
+                                {element.original ? "Original" :   (<><div className="item-operators">
+                                    <div onClick={()=> handleIncrementClick(element.id)} className="little-circle-operators">+</div>
                                 </div>
                                 <div className="item-count">
                                     <p>{element.quantity}</p>
                                 </div>
                                 <div className="item-operators">
-                                    <div onClick={()=> handleDecrementClick(element.productId,  element.quantity)} className="little-circle-operators">-</div>
-                                </div>
+                                    <div onClick={()=> handleDecrementClick(element.id,  element.quantity)} className="little-circle-operators">-</div>
+                                </div></>)}
+                                
                             </div>
                         </div>   
                         {/* <div className="item-total-field">R$100</div> */}
                         <div className="item-remove-button">
-                            <button onClick={()=>handleCleanItemClick(element.productId)} className="cart-item-remove-button">X</button>
+                            <button onClick={()=>handleCleanItemClick(element.id)} className="cart-item-remove-button">X</button>
                         </div>
                     </div>
                 </div> 
@@ -126,7 +127,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                     </div> */}
                     <div className="total-container">
                         <div className="total-label">TOTAL</div>
-                        <div className="total-value">R$ {cart.length >= 1 ? cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
+                        <div className="total-value">R$ {cart.length >= 1 ? cart.map(item => item.original.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
                     </div>
                     <div className="conditions-and-agreements">
                         <div className="shipping-conditions">*entrega disponível apenas na região metropolitana de fortaleza</div>
@@ -139,7 +140,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
             </div>
 
             <div className="cart-add-to-cart-container">
-                        <div className="cart-price">R$ {cart.length >= 1 ? cart.map(item => item.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
+                        <div className="cart-price">R$ {cart.length >= 1 ? cart.map(item => item.original.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
     
                         <div className="cart-certificates-warnings">
                             <div className="cart-certificate">

@@ -141,8 +141,10 @@
 
                     @include media("<=phone") {
                         .item-thumbnail {
-                            height: 150px;
-                            box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+                            
+                            height:auto;
+                            width: 150px;
+                            object-fit:contain;
                         }
                     }
                 }

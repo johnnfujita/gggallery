@@ -48,10 +48,8 @@ const SingleProduct = ({cart, match, addCartItem}) => {
     })
     
     const handleClickAddItem = (itemId) => {
-        console.log(itemId, cart.findIndex(item => item.productId === itemId) === -1)
         if (cart.findIndex(item => item.productId === itemId) === -1){
-            console.log('oiii')
-            addCartItem(itemId)
+            addCartItem(imageList.filter(item => item.id === itemId)[0])
             setAddedItem(true)
         }
         

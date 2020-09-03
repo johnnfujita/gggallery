@@ -20,7 +20,7 @@ export const incrementCartItemSuccess = (state, action) => {
     console.log(state, action)
     return {
         loading: false,
-        cart: state.cart.map(item => item.productId === action.payload ? {...item, quantity: item.quantity+=1} : item) 
+        cart: state.cart.map(item => item.id === action.payload ? {...item, quantity: item.quantity+=1} : item) 
     }
 }
 
@@ -34,7 +34,7 @@ export const incrementCartItemFail = (state, action) => {
 export const decrementCartItemSuccess =  (state, action) =>  {
     return updateObject(state, {
         loading: false,
-        cart: state.cart.map(item => item.productId === action.payload ? {...item, quantity:item.quantity-=1} : item)
+        cart: state.cart.map(item => item.id === action.payload ? {...item, quantity:item.quantity-=1} : item)
     })
 }
 export const decrementCartItemFail = (state, action) => {
@@ -61,10 +61,10 @@ export const cleanCartFail = (state, action) => {
 
 export const cleanCartItemSuccess = (state, action) => {
 
-    console.log( state.cart.filter(item => item.productId !== action.payload))
+    console.log( state.cart.filter(item => item.id !== action.payload))
     return updateObject(state, {
         loading: false,
-        cart: state.cart.filter(item => item.productId !== action.payload)
+        cart: state.cart.filter(item => item.id !== action.payload)
     })
 }
 export const cleanCartItemFail = (state, action) => {
@@ -78,7 +78,7 @@ export const addCartItemSuccess = (state, action) => {
     console.log(state)
     return {
         loading: false,
-        cart: [...state.cart, {productId: action.payload, quantity: 1, price: 6666}  ]
+        cart: [...state.cart, {...action.payload, quantity:1}  ]
     }
 }
 
