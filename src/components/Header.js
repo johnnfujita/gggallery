@@ -124,13 +124,13 @@ const Header = ({ history, dimensions}) => {
             <div className="container">
                 <div className="row vcenter space-between">
                     <div className="logo">
-                        <NavLink to="/">GGG</NavLink>
+                        <NavLink to="/">GGGALLERY</NavLink>
                     </div>
                     
                     
                     <div className="nav-toggle">
                     
-                        <div onClick={()=> setMenuState({menuOpened: true})} 
+                        {/* <div onClick={()=> setMenuState({menuOpened: true})} 
                              className="hamburguer-menu">
                             
                             <span></span>
@@ -139,7 +139,7 @@ const Header = ({ history, dimensions}) => {
                         <div onClick={()=> setMenuState({menuOpened: false})}
                              className="hamburguer-menu-close">
                             <UpArrow />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 

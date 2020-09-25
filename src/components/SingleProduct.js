@@ -21,7 +21,7 @@ function debounce(fn, ms) {
 }
 
 let imagesJson = require("../mockdata/obras.json")
-let imageList = imagesJson.obras
+let imageList = imagesJson
 
 
 const SingleProduct = ({cart, match, addCartItem}) => {
@@ -48,8 +48,8 @@ const SingleProduct = ({cart, match, addCartItem}) => {
     })
     
     const handleClickAddItem = (itemId) => {
-        if (cart.findIndex(item => item.productId === itemId) === -1){
-            addCartItem(imageList.filter(item => item.id === itemId)[0])
+        if (cart.findIndex(item => item.artwork_id === itemId) === -1){
+            addCartItem(imageList.filter(item => item.artwork_id === itemId)[0])
             setAddedItem(true)
         }
         
@@ -57,7 +57,7 @@ const SingleProduct = ({cart, match, addCartItem}) => {
     if (addedItem) { 
         return <Redirect to="/carrinho" />
     }
-    let item = imageList.filter((el) => el.id === Number(match.params.id))
+    let item = imageList.filter((el) => Number(el.artwork_id) === Number(match.params.id))
     
     item = item[0]
     return (
@@ -74,7 +74,7 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                             
                             <div className="size">{item.width}cm x {item.height}cm</div>
                             <div className="size">{item.technique}</div>
-                            <div className="size">{item.style}</div>
+                            {/* <div className="size">{item.style}</div> */}
                         </div>
                         <div className="buttons-container-bottom">
                             <div className="description-container">{item.description}</div>
@@ -91,9 +91,9 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                         
                     </div>
                     <div className="add-to-cart-container">
-                        <div className="price">R$ {item.original.price},00</div>
+                        <div className="price">R$ {item.original[0]},00</div>
     
-                        <div className="certificates-warnings">
+                        {/* <div className="certificates-warnings">
                             <div className="certificate">
                                 <AuthenticityCheck size={18} />
                                 <div className="label-certificate">Certificado de Autenticidade</div>
@@ -102,11 +102,12 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                                 <PaymentBagde size={18} />
                                <div className="label-certificate">Pagamento Seguro</div> 
                             </div>
-                        </div>
+                        </div> */}
                         <div className="final-buttons">
-                            <div onClick={()=> handleClickAddItem(item.id) }className="add-button">Adicionar</div>
-                            <div className="or-label">ou</div>
-                            <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
+                            {/* <div onClick={()=> handleClickAddItem(item.id) }className="add-button">Adicionar</div>
+                            <div className="or-label">ou</div> */}
+                            {/* <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a> */}
+                            <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="add-button"> Contato&nbsp;&nbsp;&nbsp;<WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : ""}</a>
                         </div>
                         
                     </div>

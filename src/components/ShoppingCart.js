@@ -74,22 +74,22 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                             
                             return (
 
-                    <div key={element.id} className="dummy-product-row">
+                    <div key={element.artwork_id} className="dummy-product-row">
                     <div className="item-thumbnail-container">
                         <img className="item-thumbnail" src={require(`../assets/${element.url}.jpg`)} alt=" "/>
                     </div>
                     <div className="row-text">
                         <div className="item-price-and-quantity-container">
-                            <div className="item-price-field">R${element.original.price},00</div>
+                            <div className="item-price-field">R${element.original[0]},00</div>
                             <div className="item-quantity-field">
                                 {element.original ? "Original" :   (<><div className="item-operators">
-                                    <div onClick={()=> handleIncrementClick(element.id)} className="little-circle-operators">+</div>
+                                    <div onClick={()=> handleIncrementClick(element.artwork_id)} className="little-circle-operators">+</div>
                                 </div>
                                 <div className="item-count">
                                     <p>{element.quantity}</p>
                                 </div>
                                 <div className="item-operators">
-                                    <div onClick={()=> handleDecrementClick(element.id,  element.quantity)} className="little-circle-operators">-</div>
+                                    <div onClick={()=> handleDecrementClick(element.artwork_id,  element.quantity)} className="little-circle-operators">-</div>
                                 </div></>)}
                                 
                             </div>
@@ -127,7 +127,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                     </div> */}
                     <div className="total-container">
                         <div className="total-label">TOTAL</div>
-                        <div className="total-value">R$ {cart.length >= 1 ? cart.map(item => item.original.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
+                        <div className="total-value">R$ {cart.length >= 1 ? cart.map(item => item.original[0] * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
                     </div>
                     <div className="conditions-and-agreements">
                         <div className="shipping-conditions">*entrega disponível apenas na região metropolitana de fortaleza</div>
@@ -140,7 +140,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
             </div>
 
             <div className="cart-add-to-cart-container">
-                        <div className="cart-price">R$ {cart.length >= 1 ? cart.map(item => item.original.price * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
+                        <div className="cart-price">R$ {cart.length >= 1 ? cart.map(item => item.original[0] * item.quantity).reduce((prev, next) => prev + next) : 0},00</div>
     
                         <div className="cart-certificates-warnings">
                             <div className="cart-certificate">
