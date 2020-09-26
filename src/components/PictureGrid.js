@@ -25,7 +25,7 @@ const PictureGrid = (props) => {
                             <div className="image-container">
                             <img  className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
                                 <div className="description">
-                                    <div className="price">R$ {el.original[0]}</div>
+                                    <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
                                     <div className="details">
                                         <div className="artist">{el.artist}</div>
                                         <div className="title">{el.title}, {el.date}</div>
@@ -45,7 +45,7 @@ const PictureGrid = (props) => {
                             <div className="image-container">
                                 <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
                                     <div className="description">
-                                        <div className="price">R$ {el.original[0]}</div>
+                                    <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
                                         <div className="details">
                                             <div className="artist">{el.artist}</div>
                                             <div className="title">{el.title}, {el.date}</div>
@@ -66,7 +66,7 @@ const PictureGrid = (props) => {
                             <div className="image-container">
                                 <img key={el.artwork_id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
                                 <div className="description">
-                                    <div className="price">R$ {el.original[0]}</div>
+                                <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
                                     <div className="details">
                                         <div className="artist">{el.artist}</div>
                                         <div className="title">{el.title}, {el.date}</div>

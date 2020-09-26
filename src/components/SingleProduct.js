@@ -91,7 +91,7 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                         
                     </div>
                     <div className="add-to-cart-container">
-                        <div className="price">R$ {item.original[0]},00</div>
+                    <div className="price">{item.original[0] === "" ? (null) : (<p>{`R$ ${item.original[0]},00`}</p>)  }</div>
     
                         {/* <div className="certificates-warnings">
                             <div className="certificate">
