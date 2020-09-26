@@ -107,7 +107,7 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                             {/* <div onClick={()=> handleClickAddItem(item.id) }className="add-button">Adicionar</div>
                             <div className="or-label">ou</div> */}
                             {/* <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a> */}
-                            <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="add-button"> Contato&nbsp;&nbsp;&nbsp;<WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : ""}</a>
+                            <a href={`https://api.whatsapp.com/send?phone=5585997382000&text=Garcez,%0agostaria%20de%20mais%20info%20sobre%20a%20obra%20do%20${item.artist}-id${item.artwork_id}.`}  className="add-button"> Contato&nbsp;&nbsp;&nbsp;<WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : ""}</a>
                         </div>
                         
                     </div>
