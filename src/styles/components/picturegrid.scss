@@ -1,6 +1,6 @@
 .grid-container {
     a {
-        pointer-events: none;
+        
         text-decoration: none;
         @include media("<=tablet") {
             display: flex;

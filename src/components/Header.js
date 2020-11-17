@@ -130,7 +130,7 @@ const Header = ({ history, dimensions}) => {
                     
                     <div className="nav-toggle">
                     
-                        {/* <div onClick={()=> setMenuState({menuOpened: true})} 
+                        <div onClick={()=> setMenuState({menuOpened: true})} 
                              className="hamburguer-menu">
                             
                             <span></span>
@@ -139,7 +139,7 @@ const Header = ({ history, dimensions}) => {
                         <div onClick={()=> setMenuState({menuOpened: false})}
                              className="hamburguer-menu-close">
                             <UpArrow />
-                        </div> */}
+                        </div>
                     </div>
                 </div>
                 

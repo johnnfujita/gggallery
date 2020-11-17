@@ -96,7 +96,7 @@ const ShoppingCart = ({cart, incrementCartItem, decrementCartItem, cleanCartItem
                         </div>   
                         {/* <div className="item-total-field">R$100</div> */}
                         <div className="item-remove-button">
-                            <button onClick={()=>handleCleanItemClick(element.id)} className="cart-item-remove-button">X</button>
+                            <button onClick={()=>handleCleanItemClick(element.artwork_id)} className="cart-item-remove-button">X</button>
                         </div>
                     </div>
                 </div> 
