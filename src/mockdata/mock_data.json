@@ -1,4 +1,5 @@
 [
+   
     {
         "artist": {
             "id": "1",
@@ -186,7 +187,7 @@
                 "height": "90",
                 "width": "70",
                 "technique": "Técnica mista sobre tela",
-                "price": "9000"
+                "price": "8000"
             },
             {
                 "id": "11",
@@ -263,7 +264,7 @@
                 "id": "13",
                 "author": "Assis Filho",
                 "image_name": "São Sebastião 5_6.jpg",
-                "title": "São Sebastião 5/6",
+                "title": "São Sebastião 5_6",
                 "year": "2019",
                 "height": "57",
                 "width": "17",
@@ -335,6 +336,45 @@
                 "price": "3000"
             }
         ]
+    },
+    {
+        "artist": {
+            "id": "14",
+            "name": "Almeida Luz",
+            "description": "Luz é fortalezense e uma das principais figuras da Street Art brasileira. Conhecido e por suas linhas e cores, Luz vem trazendo sua arte e consolidando-se como precursor da Street Art no polo da Varjota."
+        },
+        "obras": [
+            {
+                "id": "21",
+                "author": "Almeida Luz",
+                "image_name": "Sem título.jpg",
+                "title": "Sem título",
+                "year": "2017",
+                "height": "31",
+                "width": "21",
+                "technique": "Aquarela e unipim sobre papel Canson",
+                "price": "2400"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "15",
+            "name": "Beatriz Soares",
+            "description": "Artista plastica e designer de moda, Beatriz tem estilo próprio e um currículo robusto que aponta para um futuro produtivo, repleto de caminhos e possibilidades que se desenham."
+        },
+        "obras": [
+            {
+                "id": "22",
+                "author": "Beatriz Soares",
+                "image_name": "Amarillo.png",
+                "title": "Amarillo",
+                "year": "2019",
+                "height": "85",
+                "width": "100",
+                "technique": "óleo e acrílica sobre tela",
+                "price": "3800"
+            }
+        ]
     }
-    
 ]
