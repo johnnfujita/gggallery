@@ -2,7 +2,10 @@
     height: 50vh;
     height: calc(var(--vh, 1h) * 50);
     box-sizing: border-box;
-   
+    text-decoration: none;
+    a {
+        text-decoration: none;
+    }
     
     .cases-navigation {
         position: absolute;
@@ -14,6 +17,7 @@
         z-index: 6;
         padding: 32px;
         box-sizing: border-box;
+        text-decoration: none;
         @include media("<=tablet") {
             display: none;
         }
@@ -74,7 +78,7 @@
                 padding: 32px;
                 box-sizing: border-box;
                 z-index: 1;
-                
+                text-decoration: none;
                 align-items: flex-start;
                 position: relative;
                 @include media("<=tablet") {
@@ -85,7 +89,7 @@
                    
                 }
                 .subtitle {
-                    
+                    text-decoration: none;
                     position: relative;
                     display: flex;
                     align-items: flex-start;
@@ -104,6 +108,7 @@
                     }
                 }
                 h2 {
+                    text-decoration: none;
                     font-size: 2.4rem;
                     line-height: 3.4rem;
                     width: 85%;
@@ -112,11 +117,13 @@
                     @include media("<=desktop", '<tablet') {
                         font-size: 2rem;
                         line-height: 3.4rem;
+                        text-decoration: none;
                     }
                     @include media('<=phone') {
                         font-size: 1.7rem;
                         line-height: 2.2rem;
                         margin-top: 8px;
+                        text-decoration: none;
                     }
 
                 }

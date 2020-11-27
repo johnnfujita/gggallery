@@ -1,10 +1,11 @@
 [
-   
+    
     {
         "artist": {
             "id": "1",
             "name": "Andrey Ohama",
-            "description": "Andrey Ohama, 55 anos, pernambucano de nascença e cearense de coração, nasceu em Recife, mas foi em Fortaleza que fez carreira na publicidade que teve início em 1986, colecionou incontáveis prêmios nacionais e internacionais na propaganda."
+            "description": "Andrey Ohama, 55 anos, pernambucano de nascença e cearense de coração, nasceu em Recife, mas foi em Fortaleza que fez carreira na publicidade que teve início em 1986, colecionou incontáveis prêmios nacionais e internacionais na propaganda.",
+            "image_name": "Andrey Ohama.jpg"
         },
         "obras": [
             {
@@ -24,7 +25,8 @@
         "artist": {
             "id": "2",
             "name": "Lia Sanders",
-            "description": "Lia Sanders é artista plástica, psiquiatra e escritora. Já participou de exposições em Fortaleza e em Berlin, onde morou por vários anos. Formada pela Universidade Federal do Ceará (UFC), tem doutorado pela Humboldt Universität zu Berlin Berlin. É professora de Psiquiatria da Unichristus e da UFC, onde coordena a Escola Arte Livre. A mulher das cavernas é o seu segundo romance."
+            "description": "Lia Sanders é artista plástica, psiquiatra e escritora. Já participou de exposições em Fortaleza e em Berlin, onde morou por vários anos. Formada pela Universidade Federal do Ceará (UFC), tem doutorado pela Humboldt Universität zu Berlin Berlin. É professora de Psiquiatria da Unichristus e da UFC, onde coordena a Escola Arte Livre. A mulher das cavernas é o seu segundo romance.",
+            "image_name": "Lia Sanders.jpg"
         },
         "obras": [
             {
@@ -44,7 +46,8 @@
         "artist": {
             "id": "3",
             "name": "Totonho Laprovitera",
-            "description": "Nas artes visuais, Totonho Laprovitera (1957) fez-se notar desde 1974, quando participou de sua primeira exposição na Casa de Cultura Raimundo Cela, em Fortaleza-CE.No início de sua trajetória tomou parte de prestigiadas exposições coletivas.Após 1982 desenvolveu-se na técnica da pintura e desde então realiza exposições individualmente ou em parcerias pelo Brasil. "
+            "description": "Nas artes visuais, Totonho Laprovitera (1957) fez-se notar desde 1974, quando participou de sua primeira exposição na Casa de Cultura Raimundo Cela, em Fortaleza-CE.No início de sua trajetória tomou parte de prestigiadas exposições coletivas.Após 1982 desenvolveu-se na técnica da pintura e desde então realiza exposições individualmente ou em parcerias pelo Brasil. ",
+            "image_name": "Totonho Laprovitera.jpg"
         },
         "obras": [
             {
@@ -64,7 +67,8 @@
         "artist": {
             "id": "4",
             "name": "Danillo Lima",
-            "description": "Danillo Lima, psicólogo e multiartista nasceu em Fortaleza-CE. Formou-se em Desenho e Pintura pelo Núcleo de Pós-Graduação e Educação Continuada da Universidade de Fortaleza - UNIFOR. Estudou em Melbourne - Austrália e busca na arte uma atuação transdisciplinar, de modo a expandir os limites da subjetivação a partir de diálogos com a música, artes visuais e psicologia. Reside em Fortaleza onde produz e expõe seu trabalho. Participa de salões e exposições no Brasil e no exterior."
+            "description": "Danillo Lima, psicólogo e multiartista nasceu em Fortaleza-CE. Formou-se em Desenho e Pintura pelo Núcleo de Pós-Graduação e Educação Continuada da Universidade de Fortaleza - UNIFOR. Estudou em Melbourne - Austrália e busca na arte uma atuação transdisciplinar, de modo a expandir os limites da subjetivação a partir de diálogos com a música, artes visuais e psicologia. Reside em Fortaleza onde produz e expõe seu trabalho. Participa de salões e exposições no Brasil e no exterior.",
+            "image_name": "Danillo Lima.jpg"
         },
         "obras": [
             {
@@ -84,7 +88,8 @@
         "artist": {
             "id": "5",
             "name": "Isaac Furtado",
-            "description": "Isaac Furtado, 54 anos, médico, cirurgião plástico, poeta e artista visual. Natural de Fortaleza."
+            "description": "Isaac Furtado, 54 anos, médico, cirurgião plástico, poeta e artista visual. Natural de Fortaleza.",
+            "image_name": "Isaac Furtado.jpg"
         },
         "obras": [
             {
@@ -104,7 +109,8 @@
         "artist": {
             "id": "6",
             "name": "Cícero Spin",
-            "description": "Cicero Spin é um artista brasileiro autodidata com paixão pela beleza, por paletas de cores de alto contraste, ilusões de ótica, códigos, cifras e cultura pop.\"Cicero Spin\" é o pseudônimo artístico do neurocirurgião e neurorradiologista Túlio Spínola, nascido no ano de 1973 em Brasília-DF.O artista Cicero Spin nasce então em Junho de 2013 após meses de maturação de uma crescente necessidade da alma de fazer sua própria arte. "
+            "description": "Cicero Spin é um artista brasileiro autodidata com paixão pela beleza, por paletas de cores de alto contraste, ilusões de ótica, códigos, cifras e cultura pop.\"Cicero Spin\" é o pseudônimo artístico do neurocirurgião e neurorradiologista Túlio Spínola, nascido no ano de 1973 em Brasília-DF.O artista Cicero Spin nasce então em Junho de 2013 após meses de maturação de uma crescente necessidade da alma de fazer sua própria arte. ",
+            "image_name": "Cícero Spin.jpg"
         },
         "obras": [
             {
@@ -124,7 +130,8 @@
         "artist": {
             "id": "7",
             "name": "J.Araripe",
-            "description": "Nascida em Fortaleza, Juliana Araripe se inseriu no mundo da arte através da ilustração, começando com coleções assinadas para várias marcas de moda regionais e nacionais. Se formou pela Unifor e logo após fez uma especialização em Ilustração Criativa na IED de Barcelona. Com conhecimento de aquarela, spray, marcadores, tinta acrílica e à óleo, usa técnicas mistas na maioria dos seus trabalhos. "
+            "description": "Nascida em Fortaleza, Juliana Araripe se inseriu no mundo da arte através da ilustração, começando com coleções assinadas para várias marcas de moda regionais e nacionais. Se formou pela Unifor e logo após fez uma especialização em Ilustração Criativa na IED de Barcelona. Com conhecimento de aquarela, spray, marcadores, tinta acrílica e à óleo, usa técnicas mistas na maioria dos seus trabalhos. ",
+            "image_name": "J.Araripe.jpg"
         },
         "obras": [
             {
@@ -144,7 +151,8 @@
         "artist": {
             "id": "8",
             "name": "Mano Alencar",
-            "description": "Mano nasceu em Juazeiro do Norte em 1959. Consolidou-se como um dos principais artistas cearenses ao longo de mais de 30 anos imerso na Arte, expondo em diversos países como Itália, França, Portugal, Espanha, Argentina e Cuba. Mano vive com sua constante busca em tangibilizar seu imaginário intenso através de suas obras, com suas formas, cores, figuras e movimentos. Além de se expressar pela arte visual, Mano é poeta, escitor e segue em seu dia a dia transpodo sua alma em sua arte."
+            "description": "Mano nasceu em Juazeiro do Norte em 1959. Consolidou-se como um dos principais artistas cearenses ao longo de mais de 30 anos imerso na Arte, expondo em diversos países como Itália, França, Portugal, Espanha, Argentina e Cuba. Mano vive com sua constante busca em tangibilizar seu imaginário intenso através de suas obras, com suas formas, cores, figuras e movimentos. Além de se expressar pela arte visual, Mano é poeta, escitor e segue em seu dia a dia transpodo sua alma em sua arte.",
+            "image_name": "Mano Alencar.jpg"
         },
         "obras": [
             {
@@ -175,7 +183,8 @@
         "artist": {
             "id": "9",
             "name": "Vando Figueiredo",
-            "description": "Sem dúvida, um dos artistas mais consolidados e bem visto hoje no Ceará. Sua técnica e traços próprios dispensariam assinatura. Porém, não bastassem os traços, a assinatura em si tornou-se também peculiaridade que faz parte de sua Obra."
+            "description": "Sem dúvida, um dos artistas mais consolidados e bem visto hoje no Ceará. Sua técnica e traços próprios dispensariam assinatura. Porém, não bastassem os traços, a assinatura em si tornou-se também peculiaridade que faz parte de sua Obra.",
+            "image_name": "Vando Figueiredo.jpg"
         },
         "obras": [
             {
@@ -206,7 +215,8 @@
         "artist": {
             "id": "10",
             "name": "Sérgio Gurgel",
-            "description": "Artista visual e designer. Sua pesquisa versa sobre o envelhecimento feminino, que surge de narrativas moventes de divas e heroínas que constrói e coleciona dentro de um imaginário afetivo singular. Suas obras transitam por pinturas, espelhos, móveis, calsadosm vidros e vídeos, com imagens resistentes ao tempo. Cheias de camadas, memórias, narrativas e ficções."
+            "description": "Artista visual e designer. Sua pesquisa versa sobre o envelhecimento feminino, que surge de narrativas moventes de divas e heroínas que constrói e coleciona dentro de um imaginário afetivo singular. Suas obras transitam por pinturas, espelhos, móveis, calsadosm vidros e vídeos, com imagens resistentes ao tempo. Cheias de camadas, memórias, narrativas e ficções.",
+            "image_name": "Sérgio Gurgel.jpg"
         },
         "obras": [
             {
@@ -226,7 +236,8 @@
         "artist": {
             "id": "11",
             "name": "Juca Máximo",
-            "description": "Artista visual, designer, excultor autodidata e músico, seu trabalho consiste em técnicas variadas como: pintura a óleo, acrílica, graviras, nanquim, canetas, arte digital, escultura em clay, resína e escultura digital. Rechecido em mais de 20 países, vem ganhando notoriedade no mundo artistico, principalmente no exterior do Brasil."
+            "description": "Artista visual, designer, excultor autodidata e músico, seu trabalho consiste em técnicas variadas como: pintura a óleo, acrílica, graviras, nanquim, canetas, arte digital, escultura em clay, resína e escultura digital. Rechecido em mais de 20 países, vem ganhando notoriedade no mundo artistico, principalmente no exterior do Brasil.",
+            "image_name": "Juca Máximo.jpg"
         },
         "obras": [
             {
@@ -257,7 +268,8 @@
         "artist": {
             "id": "12",
             "name": "Assis Filho",
-            "description": "Assis Filho é artista e escultor  cearense especialista em peças figurativas realistas. Autodidata, o artista começou es estudos ainda criança, quando passou a dominar outras técnicas de escultura."
+            "description": "Assis Filho é artista e escultor  cearense especialista em peças figurativas realistas. Autodidata, o artista começou es estudos ainda criança, quando passou a dominar outras técnicas de escultura.",
+            "image_name": "Assis Filho.jpg"
         },
         "obras": [
             {
@@ -277,7 +289,8 @@
         "artist": {
             "id": "13",
             "name": "Fernando França",
-            "description": "Desenhista, pintor e mestre em literatura pela Universidade Federal do Ceará, nasceu em Rio Branco em 1962. Apresentou suas obras em diversas exposições, coletivas e individuais no Brasil, Alemanha, França, Italia, Espanha, Portugal, Dinamarca, Polonha e Cabo Verde. Atualmente desenvolve uma série entitulada \"Encantes Amazônicos\", com trabalhos inspirados nas histórias e mitologia da Amazônia."
+            "description": "Desenhista, pintor e mestre em literatura pela Universidade Federal do Ceará, nasceu em Rio Branco em 1962. Apresentou suas obras em diversas exposições, coletivas e individuais no Brasil, Alemanha, França, Italia, Espanha, Portugal, Dinamarca, Polonha e Cabo Verde. Atualmente desenvolve uma série entitulada \"Encantes Amazônicos\", com trabalhos inspirados nas histórias e mitologia da Amazônia.",
+            "image_name": "Fernando França.jpg"
         },
         "obras": [
             {
@@ -341,7 +354,8 @@
         "artist": {
             "id": "14",
             "name": "Almeida Luz",
-            "description": "Luz é fortalezense e uma das principais figuras da Street Art brasileira. Conhecido e por suas linhas e cores, Luz vem trazendo sua arte e consolidando-se como precursor da Street Art no polo da Varjota."
+            "description": "Luz é fortalezense e uma das principais figuras da Street Art brasileira. Conhecido e por suas linhas e cores, Luz vem trazendo sua arte e consolidando-se como precursor da Street Art no polo da Varjota.",
+            "image_name": "Almeida Luz.jpg"
         },
         "obras": [
             {
@@ -361,7 +375,8 @@
         "artist": {
             "id": "15",
             "name": "Beatriz Soares",
-            "description": "Artista plastica e designer de moda, Beatriz tem estilo próprio e um currículo robusto que aponta para um futuro produtivo, repleto de caminhos e possibilidades que se desenham."
+            "description": "Artista plastica e designer de moda, Beatriz tem estilo próprio e um currículo robusto que aponta para um futuro produtivo, repleto de caminhos e possibilidades que se desenham.",
+            "image_name": "Beatriz Soares.png"
         },
         "obras": [
             {

@@ -36,7 +36,7 @@ const routes = [
   {path: "/about", name: "About", Component: About },
   {path: "/artistas", name: "Artistas", Component: ArtistList },
   {path: "/espacos", name: "Espacos", Component: DisplayList },
-  {path: "/artista", name: "Artista", Component: ArtistProfile },
+  {path: "/artista/:id", name: "Artista", Component: ArtistProfile },
   {path: "/obra/:id", name: "Obra", Component: SingleProduct },
   
   {path: "/perfilusuario", name: "Perfil Usuario", Component: UserProfile },

@@ -1,6 +1,61 @@
-.artist-container {
-    height: 50%;
-    
+.artist-art-outer-container {
+    height: 100vh;
+    width: 100%;
     background-color: $white;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    @include media("<=tablet") {
+        .artist-section {
+           height: 50%;
+           width: 100%;
+           border-radius: 50px;
+            .case-details {
+                border-radius: 50px;
+                position: absolute;
+                z-index: 10;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding: 10px;
+
+                
+                h2 {
+                   
+                }
+            }
+            .artist-image-container {
+                height: 100%;
+                overflow: hidden;
+                border-radius: 0px 0px 20px 20px;
+                .artist-image {
+                    position: relative;
+                    z-index: 2;
+                    opacity: 0.4;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+        }
+        
+    }
+    .description-section {
+        .brief-artist {
+            padding: 10px;
+            border-radius: 50px;
+            background-color: $black;
+            color: $white;
+            
+            width: 70px;
+        }
+            background-color: white;
+            padding: 8px 20px 20px 20px;
+            
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+                    
+    }
 }
