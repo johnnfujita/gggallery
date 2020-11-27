@@ -2,26 +2,8 @@ import React, {useState} from 'react'
 import { ReactComponent as CasesNext} from '../assets/arrow-right.svg';
 import { ReactComponent as CasesPrev} from '../assets/arrow-left.svg';
 
-const caseStudies = [
-    {
-        id: 1,
-        subtitle: "Ohama", 
-        title: "O cyberpunk",
-        img: "Dystopia n 1"
-},
-{
-        id: 2,
-        subtitle: "Juca", 
-        title: "Serie Especial ",
-        img: "Gravity IX"
-},
-{
-        id: 3,
-        subtitle: "Totonho", 
-        title: "As Dunas",
-        img: "Morro Branco"
-}
-]
+let entriesJson = require("../mockdata/mock_data.json")
+
 const Cases = (props) => {
 
     let [offset, setOffset] = useState(0);
@@ -30,7 +12,7 @@ const Cases = (props) => {
    
     const addOffset = () => {
        
-        if (-offset < caseWidth * (caseStudies.length - 3)) {
+        if (-offset < caseWidth * (entriesJson.length - 3)) {
             setOffset(offset => offset-caseWidth)
             console.log(-offset)
         }
@@ -61,18 +43,18 @@ const Cases = (props) => {
                     </div>
                 </div>
                 <div className="row" style={{marginLeft: `${offset}px`}}>
-                    {caseStudies.map( item => (
-                        <div className="case"  key={item.id}>
+                    {entriesJson.map( item => (
+                        <div className="case"  key={item.obras[0].id}>
                             <div style={{width: props.widthWin / 3}} className="case-details">
                                 <div className="subtitle">
-                                    {item.subtitle}
+                                    {item.obras[0].title}
                                 </div>
                                 <h2>
-                                    {item.title}
+                                    {item.artist.name}
                                 </h2>
                             </div>
                             <div className="case-image">
-                                <img src={require(`../assets/${item.img}.jpg`)} alt={item.title} />
+                                <img src={require(`../assets/${item.obras[0].image_name}`)} alt={item.obras[0].title} />
                             </div>
                         </div>
                     ))}
