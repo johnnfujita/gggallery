@@ -1,43 +1,69 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { ReactComponent as CasesNext} from '../assets/arrow-right.svg';
 import { ReactComponent as CasesPrev} from '../assets/arrow-left.svg';
 
 const caseStudies = [
     {
         id: 1,
-        subtitle: "Bacon", 
-        title: "Tragédia da Carne",
-        img: "innocent-cropped"
+        subtitle: "Ohama", 
+        title: "O cyberpunk",
+        img: "Dystopia n 1"
 },
 {
         id: 2,
-        subtitle: "Juca Maximo", 
+        subtitle: "Juca", 
         title: "Serie Especial ",
-        img: "juca3"
+        img: "Gravity IX"
 },
 {
         id: 3,
-        subtitle: "Formas do pensamento", 
-        title: "Uma viagem pelo abstrato corporal",
-        img: "artistunknown"
+        subtitle: "Totonho", 
+        title: "As Dunas",
+        img: "Morro Branco"
 }
 ]
-const Cases = () => {
+const Cases = (props) => {
+
+    let [offset, setOffset] = useState(0);
+
+    const caseWidth = props.widthWin / 3
+   
+    const addOffset = () => {
+       
+        if (-offset < caseWidth * (caseStudies.length - 3)) {
+            setOffset(offset => offset-caseWidth)
+            console.log(-offset)
+        }
+        
+    }
+
+    const decreaseOffset = () => {
+        if (-offset >= caseWidth) {
+            setOffset(offset => offset+caseWidth)
+            console.log(-offset)
+        }
+        
+        
+    }
+
     return (
-        <section className="cases">
+        
+        <section className="cases" >
+        
             <div className="container-fluid">
+            
                 <div className="cases-navigation">
-                    <div className="cases-arrow prev disabled">
+                    <div onClick={() =>decreaseOffset()} className={`cases-arrow prev ${offset === 0 ? "disabled" : ""}`}>
                         <CasesPrev />
                     </div>
-                    <div className="cases-arrow next">
+                    <div className="cases-arrow next"  onClick={()=>addOffset()}>
                         <CasesNext />
                     </div>
                 </div>
-                <div className="row">
+                <div className="row" style={{marginLeft: `${offset}px`}}>
                     {caseStudies.map( item => (
-                        <div className="case" key={item.id}>
-                            <div className="case-details">
+                        <div className="case"  key={item.id}>
+                            <div style={{width: props.widthWin / 3}} className="case-details">
                                 <div className="subtitle">
                                     {item.subtitle}
                                 </div>
@@ -53,6 +79,7 @@ const Cases = () => {
                 </div>
             </div>
         </section>
+
     )
 }
 

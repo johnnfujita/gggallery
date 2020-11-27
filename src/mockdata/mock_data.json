@@ -1,0 +1,340 @@
+[
+    {
+        "artist": {
+            "id": "1",
+            "name": "Andrey Ohama",
+            "description": "Andrey Ohama, 55 anos, pernambucano de nascença e cearense de coração, nasceu em Recife, mas foi em Fortaleza que fez carreira na publicidade que teve início em 1986, colecionou incontáveis prêmios nacionais e internacionais na propaganda."
+        },
+        "obras": [
+            {
+                "id": "1",
+                "author": "Andrey Ohama",
+                "image_name": "Dystopia n 1.jpg",
+                "title": "Dystopia n 1",
+                "year": "2020",
+                "height": "120",
+                "width": "80",
+                "technique": "Óleo sobre tela",
+                "price": "4500"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "2",
+            "name": "Lia Sanders",
+            "description": "Lia Sanders é artista plástica, psiquiatra e escritora. Já participou de exposições em Fortaleza e em Berlin, onde morou por vários anos. Formada pela Universidade Federal do Ceará (UFC), tem doutorado pela Humboldt Universität zu Berlin Berlin. É professora de Psiquiatria da Unichristus e da UFC, onde coordena a Escola Arte Livre. A mulher das cavernas é o seu segundo romance."
+        },
+        "obras": [
+            {
+                "id": "2",
+                "author": "Lia Sanders",
+                "image_name": "A Mulher das Cavernas.jpg",
+                "title": "A Mulher das Cavernas",
+                "year": "2018",
+                "height": "70",
+                "width": "50",
+                "technique": "Acrílica sobre tela",
+                "price": "5000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "3",
+            "name": "Totonho Laprovitera",
+            "description": "Nas artes visuais, Totonho Laprovitera (1957) fez-se notar desde 1974, quando participou de sua primeira exposição na Casa de Cultura Raimundo Cela, em Fortaleza-CE.No início de sua trajetória tomou parte de prestigiadas exposições coletivas.Após 1982 desenvolveu-se na técnica da pintura e desde então realiza exposições individualmente ou em parcerias pelo Brasil. "
+        },
+        "obras": [
+            {
+                "id": "3",
+                "author": "Totonho Laprovitera",
+                "image_name": "Sanfoneiro Melancolicamente.jpg",
+                "title": "Sanfoneiro Melancolicamente",
+                "year": "2016",
+                "height": "100",
+                "width": "100",
+                "technique": "Acrílica sobre tela",
+                "price": "8000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "4",
+            "name": "Danillo Lima",
+            "description": "Danillo Lima, psicólogo e multiartista nasceu em Fortaleza-CE. Formou-se em Desenho e Pintura pelo Núcleo de Pós-Graduação e Educação Continuada da Universidade de Fortaleza - UNIFOR. Estudou em Melbourne - Austrália e busca na arte uma atuação transdisciplinar, de modo a expandir os limites da subjetivação a partir de diálogos com a música, artes visuais e psicologia. Reside em Fortaleza onde produz e expõe seu trabalho. Participa de salões e exposições no Brasil e no exterior."
+        },
+        "obras": [
+            {
+                "id": "4",
+                "author": "Danillo Lima",
+                "image_name": "O vermelho de Amélia..jpg",
+                "title": "O vermelho de Amélia.",
+                "year": "2014",
+                "height": "62",
+                "width": "48",
+                "technique": "Óleo sobre tela",
+                "price": "4000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "5",
+            "name": "Isaac Furtado",
+            "description": "Isaac Furtado, 54 anos, médico, cirurgião plástico, poeta e artista visual. Natural de Fortaleza."
+        },
+        "obras": [
+            {
+                "id": "5",
+                "author": "Isaac Furtado",
+                "image_name": "Abençoadas cores.jpg",
+                "title": "Abençoadas cores",
+                "year": "2020",
+                "height": "25",
+                "width": "54",
+                "technique": "Técnica mista sobre cartão",
+                "price": "3000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "6",
+            "name": "Cícero Spin",
+            "description": "Cicero Spin é um artista brasileiro autodidata com paixão pela beleza, por paletas de cores de alto contraste, ilusões de ótica, códigos, cifras e cultura pop.\"Cicero Spin\" é o pseudônimo artístico do neurocirurgião e neurorradiologista Túlio Spínola, nascido no ano de 1973 em Brasília-DF.O artista Cicero Spin nasce então em Junho de 2013 após meses de maturação de uma crescente necessidade da alma de fazer sua própria arte. "
+        },
+        "obras": [
+            {
+                "id": "6",
+                "author": "Cícero Spin",
+                "image_name": "Breaking up III.png",
+                "title": "Breaking up III",
+                "year": "2016",
+                "height": "47",
+                "width": "58",
+                "technique": "Técnica mista sobre páginas",
+                "price": "1790"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "7",
+            "name": "J.Araripe",
+            "description": "Nascida em Fortaleza, Juliana Araripe se inseriu no mundo da arte através da ilustração, começando com coleções assinadas para várias marcas de moda regionais e nacionais. Se formou pela Unifor e logo após fez uma especialização em Ilustração Criativa na IED de Barcelona. Com conhecimento de aquarela, spray, marcadores, tinta acrílica e à óleo, usa técnicas mistas na maioria dos seus trabalhos. "
+        },
+        "obras": [
+            {
+                "id": "7",
+                "author": "J.Araripe",
+                "image_name": "Reverb n3.jpg",
+                "title": "Reverb n3",
+                "year": "2020",
+                "height": "80",
+                "width": "60",
+                "technique": "Técnica mista sobre tela",
+                "price": "1500"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "8",
+            "name": "Mano Alencar",
+            "description": "Mano nasceu em Juazeiro do Norte em 1959. Consolidou-se como um dos principais artistas cearenses ao longo de mais de 30 anos imerso na Arte, expondo em diversos países como Itália, França, Portugal, Espanha, Argentina e Cuba. Mano vive com sua constante busca em tangibilizar seu imaginário intenso através de suas obras, com suas formas, cores, figuras e movimentos. Além de se expressar pela arte visual, Mano é poeta, escitor e segue em seu dia a dia transpodo sua alma em sua arte."
+        },
+        "obras": [
+            {
+                "id": "8",
+                "author": "Mano Alencar",
+                "image_name": "Detalhes de Quintal.jpg",
+                "title": "Detalhes de Quintal",
+                "year": "2020",
+                "height": "100",
+                "width": "80",
+                "technique": "Acrílica sobre tela",
+                "price": "5000"
+            },
+            {
+                "id": "9",
+                "author": "Mano Alencar",
+                "image_name": "Tempo de Estilo.jpg",
+                "title": "Tempo de Estilo",
+                "year": "2020",
+                "height": "150",
+                "width": "100",
+                "technique": "Acrílica sobre tela",
+                "price": "9000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "9",
+            "name": "Vando Figueiredo",
+            "description": "Sem dúvida, um dos artistas mais consolidados e bem visto hoje no Ceará. Sua técnica e traços próprios dispensariam assinatura. Porém, não bastassem os traços, a assinatura em si tornou-se também peculiaridade que faz parte de sua Obra."
+        },
+        "obras": [
+            {
+                "id": "10",
+                "author": "Vando Figueiredo",
+                "image_name": "Espelho.jpg",
+                "title": "Espelho",
+                "year": "2019",
+                "height": "90",
+                "width": "70",
+                "technique": "Técnica mista sobre tela",
+                "price": "9000"
+            },
+            {
+                "id": "11",
+                "author": "Vando Figueiredo",
+                "image_name": "Banho Turco.jpg",
+                "title": "Banho Turco",
+                "year": "2004",
+                "height": "150",
+                "width": "150",
+                "technique": "Técnica mista sobre tela",
+                "price": "22500"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "10",
+            "name": "Sérgio Gurgel",
+            "description": "Artista visual e designer. Sua pesquisa versa sobre o envelhecimento feminino, que surge de narrativas moventes de divas e heroínas que constrói e coleciona dentro de um imaginário afetivo singular. Suas obras transitam por pinturas, espelhos, móveis, calsadosm vidros e vídeos, com imagens resistentes ao tempo. Cheias de camadas, memórias, narrativas e ficções."
+        },
+        "obras": [
+            {
+                "id": "12",
+                "author": "Sérgio Gurgel",
+                "image_name": "Otel.jpg",
+                "title": "Otel",
+                "year": "2017",
+                "height": "62",
+                "width": "42",
+                "technique": "Óleo sobre couro",
+                "price": "8000"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "11",
+            "name": "Juca Máximo",
+            "description": "Artista visual, designer, excultor autodidata e músico, seu trabalho consiste em técnicas variadas como: pintura a óleo, acrílica, graviras, nanquim, canetas, arte digital, escultura em clay, resína e escultura digital. Rechecido em mais de 20 países, vem ganhando notoriedade no mundo artistico, principalmente no exterior do Brasil."
+        },
+        "obras": [
+            {
+                "id": "19",
+                "author": "Juca Máximo",
+                "image_name": "Gravity IX.jpg",
+                "title": "Gravity IX",
+                "year": "2020",
+                "height": "100",
+                "width": "75",
+                "technique": "Acrílica sobre tela",
+                "price": "7800"
+            },
+            {
+                "id": "20",
+                "author": "Juca Máximo",
+                "image_name": "Gravity VI.jpg",
+                "title": "Gravity VI",
+                "year": "2020",
+                "height": "100",
+                "width": "75",
+                "technique": "Acrílica sobre tela",
+                "price": "9200"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "12",
+            "name": "Assis Filho",
+            "description": "Assis Filho é artista e escultor  cearense especialista em peças figurativas realistas. Autodidata, o artista começou es estudos ainda criança, quando passou a dominar outras técnicas de escultura."
+        },
+        "obras": [
+            {
+                "id": "13",
+                "author": "Assis Filho",
+                "image_name": "São Sebastião 5_6.jpg",
+                "title": "São Sebastião 5/6",
+                "year": "2019",
+                "height": "57",
+                "width": "17",
+                "technique": "Resina poliéster",
+                "price": "4300"
+            }
+        ]
+    },
+    {
+        "artist": {
+            "id": "13",
+            "name": "Fernando França",
+            "description": "Desenhista, pintor e mestre em literatura pela Universidade Federal do Ceará, nasceu em Rio Branco em 1962. Apresentou suas obras em diversas exposições, coletivas e individuais no Brasil, Alemanha, França, Italia, Espanha, Portugal, Dinamarca, Polonha e Cabo Verde. Atualmente desenvolve uma série entitulada \"Encantes Amazônicos\", com trabalhos inspirados nas histórias e mitologia da Amazônia."
+        },
+        "obras": [
+            {
+                "id": "14",
+                "author": "Fernando França",
+                "image_name": "Peroba.jpg",
+                "title": "Peroba",
+                "year": "2020",
+                "height": "35",
+                "width": "50",
+                "technique": "Óleo sobre tela",
+                "price": "4000"
+            },
+            {
+                "id": "15",
+                "author": "Fernando França",
+                "image_name": "Lagoinha.jpg",
+                "title": "Lagoinha",
+                "year": "2020",
+                "height": "24",
+                "width": "32",
+                "technique": "Óleo sobre tela",
+                "price": "3000"
+            },
+            {
+                "id": "16",
+                "author": "Fernando França",
+                "image_name": "Morro Branco.jpg",
+                "title": "Morro Branco",
+                "year": "2020",
+                "height": "24",
+                "width": "30",
+                "technique": "Óleo sobre tela",
+                "price": "3000"
+            },
+            {
+                "id": "17",
+                "author": "Fernando França",
+                "image_name": "Mundaú.jpg",
+                "title": "Mundaú",
+                "year": "2020",
+                "height": "24",
+                "width": "31",
+                "technique": "Óleo sobre tela",
+                "price": "3000"
+            },
+            {
+                "id": "18",
+                "author": "Fernando França",
+                "image_name": "Peroba II.jpg",
+                "title": "Peroba II",
+                "year": "2020",
+                "height": "24",
+                "width": "33",
+                "technique": "Óleo sobre tela",
+                "price": "3000"
+            }
+        ]
+    }
+    
+]

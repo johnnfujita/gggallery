@@ -1,4 +1,28 @@
-[{"artwork_id": "1", "title": "Imaginário", "created": "24/09/20", "style": "Street Style", "description": "", "artist": "Almeida Luz", "height": "24", "width": "32", "technique": "Posca sobre papel Canson", "url": "luz1", "date": "2020", "tags": ["Street Art", "Grafite"], "original": ["700", "Amika Café"], "prints": [], "limited": []},
+[
+    {
+        "artwork_id": "1", 
+        "title": "Imaginário", 
+        "created": "24/09/20", 
+        "style": "Street Style", 
+        "description": "", 
+        "artist": "Almeida Luz", 
+        "height": "24", 
+        "width": "32", 
+        "technique": "Posca sobre papel Canson", 
+        "url": "luz1", 
+        "date": "2020", 
+        "tags": [
+            "Street Art", 
+            "Grafite"
+            ], 
+        "original": 
+            [
+            "700", 
+            "Amika Café"
+            ], 
+            "prints": [], 
+            "limited": []
+        },
 {"artwork_id": "2", "title": "Família", "created": "24/09/20", "style": "Street Style", "description": "", "artist": "Almeida Luz", "height": "18", "width": "24", "technique": "Unipin sobre papel fabriano", "url": "luz2", "date": "2020", "tags": ["Street Art", "Grafite"], "original": ["500", "Amika Café"], "prints": [], "limited": []},
 {"artwork_id": "3", "title": "Trancendental", "created": "24/09/20", "style": "Street Style", "description": "Acervo particular de Pedro Monteiro.", "artist": "Almeida Luz", "height": "16", "width": "24", "technique": "Posca sobre papel Canson", "url": "luz3", "date": "2020", "tags": ["Street Art", "Grafite"], "original": ["", "Amika Café"], "prints": [], "limited": []},
 {"artwork_id": "4", "title": "Menino Livre I", "created": "24/09/20", "style": "Street Style", "description": "", "artist": "Almeida Luz", "height": "25", "width": "20", "technique": "Fine Art", "url": "luz4", "date": "2020", "tags": ["Street Art", "Grafite"], "original": ["300", "Amika Café"], "prints": [], "limited": []},

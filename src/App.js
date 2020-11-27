@@ -92,7 +92,7 @@ function App() {
       {console.log(dimensions.width)}
       <div className="App">
         {routes.map(({path, Component}) => (
-          <Route key={path} exact path={path} component={Component} />
+          <Route key={path} exact path={path}  render={ (props)=> <Component {...props} dimensions={dimensions}/> } />
         ))}
         <Route key={"/vidas/login"} exact path={"/vidas/login"} render={ props => <Login {...props} />} />
         <Route key={"/vidas/register"} exact path={"/vidas/register"} render={ props => <Register {...props} role="register" />} />

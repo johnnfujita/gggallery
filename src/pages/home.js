@@ -3,8 +3,7 @@ import Banner from '../components/Banner'
 import Cases from '../components/Cases'
 import IntroOverlay from '../components/IntroOverlay'
 import gsap from 'gsap';
-
-
+import PictureGrid from "../components/PictureGrid"
 const timeline = gsap.timeline();
 const homeAnimation =(completeAnimation)=> {
          
@@ -40,8 +39,8 @@ const homeAnimation =(completeAnimation)=> {
       onComplete: completeAnimation
     });
 }
-const Home = () => {
-
+const Home = (props) => {
+   
     const [animationComplete, setAnimationComplete] = useState(false)
 
     const completeAnimation = () => {
@@ -55,9 +54,9 @@ const Home = () => {
     return (
         <>
         {animationComplete === false ? <IntroOverlay /> : " "}
-          
+    
             <Banner />
-            <Cases />
+            <Cases widthWin={props.dimensions.width}/>
         </>
     )
 }

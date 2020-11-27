@@ -19,37 +19,37 @@ const Navigation = () => {
                                         Acervo
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink className="anchors" to="/artistas" exact>
                                         Artistas
                                     </NavLink>
-                                </li>
+                                </li> */}
                                 {/* <li>
                                     <NavLink className="anchors" to="/about" exact>
                                         About
                                     </NavLink>
                                 </li> */}
-                                <li>
+                                {/* <li>
                                     <NavLink className="anchors" to="/espaços" exact>
                                         Espaços
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
-                    <ProfileButtons />
+                    {/* <ProfileButtons /> */}
                         <div className="nav-column">
                             <div className="nav-label">Contato</div>
                             <div className="nav-infos">
                                 <ul className="nav-info">
                                     <li className="nav-info-label">Email</li>
                                     <li>
-                                        <a  href={`https://api.whatsapp.com/send?phone=5585997382000&text=Garcez,%0agostaria%20de%20ter%20meu%20estabelecimento%20cadastrado%20para%20receber%20obras.`} className="anchors">
+                                        <a  href={`https://api.whatsapp.com/send?phone=5585986719677&text=Juliana,%0agostaria%20de%20ter%20meu%20estabelecimento%20cadastrado%20para%20receber%20obras.`} className="anchors">
                                             Como cadastrar seu espaço
                                         </a>
                                     </li>
                                     <li>
-                                    <a  href={`https://api.whatsapp.com/send?phone=5585997382000&text=Garcez,%0agostaria%20de%20ter%20obras%20de%20arte%20que%20possuo%20para%20venda.`} className="anchors">
+                                    <a  href={`https://api.whatsapp.com/send?phone=5585986719677&text=Juliana,%0agostaria%20de%20ter%20obras%20de%20arte%20que%20possuo%20para%20venda.`} className="anchors">
                                             Como cadastrar suas obras
                                         </a>
                                     </li>
@@ -64,7 +64,7 @@ const Navigation = () => {
                                     <li className="nav-info-label">Phone</li>
                                     
                                     <li className="nav-whatsapp">
-                                        <a className="anchors" href="https://wa.me/5585997382000/" >
+                                        <a className="anchors" href="https://wa.me/5585986719677/" >
                                             <WhatsappContact size={30} /> Whatsapp
                                         </a>
                                     </li>

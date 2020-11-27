@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {  Link} from "react-router-dom";
 
 
-let imagesJson = require("../mockdata/obras.json")
+let imagesJson = require("../mockdata/mock_data.json")
 let imageList = imagesJson
 let column1 = imageList.filter((el, idx) => idx % 3 === 0)
 let column2 = imageList.filter((el, idx) => idx % 3 === 1)
@@ -21,15 +21,15 @@ const PictureGrid = (props) => {
                 <div className="column">
                     {imageList.map((el, idx) => {
                         return idx % 3 === 0 ?  (
-                        <Link key={el.artwork_id} to={`/obra/${el.artwork_id}`}>
+                        <Link key={el.obras[0].id} to={`/obra/${el.obras[0].id}`}>
                             <div className="image-container">
-                            <img  className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
+                            <img  className="image" src={require(`../assets/${el.obras[0].image_name}`)} alt={`${el.obras[0].title}`} />
                                 <div className="description">
-                                    <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
+                                    <div className="price">{el.obras[0].title === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.obras[0].price},00`}</p>)  }</div>
                                     <div className="details">
-                                        <div className="artist">{el.artist}</div>
-                                        <div className="title">{el.title}, {el.date}</div>
-                                        <div className="dimensions">{el.width}cm x {el.height}cm</div>
+                                        <div className="artist">{el.artist.name}</div>
+                                        <div className="title">{el.obras[0].title}, {el.obras[0].year}</div>
+                                        <div className="dimensions">{el.obras[0].width}cm x {el.obras[0].height}cm</div>
                                     </div>
                                 </div>
                             </div>
@@ -41,19 +41,19 @@ const PictureGrid = (props) => {
                 <div className="column">
                     {imageList.map((el, idx) => {
                         return idx % 3 === 1 ?  
-                        (<Link key={el.artwork_id} to={`/obra/${el.artwork_id}`}>
-                            <div className="image-container">
-                                <img key={el.id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
-                                    <div className="description">
-                                    <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
-                                        <div className="details">
-                                            <div className="artist">{el.artist}</div>
-                                            <div className="title">{el.title}, {el.date}</div>
-                                            <div className="dimensions">{el.width}cm x {el.height}cm</div>
-                                        </div>
-                                    </div>
+                        (<Link key={el.obras[0].id} to={`/obra/${el.obras[0].id}`}>
+                        <div className="image-container">
+                        <img  className="image" src={require(`../assets/${el.obras[0].image_name}`)} alt={`${el.obras[0].title}`} />
+                            <div className="description">
+                                <div className="price">{el.obras[0].title === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.obras[0].price},00`}</p>)  }</div>
+                                <div className="details">
+                                    <div className="artist">{el.artist.name}</div>
+                                    <div className="title">{el.obras[0].title}, {el.obras[0].year}</div>
+                                    <div className="dimensions">{el.obras[0].width}cm x {el.obras[0].height}cm</div>
+                                </div>
                             </div>
-                        </Link>)
+                        </div>
+                    </Link>)
                          : " " 
                         }
                     )}
@@ -61,16 +61,15 @@ const PictureGrid = (props) => {
                 <div className="column">
                     {imageList.map((el, idx) => {
                         return idx % 3 === 2 ?  (
-                        <Link to={`/obra/${el.artwork_id}`} >
-
+                            <Link key={el.obras[0].id} to={`/obra/${el.obras[0].id}`}>
                             <div className="image-container">
-                                <img key={el.artwork_id} className="image" src={require(`../assets/${el.url}.jpg`)} alt={`${el.title}`} />
+                            <img  className="image" src={require(`../assets/${el.obras[0].image_name}`)} alt={`${el.obras[0].title}`} />
                                 <div className="description">
-                                <div className="price">{el.original[0] === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.original[0]},00`}</p>)  }</div>
+                                    <div className="price">{el.obras[0].title === "" ? (<p>Vendida</p>) : (<p>{`R$ ${el.obras[0].price},00`}</p>)  }</div>
                                     <div className="details">
-                                        <div className="artist">{el.artist}</div>
-                                        <div className="title">{el.title}, {el.date}</div>
-                                        <div className="dimensions">{el.width}cm x {el.height}cm</div>
+                                        <div className="artist">{el.artist.name}</div>
+                                        <div className="title">{el.obras[0].title}, {el.obras[0].year}</div>
+                                        <div className="dimensions">{el.obras[0].width}cm x {el.obras[0].height}cm</div>
                                     </div>
                                 </div>
                             </div>

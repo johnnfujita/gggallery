@@ -20,8 +20,8 @@ function debounce(fn, ms) {
     }
 }
 
-let imagesJson = require("../mockdata/obras.json")
-let imageList = imagesJson
+let imagesJson = require("../mockdata/mock_data.json")
+let entryList = imagesJson
 
 
 const SingleProduct = ({cart, match, addCartItem}) => {
@@ -49,7 +49,7 @@ const SingleProduct = ({cart, match, addCartItem}) => {
     
     const handleClickAddItem = (itemId) => {
         if (cart.findIndex(item => item.artwork_id === itemId) === -1){
-            addCartItem(imageList.filter(item => item.artwork_id === itemId)[0])
+            addCartItem(entryList.obras[0].filter(item => item.id === itemId)[0])
             setAddedItem(true)
         }
         
@@ -57,41 +57,40 @@ const SingleProduct = ({cart, match, addCartItem}) => {
     if (addedItem) { 
         return <Redirect to="/carrinho" />
     }
-    let item = imageList.filter((el) => Number(el.artwork_id) === Number(match.params.id))
-    
+    let item = entryList.filter((el) => Number(el.obras[0].id) === Number(match.params.id))
     item = item[0]
     return (
         <>
                 <div className="obra-container">
                 <div className="image-container">
-                    <img  className="image" src={require(`../assets/${item.url}.jpg`)} alt={`${item.title}`} />
+                    <img  className="image" src={require(`../assets/${item.obras[0].image_name}`)} alt={`${item.obras[0].title}`} />
                 </div>
                 <div className="menu">
                     <div className="description">
                         <div className="details">
-                            <div className="title">{item.title}, {item.date}</div>
-                            <div className="artist"> {item.artist}</div>
+                            <div className="title">{item.obras[0].title}, {item.obras[0].year}</div>
+                            <div className="artist"> {item.artist.name}</div>
                             
-                            <div className="size">{item.width}cm x {item.height}cm</div>
-                            <div className="size">{item.technique}</div>
-                            <div className="size">{item.style}</div>
+                            <div className="size">{item.obras[0].width}cm x {item.obras[0].height}cm</div>
+                            <div className="size">{item.obras[0].technique}</div>
+                            {/* <div className="size">{item.style}</div> */}
                         </div>
-                        <div className="buttons-container-bottom">
-                            <div className="description-container">{item.description}</div>
+                         {/* <div className="buttons-container-bottom">
+                             <div className="description-container">{item.description}</div> 
                             <div className="labels">
                             <div className="label">Original</div>
-                            {item.prints.length > 0 ? <div className="label">Prints</div>:null}
+                             {item.prints.length > 0 ? <div className="label">Prints</div>:null}
                             </div>
                             <div className="counter">
                                 <div className="counter-button">+</div>
                                 <input className="input-counter" type="text" pattern="\d+" placeholder="Qnt." disabled={true}/>
                                 <div className="counter-button">-</div>
-                            </div>
-                        </div>
+                            </div> 
+                        </div>  */}
                         
                     </div>
                     <div className="add-to-cart-container">
-                    <div className="price">{item.original[0] === "" ? (null) : (<p>{`R$ ${item.original[0]},00`}</p>)  }</div>
+                    <div className="price">{item.obras[0].price === "" ? (null) : (<p>{`R$ ${item.obras[0].price},00`}</p>)  }</div>
     
                         <div className="certificates-warnings">
                             <div className="certificate">
@@ -104,9 +103,9 @@ const SingleProduct = ({cart, match, addCartItem}) => {
                             </div>
                         </div>
                         <div className="final-buttons">
-                            <div onClick={()=> handleClickAddItem(item.artwork_id) }className="add-button">Adicionar</div>
-                            <div className="or-label">ou</div>
-                            <a href={`https://wa.me/5585988526803?text=https://karysvalley.com/obra/${item.id}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
+                            {/* <div onClick={()=> handleClickAddItem(item.artwork_id) }className="add-button">Adicionar</div>
+                            <div className="or-label">ou</div> */}
+                            <a href={`https://wa.me/5585986719677?text=Ju, Eu gostaria de mais info sobre a obra ${item.obras[0].title}`} className="direct-whats"> <WhatsappContact size={24}/> { dimensions.width <= 650 ? "" : "Whatsapp"}</a>
                             
                         </div>
                         

@@ -20,7 +20,7 @@ const Banner = () => {
                         </div>
                     </h2>
                     <div className="btn-row">
-                        <a href="/">Galeria <RightArrow /></a>
+                        <a href="/obras">Galeria <RightArrow /></a>
                     </div>
                 </div>
             </div>

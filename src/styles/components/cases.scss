@@ -2,7 +2,7 @@
     height: 50vh;
     height: calc(var(--vh, 1h) * 50);
     box-sizing: border-box;
-    
+   
     
     .cases-navigation {
         position: absolute;
@@ -25,6 +25,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover {
+                cursor: pointer;
+                background: rgba(0,0,0,1);
+                transform: scale(1.02);
+            }
 
             svg {
                 color: $white;
@@ -33,10 +38,15 @@
             }
             &.disabled {
                 opacity: 0.3;
+                &:hover {
+                    cursor: not-allowed;
+                    transform: scale(1);
+                }
             }
         }
     }
     .row {
+        transition: margin-left 1s ease-in;
         @include media("<=tablet") {
             flex-direction: column;
             
@@ -55,7 +65,7 @@
                 
             }
             .case-details {
-                width: 33.33333vw;
+                transition: all 1s ease-in;
                 height: 50vh;
                 height: calc(var(--vh, 1vh) * 50);
                 display: flex;
